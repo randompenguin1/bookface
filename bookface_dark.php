@@ -10,7 +10,7 @@
  * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: Yes
- * Version: 1.0
+ * Version: 1.1
  */
 
 require_once 'view/theme/frio/php/PHPColors/Color.php';
