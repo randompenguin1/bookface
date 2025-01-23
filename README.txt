@@ -27,6 +27,10 @@ NOTES:
 * This scheme was adapted from a user stylesheet for use in browsers on the client-side.
 
 CHANGELOG:
+1.1
+* Fixes long lists of tags/mentions spilling out of post or profile container, forces them to wrap to multiple rows as necessary.
+* Adds spacing to left of multiple settings buttons floated to right.
+
 1.0
 * Initial release of server-side version
 * Accent colors now work (server-side version only)
