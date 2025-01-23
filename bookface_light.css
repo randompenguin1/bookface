@@ -279,7 +279,11 @@
 			display: block;
 			clear: both;
 		}
-
+    #settings-server button[type="submit"] {
+	  float: right !important;
+	  margin-left: 5px !important;
+	  margin-bottom: 20px !important;
+	}
 	/* Other people profiles */
 	#mention-link {
 		background-color: var(--link-color) !important;
