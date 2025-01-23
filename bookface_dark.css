@@ -1,6 +1,6 @@
 /*
-	Name	   : Bookface Dark
-	Version    : 1.0
+    Name	 : Bookface Dark
+    Version    : 1.1
     Licence    : AGPL
     Created on : 19.01.2025
     Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
@@ -315,6 +315,7 @@ box-sizing: border-box;
     }
     .panel-footer button[type="submit"]{
         float: right !important;
+        margin-left: 5px;
     }
         .panel-footer::after{
             content: '';
@@ -427,6 +428,13 @@ aside .widget,
                      padding-left: 10px !important;
                      padding-right: 10px !important;
               }
+       /* keep mentions and tags from spilling out */
+       #profile-page .label,
+       #profile-page .label a,
+       .wall-item-bottom .label, 
+       .wall-item-bottom .label a {
+            display: inline-block !important;
+       }
        /* ACTION BUTTON LABELS */
        .wall-item-actions-row button,
        .wall-item-actions-right button {
