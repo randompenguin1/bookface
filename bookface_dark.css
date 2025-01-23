@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.1
+    Version    : 1.2
     Licence    : AGPL
     Created on : 19.01.2025
     Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
@@ -533,6 +533,27 @@ aside .widget,
         }
        /* END OF ACTION BUTTON LABELS */        
 /* Compose and Reply */
+	#jot-modal .modal-header .compose-link {
+		border-radius: 100% !important;
+		height: 36px;
+		width: 36px;
+		font-size: 27px !important;
+		padding: 0 6px !important;
+	}	
+	.close {
+		height: 36px;
+		width: 36px;
+		background-color: #0066FF !important;
+		opacity: 1 !important;
+		color: #fff !important;
+		border-radius: 100%;
+		margin-top: 5px;
+		margin-top: 2px !important;
+	}
+	.close:hover,
+	.close:focus {
+		  box-shadow: inset rgba(255,255,255,.2) !important;
+	}
 #jot-modal-content,
 .wall-item-comment-wrapper {
 	background-color: rgb(37,39,40) !important;
