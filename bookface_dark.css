@@ -322,6 +322,11 @@ box-sizing: border-box;
             display: block;
             clear: both;
         }
+    	#settings-server button[type="submit"] {
+	  float: right !important;
+	  margin-left: 5px !important;
+	  margin-bottom: 20px !important;
+	}
     /* Compose Window */
     #upload-photo {
         background-color: var(--link-color) !important;
