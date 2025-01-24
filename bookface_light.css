@@ -470,7 +470,12 @@
 		width: 36px;
 		font-size: 27px !important;
 		padding: 0 6px !important;
-	}	
+		background-color: rgba(0,0,0,.1);
+	}
+		#jot-modal .modal-header .compose-link:hover,
+		#jot-modal .modal-header .compose-link:focus {
+			background-color: rgba(0,0,0,.2);
+		}
 	.close {
 		height: 36px;
 		width: 36px;
