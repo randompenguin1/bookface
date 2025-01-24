@@ -7,7 +7,7 @@
 */
 
 :root {
-    --global-font-family: 'Roboto', 'Helvetica Neue', Arial, sans-serif, Noto Color Emoji;
+    --global-font-family: 'Open Sans', Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
     --link-color: $link_color;
     --nav-icon-color: $nav_icon_color;
@@ -548,7 +548,7 @@ aside .widget,
 	.close {
 		height: 36px;
 		width: 36px;
-		background-color: #0066FF !important;
+		background-color: var(--link-color) !important;
 		opacity: 1 !important;
 		color: #fff !important;
 		border-radius: 100%;
