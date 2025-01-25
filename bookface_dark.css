@@ -379,6 +379,52 @@ border-radius: 8px !important;
 	border-radius: 8px !important;
 	margin-bottom: 10px !important;
 }
+	/* SEARCH RESULTS */
+	#search-save {
+		background-color: var(--link-color) !important;
+		color: white !important;
+		border-radius: 8px !important;
+		padding: 6px 8px !important;
+	}
+		#search-save:hover,
+		#search-save:focus {
+			box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
+		}
+	#search-save .fa-plus::before{
+		content: '\f292' !important;
+	}
+	#search-save .fa-floppy-o::before {
+		content: '\f00e' !important;
+	}
+	#search-save .fa-floppy-o::before,
+	#search-save .fa-plus::before {
+		display: inline-block;
+		margin-top: 2px;
+	}
+	#search-save .fa-floppy-o::after,
+	#search-save .fa-plus::after{
+		content: 'Save Search';
+		font-family: 'Open Sans', Arial, sans-serif;
+		font-size: 15px;
+		float: left;
+		margin-right: 10px;
+		line-height: 32px;
+		position: relative;
+		display: block;
+		top: -2px;
+		font-weight: 700;
+	}
+
+	#search-save .fa-floppy-o::after {
+		  content: 'Save Search';
+	}
+	#search-save .fa-plus::before {
+		display: inline-block;
+		margin-top: 2px;
+	}
+	#search-save .fa-plus::after {
+		  content: 'Follow Tag';
+	}
 /* sidebar widgets */
 aside .widget,
 .nav-container .widget {
@@ -843,6 +889,9 @@ aside .widget li:hover {
     #search-box { 
         width: 18% !important;
     }
+    #search-save {
+	 width: 140px !important;
+    }
 }
 @media screen and (max-width: 991px){
     #search-box {
@@ -874,4 +923,13 @@ aside .widget li:hover {
 		left: 10% !important;
 		margin-left: 0!important;
 	}
+	#search-save {
+		width: 100px !important;
+	}
+		#search-save .fa-plus::after {
+			content: 'Follow';
+		}
+		#search-save .fa-floppy-o::after {
+			content: 'Save';
+		}
 }	
