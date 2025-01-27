@@ -334,6 +334,15 @@ box-sizing: border-box;
 	  margin-left: 5px !important;
 	  margin-bottom: 20px !important;
 	}
+	input[name="page_tos"]{
+	    float: right;
+	    padding: 8px;		
+	}
+	.submit::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
     /* Compose Window */
     #upload-photo {
         background-color: var(--link-color) !important;
