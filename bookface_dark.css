@@ -123,6 +123,14 @@ header #banner {
        height: 40px !important;
        width: 40px !important;
        }
+       #navbar-brand-text {
+       	line-height: 40px;
+       	font-weight: 700;
+       	color: var(--link-color) !important;
+       }
+       #nav-login::before{
+       	content: 'Sign-In';
+       }
 .topbar ul.nav {
        left: 50% !important;
        margin-left: -25% !important;
@@ -183,6 +191,7 @@ header #banner {
 }
 #nav-user-menu {
     min-width: 250px !important;
+    overflow-x: hidden;
 }
 .nav-pills .dropdown-menu li a, 
 .nav-pills .dropdown-menu li .btn-link, 
@@ -1004,7 +1013,13 @@ aside .widget li:hover {
 	#photos-upload-perms button[data-toggle="modal"]:focus {
 		background-color: rgba(255,255,255,.1) !important;
 	}
-
+/* ADD-ONS */
+.advancedcontentfilter-content-wrapper table td:nth-of-type(2) {
+  word-wrap: anywhere;
+}
+.advancedcontentfilter-content-wrapper pre {
+	margin-top: 20px;
+}
 @media screen and (max-width: 1280px) {
     #search-box { 
         width: 18% !important;
