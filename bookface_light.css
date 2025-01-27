@@ -291,6 +291,15 @@
 	  margin-left: 5px !important;
 	  margin-bottom: 20px !important;
 	}
+	input[name="page_tos"]{
+	    float: right;
+		padding: 8px;		
+	}
+	.submit::after{
+		content: '';
+		display: block;
+		clear: both;
+	}
 	/* Other people profiles */
 	#mention-link {
 		background-color: var(--link-color) !important;
