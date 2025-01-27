@@ -238,6 +238,7 @@
 			margin-top: 10px;
 		}
 	/* Make Submit Buttons Pretty */
+	#adminpage a.btn,
 	.settings-submit,
 	button[type="submit"],
 	input[type="submit"],
@@ -251,6 +252,8 @@
 		border-radius:50px !important;
 		margin-top:-.5px !important;
 	}
+	#adminpage a.btn:hover,
+    #adminpage a.btn:focus,
 	.settings-submit:hover,
 	.settings-submit:focus,
 	button[type="submit"]:hover,
@@ -285,6 +288,9 @@
 			content: '';
 			display: block;
 			clear: both;
+		}
+		#addonslist{
+			margin-top: 20px;
 		}
 	#settings-server button[type="submit"] {
 	  float: right !important;
