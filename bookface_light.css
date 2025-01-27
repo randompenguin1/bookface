@@ -117,6 +117,14 @@
 		height: 40px !important;
 		width: 40px !important;
 		}
+	    #navbar-brand-text {
+       		line-height: 40px;
+       		font-weight: 700;
+       		color: var(--link-color) !important;
+       }
+       #nav-login::before{
+       	content: 'Sign-In';
+       }
 	.topbar ul.nav {
 		left: 50% !important;
 		margin-left: -25% !important;
@@ -173,6 +181,7 @@
 	#nav-user-menu {
 		background-color: #ffffff !important;
 		min-width: 250px !important;
+		overflow-x: hidden;
 	}
 	.nav-pills .dropdown-menu li a, .nav-pills .dropdown-menu li .btn-link, .nav-tabs .dropdown-menu li a, .nav-tabs .dropdown-menu li .btn-link, .account .dropdown-menu li a, .account .dropdown-menu li .btn-link, .contact-photo-wrapper .dropdown-menu li a, .contact-photo-wrapper .dropdown-menu li .btn-link {
 		color: #65686C !important;
@@ -936,7 +945,13 @@
 	#photos-upload-perms button[data-toggle="modal"]:focus {
 		background-color: rgba(0,0,0,.2) !important;
 	}		
-	
+/* ADD-ONS */
+.advancedcontentfilter-content-wrapper table td:nth-of-type(2) {
+  word-wrap: anywhere;
+}
+.advancedcontentfilter-content-wrapper pre {
+	margin-top: 20px;
+}	
 		
 	@media screen and (max-width: 1280px) {
 		#search-box { 
