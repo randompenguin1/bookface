@@ -340,9 +340,11 @@ box-sizing: border-box;
 	  margin-left: 5px !important;
 	  margin-bottom: 20px !important;
 	}
+	input[name="page_logs"],
+	input[name="republish_directory"],
 	input[name="page_tos"]{
 	    float: right;
-	    padding: 8px;		
+		padding: 8px;		
 	}
 	.submit::after{
 		content: '';
