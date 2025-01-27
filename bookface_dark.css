@@ -340,6 +340,7 @@ box-sizing: border-box;
 	  margin-left: 5px !important;
 	  margin-bottom: 20px !important;
 	}
+       #probe button[type="submit"],
 	input[name="page_logs"],
 	input[name="republish_directory"],
 	input[name="page_tos"]{
