@@ -240,6 +240,7 @@
 	/* Make Submit Buttons Pretty */
 	.settings-submit,
 	button[type="submit"],
+	input[type="submit"],
 	#photos-upload-submit {
 		background-color: var(--link-color) !important;
 		color: white !important;
@@ -254,6 +255,8 @@
 	.settings-submit:focus,
 	button[type="submit"]:hover,
 	button[type="submit"]:focus,
+	input[type="submit"]:hover,
+	input[type="submit"]:focus,
 	#photos-upload-submit:hover,
 	#photos-upload-submit:focus{
 		box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
@@ -273,7 +276,8 @@
     .panel-footer {
     	background-color: var(--nav-bg) !important;
     }
-	.panel-footer button[type="submit"]{
+	.panel-footer button[type="submit"],
+	.panel-footer input[type="submit"] {
 		float: right !important;
 		margin-left: 5px;
 	}
