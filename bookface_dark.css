@@ -1,9 +1,9 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.2
+    Version    : 1.3
     Licence    : AGPL
-    Created on : 26.01.2025
-    Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml
+    Created on : 11 Feb 2025
+    Author     : Kristi H. @kmh@friendica.world feb @feb@loma.ml Phil phil@loma.ml
 */
 
 :root {
@@ -18,23 +18,45 @@
     --background-image: $background_image;
     --menu-background-hover-color: $menu_background_hover_color;
     --border-color: #333333;
+    --count-color:  #ffffff;
+    --count-bg: var(--link-color);
+    
+    /* LOCALIZE pseudo-element text below */
+    --sign-in-text: 'Sign-In';
+    --compose-text: 'Compose';
+    --new-note-text: 'New Note';
+    --save-search-text: 'Save Search';
+    --follow-tag-text: 'Follow Tag';
+    --comment-button-text: 'Comment';
+    --share-button-text: 'Share';
+    --quote-button-text: 'Quote';
+    --like-button-text: 'Like';
+    --dislike-button-text: 'Dislike';
+    --more-button-text: 'More';
+    --attendyes-button-text: 'Going';
+    --attendno-button-text: 'Can\'t Go';
+    --attendmaybe-button-text: 'Maybe';
+    --add-photo-button-text: 'Add Photos';
+    --follow-button-text: 'Follow';
+    --save-button-text: 'Save';
 }
 
 body {
        background-color: var(--background-color) !important;
        font-size: 15px !important;
-       padding-top: 125px !important;
+       padding-top: 130px !important;
+       font-family: var(--global-font-family);
 }
 #topbar-first .nav > li > a, 
 #topbar-first .nav > li > button, 
 nav.navbar .nav > li > a, 
 nav.navbar .nav > li > button{
-       color: #B0B3B8 !important;
-       
+       color: var(--nav-icon-color) !important;
        }
 #topbar-first, nav.navbar {
        background-color: var(--nav-bg) !important;
-       color: #B0B3B8 !important;
+       color: var(--nav-icon-color) !important;
+       height: 55px;
 }
        #topbar-first .topbar-nav .nav-segment {
               margin-right: 10px;
@@ -50,55 +72,88 @@ nav.navbar .nav > li > button{
 #topbar-first .nav > li > a:focus, 
 #topbar-first .nav > li > button:not(#main-menu):hover, 
 #topbar-first .nav > li > button:not(#main-menu):focus, 
+#topbar-first button.navbar-toggle:hover,
+#topbar-first button.navbar-toggle:focus, 
 nav.navbar .nav > li > a:hover, 
 nav.navbar .nav > li > a:focus, 
 nav.navbar .nav > li > button:hover, 
 nav.navbar .nav > li > button:focus {
-  background-color: rgba(255,255,255,.1) !important;
-       border-radius: 8px !important;
+	background-color: rgba(255,255,255,.1) !important;
+	border-radius: 8px !important;
        
 }    
-#topbar-first .nav > li > a.selected {
-       border-bottom: 3px solid var(--link-color) !important;
-       color: var(--link-color) !important;
-}
+	#topbar-first button.navbar-toggle,
+	#nav-notifications-menu-btn {
+		width: 50px;
+		height: 50px;
+	}	
+	#topbar-first .nav > li > a.selected,
+	#nav-notification.dropdown.open {
+		border-bottom: 3px solid var(--link-color) !important;
+		color: var(--link-color) !important;
+	}
 #topbar-first .nav > li > a.selected:hover,
+#topbar-first .nav > li > a.selected:focus,
 #topbar-first .nav > li > #main-menu:hover,
-#topbar-first .nav > li > #main-menu:focus {
+#topbar-first .nav > li > #main-menu:focus,
+#nav-notification.dropdown.open #nav-notifications-menu-btn:hover,
+#nav-notification.dropdown.open #nav-notifications-menu-btn:focus {
        background-color: transparent !important;
        border-radius: 0 !important;
 }
+	#nav-notification.dropdown.open #nav-notifications-menu-btn .fa-bell::before {
+		content: '\f0f3';
+		color: var(--link-color);		
+	}
 ul.tabs li {
        font-size: 15px !important;
        margin-left: 10px !important;
 }
-ul.tabs li.active {
-       border-color: var(--link-color) !important;
-}
        ul.tabs li a {
               margin-top: 8px;
-              color: var(--link-color) !important;
+              color: var(--link-color);
        }
-       ul.tabs li:hover:not(.active) {
-              border-bottom-width: 0px !important;
-       }
-              ul.tabs li:hover:not(.active) a {
-                     background-color: rgba(255,255,255,.1) !important;
-                     border-radius: 8px !important;
-              }
+		ul.tabs li:not(.active):hover {
+			border-bottom-width: 0px !important;
+		}
+			ul.tabs li:not(.active):hover > a {
+				background-color: rgba(128,128,128,.1) !important;
+				background-image: none !important;
+				border-radius: 8px !important;
+				color: var(--font-color);
+			}
     .dropdown-menu {
         padding-bottom: 15px !important;
         background-color: var(--nav-bg) !important;
         border: 1px solid var(--background-color) !important;
     }
-        .dropdown-menu li {
-            margin: 10px;
-            width: 92% !important;
-            border-radius: 8px;
-        }
-            .dropdown-menu li:hover {
-                border-color: transparent !important;
-            }
+		.dropdown-menu li {
+			margin: 3px 10px;
+			width: 92%  !important;
+			border-radius: 8px;
+		}
+			.dropdown-menu li:hover {
+				border-color: transparent  !important;
+			}
+			.dropdown-menu > li > a:hover,
+			.dropdown-menu > li > a:focus {
+				background-image: none !important;
+				border-radius: 8px ;
+			}
+			.dropdown-menu > li.active,
+			.dropdown-menu > li.active:hover,
+			.dropdown-menu > li.active:focus {
+				border-radius: 0;
+				background-color: transparent;
+				border-bottom: 4px solid var(--link-color) !important;
+			}
+			.dropdown-menu > li.active > a,
+			.dropdown-menu > li.active:hover > a,
+			.dropdown-menu > li.active:focus > a {
+				color: var(--link-color);
+				background-color: transparent;
+				background-image: none;
+			}
     .form-control {
     	background: var(--nav-bg);
     	color: #fff;
@@ -116,20 +171,42 @@ ul.tabs li.active {
 header #banner {
        left: 0 !important;
        right: auto !important;
+       margin-top: 10px;
 }
-       header #banner #logo-img,
-       .navbar-brand #logo-img {
-              background-color: var(--link-color) !important;
-       height: 40px !important;
-       width: 40px !important;
-       }
+	.navbar-brand #logo-img {
+		margin-top: 20px;
+	}
+	.navbar-brand #logo-img,
+	header #banner #logo-img {
+		/* SVG Mask is broken in WebKit use Icon Font instead */
+		-webkit-mask-image: unset !important;
+		mask: none !important;
+		mask-size: unset !important;
+		mask-composite: unset !important;
+		mask-mode: unset !important;
+		background-color: transparent !important;
+		height: 40px;
+		width:  40px;
+	}
+		.navbar-brand #logo-img::before,
+		header #banner #logo-img::before {
+			content: '\f2e6';
+			font-family: ForkAwesome;
+			font-size: 45px;
+			position: relative;
+			top: -12px;
+			left: 0px;
+			text-shadow: none;
+			color: var(--link-color);
+		}
+
        #navbar-brand-text {
        	line-height: 40px;
        	font-weight: 700;
        	color: var(--link-color) !important;
        }
        #nav-login::before{
-       	content: 'Sign-In';
+       	content: var(--sign-in-text);
        }
 .topbar ul.nav {
        left: 50% !important;
@@ -153,7 +230,7 @@ header #banner {
        box-shadow: none !important;
 }
 #search-box form > div {
-       background-color: #333334;
+       background-color: var(--background-color);
        border-radius: 50px;
 }
 #search-box form > div::before {
@@ -169,7 +246,7 @@ header #banner {
        width: 100% !important;
 }
 #search-box .form-control::placeholder {
-       color: #B0B3B8 !important;
+       color: var(--nav-icon-color) !important;
 }
 #topbar-first #search-box .btn {
        font-size: 0px !important;
@@ -183,7 +260,7 @@ header #banner {
        content: '\f061';
        font-family: ForkAwesome;
        font-size: 15px;
-       color: #B0B3B8;
+       color: var(--nav-icon-color);
 }
 #nav-user-menu, #nav-notifications-menu {
        background-color: var(--nav-bg) !important;
@@ -201,7 +278,7 @@ header #banner {
 .account .dropdown-menu li .btn-link, 
 .contact-photo-wrapper .dropdown-menu li a, 
 .contact-photo-wrapper .dropdown-menu li .btn-link {
-       color: #B0B3B8 !important;
+       color: var(--nav-icon-color) !important;
        border-color: var(--nav-bg) !important;
 }
        .nav-pills .dropdown-menu li > a:hover, 
@@ -221,16 +298,24 @@ header #banner {
 .account .dropdown-menu li.divider, 
 .contact-photo-wrapper .dropdown-menu li.divider {
        background-color: var(--nav-bg) !important;
-}    
+}  
+#content .nav > li > .btn-link {
+	margin: 5px;
+}
+#content .nav > li > .btn-link:hover,
+#content .nav > li > .btn-link:focus {
+	background-color: var(--link-color);
+	color: white;
+}  
 #topbar-first #nav-notifications-menu {
        border: 1px solid var(--background-color) !important;
 }
 #topbar-first #nav-notifications-menu li {
-       border-color: transparent !important;
-box-sizing: border-box;
-       margin: 10px;
-       border-radius: 10px !important;
-       width: 94% !important;
+    border-color: transparent !important;
+	box-sizing: border-box;
+    margin: 10px;
+    border-radius: 10px !important;
+    width: 94% !important;
 }
 #topbar-first .notification-unseen {
        background-color: rgba(255,255,255,.2) !important
@@ -239,9 +324,26 @@ box-sizing: border-box;
        background-color:rgba(128,128,128,.2) !important;    
        border-color: transparent !important;
 }
+	.topbar .dropdown-header {
+		color: var(--nav-icon-color);
+	}
+	#topbar-first .topbar-nav .arrow {
+		display: none !important;
+	}
+				.topbar .dropdown-header .dropdown-header-link .btn-link {
+					border: 1px solid var(--link-color);
+					border-radius: 8px;
+					padding: 5px;
+					margin-top: -6px;
+				}
+					.topbar .dropdown-header .dropdown-header-link .btn-link:hover,
+					.topbar .dropdown-header .dropdown-header-link .btn-link:focus {
+						background-color: rgba(0,0,0,.1);
+					}
 #topbar-second {
-       height: 60px !important;
-       background-color: var(--nav-bg) !important;
+	top: 55px;
+    height: 60px !important;
+    background-color: var(--nav-bg) !important;
        border-color: #333 !important;
 }
        .btn.btn-primary:hover,
@@ -271,7 +373,7 @@ box-sizing: border-box;
               box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
        }
        #jotOpen::before {
-              content: 'Compose';
+              content: var(--compose-text);
               font-size: 15px;
               margin-right: 10px;
               line-height: 32px;
@@ -279,6 +381,14 @@ box-sizing: border-box;
               display: inline;
               top: -4px;
        }
+		body.mod-notes #jotOpen::before {
+			content: var(--new-note-text);
+		}
+		body.mod-notes .sectiontop h3::before {
+  			content: '\f023';
+  			font-family: ForkAwesome;
+  			margin-right: 5px;
+		}
        #jotOpen .fa-pencil-square-o {
               font-size: 32px !important;
               position: relative;
@@ -287,6 +397,32 @@ box-sizing: border-box;
        #topbar-second #nav-short-info {
               margin-top: 10px;
        }
+	/* General Content Wrappers */
+	section > .generic-page-wrapper, 
+	.videos-content-wrapper, 
+	.suggest-content-wrapper, 
+	.help-content-wrapper, 
+	.match-content-wrapper, 
+	.dirfind-content-wrapper, 
+	.delegation-content-wrapper, 
+	.notes-content-wrapper, 
+	.message-content-wrapper, 
+	.apps-content-wrapper, #adminpage, 
+	.delegate-content-wrapper, 
+	.uexport-content-wrapper, 
+	.dfrn_request-content-wrapper, 
+	.friendica-content-wrapper, 
+	.credits-content-wrapper, 
+	.nocircle-content-wrapper, 
+	.profperm-content-wrapper, 
+	.invite-content-wrapper, 
+	.tos-content-wrapper, 
+	.fsuggest-content-wrapper,
+	.shared-wrapper {
+		background-color: var(--nav-bg) !important;
+		background-image: none;
+		border-color: #333;
+	}
     /* Make Submit Buttons Pretty */
     #adminpage a.btn,
     .settings-submit,
@@ -349,55 +485,39 @@ box-sizing: border-box;
 	  margin-left: 5px !important;
 	  margin-bottom: 20px !important;
 	}
-       #adminpage button[type="submit"],
-       input[type="submit"],
+    #adminpage button[type="submit"],
+    input[type="submit"],
 	input[name="page_logs"],
 	input[name="republish_directory"],
 	input[name="page_tos"]{
 	    float: right;
-	    padding: 8px;		
+	    padding: 8px;
+	    border: none;		
 	}
 	.submit::after{
 		content: '';
 		display: block;
 		clear: both;
 	}
-    /* Compose Window */
-    #upload-photo {
-        background-color: var(--link-color) !important;
-        color: white !important;
-        border-radius: 8px !important;
-    }
-     #upload-photo:hover,
-     #upload-photo:focus {
-        background-color: darkblue !important;
-    }
-    
-    /* 	HIDE ATTACHMENT BUTTON
-    	=======================
-    	This hides the file attachment button in the Compose "Browser" tab
-    	because there is no way to manage/delete uploaded attachments it
-    	was a design choice of this theme mod to hide this button from users.
-    	
-    	If you WANT users to be able to see uploaded files and attach them
-    	to posts either comment out this rule or change "none" to "block"
-    */ 
-    .fbswitcher [data-mode="attachment"] {
-           display: none !important;
-    }
+	#photo-edit-end {
+		clear: both;
+	}
+	/* make textareas resize in the correct direction */
+	textarea {
+		resize: vertical !important;
+	}
 /* Other people profiles */
 #mention-link {
-border-radius: 8px !important;
-              background-color: var(--link-color) !important;
-              color: #ffffff !important;
-              border-color: #000 !important;
-              box-shadow: none !important;
-       padding: 0 16px !important;
+	border-radius: 8px !important;
+    background-color: var(--link-color) !important;
+    color: #ffffff !important;
+    border-color: #000 !important;
+    box-shadow: none !important;
+    padding: 0 16px !important;
 }
        #mention-link:hover,
        #mention-link:focus {
-              box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important;
-              
+              box-shadow: inset 0 0 100px rgba(0,0,0,.1) !important; 
        }
        #mention-link span:first-of-type {
               float: right;
@@ -447,7 +567,7 @@ border-radius: 8px !important;
 	}
 	#search-save .fa-floppy-o::after,
 	#search-save .fa-plus::after{
-		content: 'Save Search';
+		content: var(--save-search-text);
 		font-family: 'Open Sans', Arial, sans-serif;
 		font-size: 15px;
 		float: left;
@@ -458,17 +578,39 @@ border-radius: 8px !important;
 		top: -2px;
 		font-weight: 700;
 	}
-
 	#search-save .fa-floppy-o::after {
-		  content: 'Save Search';
+		  content: var(--save-search-text);
 	}
 	#search-save .fa-plus::before {
 		display: inline-block;
 		margin-top: 2px;
 	}
 	#search-save .fa-plus::after {
-		  content: 'Follow Tag';
+		  content: var(--follow-tag-text);
 	}
+	/* popovers */
+	.popover.hovercard {
+		border: 1px solid var(--nav-bg) !important;
+		-webkit-box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25);
+  		-moz-box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25);
+  		box-shadow: 0 10px 100px rgba(255, 255, 255, 0.25);
+	}
+	.hover-card-footer {
+		border-color: #333;
+		background-color: var(--nav-bg);
+	}
+		.hovercard.top > .arrow::after {
+			border-top-color: var(--nav-bg);
+		}
+		.hovercard.right > .arrow::after {
+			border-right-color: var(--nav-bg);
+		}
+		.hovercard.bottom > .arrow::after {
+			border-bottom-color: var(--nav-bg);
+		}
+		.hovercard.left > .arrow::after {
+			border-left-color: var(--nav-bg);
+		}
 /* sidebar widgets */
 aside .widget,
 .nav-container .widget {
@@ -477,11 +619,17 @@ aside .widget,
        -moz-box-shadow: none !important;
        box-shadow: none !important;
 }
-/* Posts */
+	aside .badge {
+		background-color: var(--link-color);
+	}
+/* POSTS */
 .tread-wrapper {
-       background-color: rgb(37, 39, 40) !important;
-  box-shadow: 0 0px 1px rgba(0,0,0,.5) !important;
-  border-radius: 10px !important;
+	background-color: rgb(37, 39, 40) !important;
+	box-shadow: 0 0px 1px rgba(0,0,0,.5) !important;
+	border-radius: 10px !important;
+}
+.wall-item-container {
+	border-top: none;
 }
 .wall-item-container .media {
        background-color: rgb(37, 39, 40) !important;
@@ -506,6 +654,11 @@ aside .widget,
               border-radius: 100% !important;
               border: 1px solid var(--nav-bg) !important;
        }
+.media-list > li:hover, 
+.media-list > li.selected, 
+.media-list > li.active {
+	background-color: var(--background-color);
+}
 .hovercard {
        background-color: var(--nav-bg) !important;
        border: 1px solid var(--background-color) !important;        
@@ -559,28 +712,29 @@ aside .widget,
        .wall-item-response {
               position: relative;
               padding-top: 4px;
+              display: block;
        }
        .button-comments::after {
-              content: 'Comment';
+              content: var(--comment-button-text);
        }
        .button-announces::after {
-              content: 'Share';
+              content: var(--share-button-text);
        }
               .share-links .dropdown-toggle::after {
-                     content: 'Share';
+                     content: var(--share-button-text);
               }
        .button-votes::after {
-              content: 'Quote';
+              content: var(--quote-button-text);
        }
        .button-likes::after {
-              content: 'Like';
+              content: var(--like-button-text);
        }
      [id^="dislike-"]::after{
-         content: 'Dislike';
+         content: var(--dislike-button-text);
      }
        .wall-item-actions-right .dropdown-toggle::after,
        .more-links .dropdown-toggle::after {
-              content: 'More';
+              content: var(--more-button-text);
        }
        /* engagement counts */
        .wall-item-actions-row > button span,
@@ -588,10 +742,10 @@ aside .widget,
               position: absolute;
               text-align: center;
               display: block;
-              background-color: var(--link-color);
+              background-color: var(--count-bg);
               box-shadow: -1px 1px 1px #000;
               border-radius: 4px;
-              color: #fff;
+              color: var(--count-color);
               font-size: 12px;
               font-weight: 700;
               width: fit-content;
@@ -600,40 +754,40 @@ aside .widget,
               top: 0px;
               z-index: 1;
        }
-        /* this is some freaking ALCHEMY! */
-        .vote-event:not(:has(.wall-item-response:empty)) {
+        /* Event Response Buttons */
+        .vote-event:has(button) {
             padding-bottom: 135px;
         }
-        .vote-event .wall-item-response {
+        .vote-event:has(button) .wall-item-response {
             position: absolute;
             top: 63px;
         }
         .vote-event .wall-item-response:empty{
             display: none;
         }
-        .vote-event .wall-item-response:nth-of-type(1){
+        .vote-event:has(button) .wall-item-response:nth-of-type(1){
             left: 15px;
         }
         .vote-event .wall-item-response:nth-of-type(1) .button-event::after,
         [id^="attendyes"]::after{
-            content: 'Going';
+            content: var(--attendyes-button-text);
         }
-        .vote-event .wall-item-response:nth-of-type(2){
+        .vote-event:has(button) .wall-item-response:nth-of-type(2){
             left: 105px;
         }
         .vote-event .wall-item-response:nth-of-type(2) .button-event::after,
         [id^="attendno"]::after{
-            content: 'Can\'t Go';
+            content: var(--attendno-button-text);
             position: relative;
             height: 20px;
             overflow: hidden; /* or skews mobile button layout */
         }
-        .vote-event .wall-item-response:nth-of-type(3){
+        .vote-event:has(button) .wall-item-response:nth-of-type(3){
             left: 204px;
         }
         .vote-event .wall-item-response:nth-of-type(3) .button-event::after,
         [id^="attendmaybe"]::after{
-            content: 'Maybe';
+            content: var(--attendmaybe-button-text);
         }
 		/* prevent "Like Like" and "Dislike Dislike" on photos */
 		#photo-view-wrapper .wall-item-actions .button-likes {
@@ -743,8 +897,8 @@ aside .widget,
 #jot-category {
        background-color: rgb(51,51,52) !important;
 }
-       #profile-jot-text, #profile-jot-wrapper textarea,
-       #jot-location,
+    #profile-jot-text, #profile-jot-wrapper textarea,
+    #jot-location,
 	.wall-item-comment-wrapper textarea {
 		background-color: rgb(51, 51, 52) !important;
 	}
@@ -796,7 +950,29 @@ aside .widget,
        border-radius: none !important;
        background-color: transparent;
 }
-/* Profile */
+    /* file browser */
+    #upload-photo {
+        background-color: var(--link-color) !important;
+        color: white !important;
+        border-radius: 8px !important;
+    }
+     #upload-photo:hover,
+     #upload-photo:focus {
+        background-color: darkblue !important;
+    }
+    /* 	HIDE ATTACHMENT BUTTON
+    	=======================
+    	This hides the file attachment button in the Compose "Browser" tab
+    	because there is no way to manage/delete uploaded attachments it
+    	was a design choice of this theme mod to hide this button from users.
+    	
+    	If you WANT users to be able to see uploaded files and attach them
+    	to posts either comment out this rule or change "none" to "block"
+    */ 
+    .fbswitcher [data-mode="attachment"] {
+           display: none !important;
+    }
+/* PROFILE */
 #profile-photo-wrapper {
     overflow: visible !important;
     padding: 5px;
@@ -815,14 +991,31 @@ aside .widget h3.p-name {
     font-size: 32px !important;
     text-align: center;
     word-break: break-word;
-}
+	text-shadow: 1px 1px 2px var(--background-color), -1px -1px 2px var(--background-color);
+	}
 aside .vcard .p-addr {
     font-weight: 600;
     text-align: center;
     white-space: break-spaces !important;
+	background-color: var(--background-color);
+	border-radius: 8px;
 }
+	aside .vcard .title,
+	aside .vcard .location,
+	aside .vcard .key,
+	aside .vcard .about,
+	aside .vcard .xmpp,
+	aside .vcard .matrix,
+	aside .vcard .homepage {
+		background-color: var(--background-color);
+		padding: 5px;
+		border-radius: 8px;
+		min-width: 100%;
+		margin: 10px 0;
+	}
 aside .widget li.selected {
 	background-color: var(--menu-background-hover-color) !important;
+	/* auto has background-image here */
     border-color: transparent !important;
     border-radius: 8px;
 }
@@ -853,12 +1046,12 @@ aside .widget li:hover {
 .comment-fake-form textarea {
     border-radius: 50px !important;
     background-color: rgb(51, 51, 52) !important;
-    box-shadow: none !important;
     -webkit-box-shadow: none !important;
+    box-shadow: none !important;
 }    
 .wall-item-actions button {
     font-size: 24px !important;
-    color: #B0B3B8 !important;
+    color: var(--nav-icon-color) !important;
 }
        .wall-item-actions button:hover {
               color: var(--link-color) !important;
@@ -868,7 +1061,7 @@ aside .widget li:hover {
        }
        .comment .media-body {
               padding: 10px;
-              background-color: rgb(51, 51, 52);
+              background-color: var(--background-color);
               border-radius: 20px;
        }
        .wall-item-actions-row .wall-item-emoji {
@@ -880,10 +1073,49 @@ aside .widget li:hover {
               position: relative;
               top: 1px;
        }
+		/* little vcard when you scroll down on profiles */
+		#vcard-short-photo-wrapper img, 
+		#nav-short-info .contact-wrapper img {
+			border-radius: 100% !important;
+		}
+		/* Profile Cover Photo */
+		.row:has(.coverphoto) aside,
+		.row:has(.coverphoto) #content {
+			margin-top: 350px;
+		}
+			.row:has(.coverphoto) aside .widget.vcard {
+				background-color: transparent !important;
+			}
+		.coverphoto {
+			position: fixed;
+			top: 115px;
+			left: 0 !important;
+			right: 0 !important;
+			z-index: -1;
+			height: 500px;
+			overflow: hidden;
+		}
+			.coverphoto img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+				.coverphoto:has(> :last-child:nth-child(2)) img {
+					height: 50%;
+				}
+				.coverphoto:has(> :last-child:nth-child(3)) img {
+					height: 33.3333%;
+				}
+				.coverphoto:has(> :last-child:nth-child(n+4)) img {
+					height: 25%;
+				}
     /* not obviously clickable or intuitive what it does */
     .plink.u-url {
+    	/* uncomment to outline as a button
         -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
         box-shadow: 0 0 1px rgba(255,255,255,.5);
+        */
         border-radius: 100%;
         position: relative;
         padding: 6px 4px;
@@ -891,7 +1123,7 @@ aside .widget li:hover {
         width:  35px;
         display: block;
     }
-        .plink.ul-url:hover {
+        .plink.u-url:hover {
             background-color: rgba(255,255,255,.1) !important;
             text-decoration: none !important;
         }
@@ -910,7 +1142,37 @@ aside .widget li:hover {
 /* Calendar */
 .fc-unthemed td.fc-today {
 	background-color: var(--menu-background-hover-color);
+	/* auto has background-image here */
 }
+.event-buttons .btn {
+  background-color: var(--link-color);
+  color: #fff;
+  border-radius: 100%;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0;
+  margin-right: 5px;
+}
+	.event-buttons .btn:hover,
+	.event-buttons .btn:focus {
+		color: #fff;
+		box-shadow: inset 0 0 100px rgba(0,0,0,.1);
+	}
+	.fc .fc-event {
+		background-color: var(--link-color);
+		border: none;
+		color: white;
+	}
+		.fc .fc-month-view .fc-content .fc-title .item-desc:hover,
+		.fc .fc-month-view .fc-content .fc-title .item-desc:focus {
+			color: white;
+		}
+		.fc .fc-event:hover,
+		.fc .fc-event:focus {
+			box-shadow: inset 0 0 100px rgba(0,0,0,.2);
+		}
 /* Photo Albums */
 .photo-album-actions .icon-padding,
 .photo-edit-link-wrap .icon-padding {
@@ -964,7 +1226,7 @@ aside .widget li:hover {
        background-color: rgba(255,255,255,.1) !important;
     }
 .photos-content-wrapper .photos-upload-link::before {
-    content: 'Add Photos';
+    content: var(--add-photo-button-text);
     font-size: 15px; 
     vertical-align: middle; 
     margin-top: -10px;
@@ -972,6 +1234,11 @@ aside .widget li:hover {
 }
 .justified-gallery {
     overflow: visible !important;
+    height: auto !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 .justified-gallery > a, 
 .justified-gallery > div, 
@@ -999,6 +1266,7 @@ aside .widget li:hover {
 }
 #photo-photo {
     margin: 0 auto !important;
+    max-width: 100%;
 }
 #photos-upload-perms button[data-toggle="modal"] {
 	background-color: rgba(255,255,255,.2) !important;
@@ -1020,6 +1288,176 @@ aside .widget li:hover {
 .advancedcontentfilter-content-wrapper pre {
 	margin-top: 20px;
 }
+/* MISCELLANEOUS STUFF */
+div#back-to-top {
+	bottom: 65px;
+	left:   10px;
+	background-color: var(--link-color);
+	color: #ffffff;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 24px;
+	border-radius: 100%;
+}	
+#item-delete-selected {
+	height: 50px;
+	width:  50px;
+	line-height: 50px;
+	font-size: 24px;
+	background-color: var(--link-color);
+	border-radius: 100%;
+	top: 120px;
+}
+	#item-delete-selected:hover,
+	#item-delete-selected:focus {
+		box-shadow: inset 0 0 100px rgba(0,0,0,.2);
+	}
+	/* Profile pics in Messages and Events */
+	.event-wrapper .event-owner img,
+	.mail-conv-wrapper .media .contact-photo-wrapper img,
+	.mail-list-outside-wrapper .contact-photo-wrapper img {
+		border-radius: 100%;
+	}
+.modal-backdrop {
+	background-color: #000;
+}
+/* TAGS, CATEGORIES, MENTIONS BUTTONS
+   ==================================
+   Restyled to be less obnoxious and tiny
+   now sized and spaced like they are on Mastodon
+*/
+a.tag.label,
+.wall-item-container .wall-item-bottom .wall-item-tags span.label {
+	border-radius: 4px !important;
+  	display: inline-flex !important;
+  	font-size: 12px !important;
+  	font-weight: 500 !important;
+  	padding: 6px 12px !important;
+  	-webkit-text-decoration: none !important;
+  	text-decoration: none !important;
+  	margin: 2px !important;	
+  	background-image: none !important;
+  	background-color: transparent !important;
+  	box-shadow: none !important;
+  	color: #05d8fb !important;
+  	border: 1px solid #05d8fb;	
+}
+	.wall-item-bottom .label {
+		color: inherit;
+	}
+	.wall-item-bottom .label a {
+		color: inherit;
+	}
+		/* hide lightning bolt and person icons
+		   pretty sure people know what "#" and "@" mean now
+		*/
+		a.tag.label .fa-bolt::before,
+		.wall-item-bottom .label .fa-bolt::before {
+			content: '';
+		}
+		.wall-item-bottom .label .fa-user::before{
+			content: '';
+		}
+	/* undo hover for entire container*/
+	.wall-item-container:hover .wall-item-bottom .wall-item-tags span.label {
+		filter: grayscale(0.5);
+		opacity: 0.8;
+		-webkit-transition: 0s;
+		-moz-transition: 0s;
+		-ms-transition: 0s;
+		transition: 0s;
+	}
+	/* replace with hover for individual tag */
+	.wall-item-container .wall-item-bottom .wall-item-tags span.label:hover,
+	.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus,
+	.wall-item-container .wall-item-bottom .wall-item-tags span.label:focus-within {
+		filter: grayscale(0) !important;
+		opacity: 1 !important;
+		/* probably don't need vendor prefixed anymore but whatever...*/
+		-webkit-transition: all 0.25s ease-in-out !important;
+		-moz-transtion: all 0.25s ease-in-out !important;
+		-ms-transition: all 0.25s ease-in-out !important;
+		transition: all 0.25s ease-in-out !important;
+	}
+	/* Hashtag Buttons */
+	a.tag.label.btn-info,
+	.wall-item-bottom .wall-item-tags .tag.label.btn-info {
+		/* inherits everything from above */
+	}
+		a.tag.label.btn-info:hover, a.tag.label.btn-info:focus,
+		.wall-item-bottom .wall-item-tags .tag.label.btn-info:hover,
+		.wall-item-bottom .wall-item-tags .tag.label.btn-info:focus {
+			background-color: #05d8fb !important;
+			color: black !important;
+		}
+	/* Category Buttons */
+	.wall-item-bottom .wall-item-tags .category.label.btn-success {
+		border-color: limegreen !important;
+		color: limegreen !important;
+		font-size: 0px !important; /* to get rid of parentheses */
+	}
+		/* replace (x) remove with icon button */
+		.wall-item-bottom .wall-item-tags .category.label.btn-success a:first-of-type {
+			font-size: 12px;
+		}
+		.wall-item-bottom .wall-item-tags .category.label.btn-success a:last-of-type::after {
+			content: '\f00d';
+			font-family: ForkAwesome;
+			font-size: 12px;
+			margin-left: 4px;
+		}
+		.wall-item-bottom .wall-item-tags .category.label.btn-success:hover,
+		.wall-item-bottom .wall-item-tags .category.label.btn-success:focus {
+			background-color: limegreen !important;
+			color: black !important;
+		}
+		/* when a category is removed need to visually indicate it */
+		.wall-item-bottom .wall-item-tags .category.label:not(.btn-success){
+			border-color: #ccc !important;
+			color: #ccc !important;
+			font-size: 0px !important;
+		}
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:first-of-type{
+				font-size: 12px;
+				text-decoration: line-through;
+			}
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success) a:last-of-type::after {
+				content: '';
+			}
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):hover,
+			.wall-item-bottom .wall-item-tags .category.label:not(.btn-success):focus {
+				background-color: red !important;
+				color: #ccc !important;
+			}
+	/* @ Mention Buttons */
+	.wall-item-bottom .wall-item-tags .mention.label.btn-warning {
+		border-color: gold !important;
+		color: gold !important;
+	}
+		.wall-item-bottom .wall-item-tags .mention.label.btn-warning:hover,
+		.wall-item-bottom .wall-item-tags .mention.label.btn-warning:focus {
+			background-color: gold !important;
+			border-color: gold !important;
+			color: black !important;
+		}
+/*	Greater than Full-HD Width
+	===========================
+*/
+@media screen and (min-width: 1921px){
+	.coverphoto {
+		max-width: 1920px;
+		left: 50% !important;
+		margin-left: -960px;
+		border-bottom-right-radius: 10px;
+		border-bottom-left-radius:  10px;
+	}
+}
+/*	Small Laptop Screens
+	Some tablets in Landscape Orientation
+	=====================================
+*/	
 @media screen and (max-width: 1280px) {
     #search-box { 
         width: 18% !important;
@@ -1028,10 +1466,59 @@ aside .widget li:hover {
 		width: 140px !important;
 	}
 }
+/*	Large Tablets in Portrait Orientation
+	=====================================
+*/
 @media screen and (max-width: 991px){
+	/* Friendica icon upper left */
+	#banner {
+		display: block !important;
+		padding: 0 !important;
+		margin: 8px 10px;
+	}
+		#friendica-logo-mask {
+			display: block !important;
+		}
+	/* hide search box - no room */
     #search-box {
-        left: 15%;
+        display: none;
     }
+    	/* show mobile search toggle */
+    	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
+    		display: block !important;
+    		position: fixed !important;
+    		left: 100px;
+    		top:    6px;
+    	}
+    	/* force display of mobile search box */
+    	#search-mobile {
+    		top: 110px !important;
+    		border-color: black;
+    	}
+    		#search-mobile .col-xs-12 {
+    			background-color: var(--nav-bg);
+    		}
+    			#search-mobile.collapse.in,
+    			#search-mobile.collapse.in * {
+    				display: block !important;
+    			}
+		#topbar-first .navbar-toggle[data-target="aside"] {
+			position: fixed;
+			top: 6px;
+			left: 50px;
+		}
+		/* change aside toggle icon */
+		.navbar-toggle .fa-ellipsis-v::before,
+		#topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+			content: "\f152";
+		}
+		body.aside-out .navbar-toggle .fa-ellipsis-v::before,
+		body.aside-out #topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+			content: "\f191";
+		}
+	#topbar-first .nav > .account {
+		right: 24px;
+	}
     #jotOpen::before {
         content: '';
         margin: 0;
@@ -1039,35 +1526,544 @@ aside .widget li:hover {
     #mention-link span:last-of-type {
         margin-right: 42px;
     }
+    .offcanvas-right-overlay,
+    aside::before {
+    	background-color: rgba(0, 0, 0, 0.4);
+    }
+    /* Cover Photo Mobile */
+	.row:has(.coverphoto) aside {
+		margin-top: 0px;
+	}   
+    aside:has(.coverphoto){
+    	left: -300px !important;
+    	right: auto  !important;
+    	display: block !important;
+    	padding-top: 120px;
+    	background-color: transparent !important;
+    	transition-duration: .5s;
+    	z-index: auto;
+    }
+    aside.canvas-sliding:has(.coverphoto) {
+    	-webkit-transition: none;
+    	transition: none;
+    }
+    aside.canvas-slid:has(.coverphoto) {
+    	left: 0px !important;
+    	right: auto !important;
+    	z-index: 20;
+    }
+    	.coverphoto.canvas-sliding,
+    	.coverphoto.canvas-slid{
+    		top: 115px !important;
+    		left: 0px !important;
+    		right: 0px !important;
+    		bottom: 0px !important;
+    		background-color: var(--background-color);
+    		overflow: visible;
+    	}
+    		.coverphoto.canvas-slid::after {
+    			content: '';
+    			position: absolute;
+    			top: 500px;
+    			left: 0px;
+    			width: 100%;
+    			height: 100%;
+    			display: block;
+    			background-color: var(--background-color);
+    		}
 }
-@media screen and (max-width: 768px){
-    #topbar-first .navbar-toggle[data-target="#search-mobile"]{
-        position: fixed !important;
-        left: 15%;
-    }
-    #search-mobile {
-        top: 110px !important;
-    }
-    .wall-item-container iframe {
-    	aspect-ratio: 5/4;
-    }
-}
-@media screen and (max-width: 480px){
-	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
-		left: 10%;
-	}
-	.topbar ul.nav {
-		position: relative !important;
-		left: 10% !important;
-		margin-left: 0!important;
-	}
+/*	Most Phones in Portrait Orientation
+	Large Screen Phones in Landscape Orientation
+	Some Small tablets in Portrait Orientation
+	======================================
+*/
+@media screen and (max-width: 768px), (max-height: 480px) and (max-width: 960px) and (orientation: landscape) {
+		#topbar-first .navbar-toggle[data-target="#search-mobile"]{
+			left: 10%;
+		}
+		.topbar ul.nav {
+			position: relative !important;
+			left: 10% !important;
+			margin-left: 0!important;
+		}
 		#search-save {
 			width: 100px !important;
 		}
 			#search-save .fa-plus::after {
-				content: 'Follow';
+				content: var(--follow-button-text);
 			}
 			#search-save .fa-floppy-o::after {
-				content: 'Save';
+				content: var(--save-button-text);
 			}
+		a.wall-item-name-link, span.fakelink {
+    		font-weight: bold;
+		}
+		.wall-item-container iframe {
+    		aspect-ratio: 5/4;
+    	}
+	/* new mobile layout */
+	body {
+		padding-top: 65px !important;
+		padding-bottom: 55px !important;
+	}
+	
+	/* Friendica icon upper left */
+	#banner {
+		display: block !important;
+		padding: 0 !important;
+		margin: 8px 10px !important;
+	}
+		#friendica-logo-mask {
+			display: block !important;
+		}
+	#topbar-first {
+		top: auto;
+		bottom: 0;
+		box-shadow: 2px 0px 5px rgba(0,0,0,.5);
+	}
+		#topbar-first .topbar-nav .arrow {
+			display: none;
+		}
+		/* re-reveal the user profile toggle */
+		#topbar-first .nav > .account {
+			position: fixed;
+			display: block !important;
+			top: 0;
+			right: 8px;
+		}
+			#topbar-first .nav > .account img {
+				margin: 0;
+			}
+			#topbar-first .nav > .account span.caret {
+				display: none;
+			}
+		/* overlay mobile nav toggle invisibly */
+		#topbar-first .offcanvas-right-toggle {
+			position: fixed;
+			top: -3px;
+			right: 7px;
+			color: transparent;
+			z-index: 10000;
+		}
+		/* move sidebar toggle to bottom bar */
+		#topbar-first .navbar-toggle[data-target="aside"]{
+			position: fixed;
+			top: auto;
+			left: auto;
+			bottom: 5px;
+		}
+			/* change icon */
+			.navbar-toggle .fa-ellipsis-v::before,
+			#topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+				content: "\f152";
+			}
+			body.aside-out .navbar-toggle .fa-ellipsis-v::before,
+			body.aside-out #topbar-first .navbar-toggle[data-target="aside"] .fa-angle-double-right::before {
+				content: "\f191";
+			}
+		/* move search button right */
+		#topbar-first .navbar-toggle[data-target="#search-mobile"] {
+			position: relative !important;
+			display: block !important; /* show in landscape on phones */
+			top: 0;
+			left: auto;
+			right: auto;
+			margin: 0;
+		}
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed){
+				color: var(--link-color);
+				border-bottom: 3px solid var(--link-color);
+				background-color: transparent !important;
+				border-radius: 0 !important;
+				margin-top: 0px;
+			}
+				#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) .fa-search::before {
+					content: '\f00e';
+				}
+		/* fix spacing of icons */
+		.topbar ul.nav {
+			position: absolute !important;
+			left: 50px !important;
+			right: 50px !important;
+			display: flex;
+			justify-content: space-between;
+		}
+		#topbar-first .topbar-nav .nav-segment {
+			margin: 0px;
+		}
+		#search-mobile {
+			top: 60px !important;
+		}
+			/* always show on phones in landscape */
+			#search-mobile.collapse.in,
+			#search-mobile.collapse.in * {
+				display: block !important;
+			}
+		/* app-style notification menu */	
+		#nav-notifications-menu {
+			position: fixed;
+			top: 60px;
+			bottom: 51px;
+			left: 0;
+			right: 0;
+			width: 100% !important;
+			min-width: unset;
+			max-width: unset;
+			min-height: unset;
+			max-height: unset !important;
+			margin: 0 !important;
+			box-shadow: none;
+		}
+			#nav-notifications-menu::before {
+				content: '\f00d';
+				font-family: ForkAwesome;
+				position: absolute;
+				top: 8px;
+				right: 12px;
+				height: 40px;
+				width:  40px;
+				background-color: var(--link-color);
+				color: white;
+				font-size: 24px;
+				border-radius: 100%;
+				line-height: 40px;
+				text-align: center;
+				display: block;
+			}
+	#offcanvasUsermenu {
+		background-color: var(--nav-bg) !important;
+	}
+	#offcanvasUsermenu ul.list-group {
+		-webkit-box-shadow: none !important;
+		-moz-box-shadow: none !important;
+		box-shadow: none !important;
+	}
+		#offcanvasUsermenu ul.list-group li:first-of-type img {
+			max-width: unset  !important;
+			max-height: unset  !important;
+			height: 40px  !important;
+			width:  40px  !important;
+			border-radius: 100% !important;
+		}
+			#offcanvasUsermenu li.divider {
+				display: none !important;
+			}
+			#offcanvasUsermenu li.list-group-item,
+	    #offcanvasUsermenu li.list-group-item a {
+				border: transparent !important;
+				background-color: transparent !important;
+				color: var(--nav-icon-color) !important;
+				width: 90% !important;
+				margin: 0 auto;
+			}
+	#offcanvasUsermenu li.list-group-item:hover {
+		background-color: #333 !important;
+		border-radius: 8px !important;
+	}
+	#offcanvasUsermenu li.list-group-item:hover a {
+		color: #fff !important;
+	}
+	#offcanvasUsermenu li.list-group-item:first-of-type:hover {
+		background-color: revert !important;
+	}
+		/* force mobile search in landscape on phones */
+		#search-box {
+			display: none !important;
+		}
+	/* position delete button */
+	#item-delete-selected {
+		top: 60px;
+		right: 10px;
+	}	
+	/* move top bars around */		
+	#topbar-second {
+		top: 0px;
+		padding: 0;
+	}
+		#topbar-second div.container{
+			position: absolute;
+			left: 55px;
+			right: 55px;
+		}
+		#topbar-second #tabmenu {
+			width: 100%;
+		}
+			/* override and show mobile tabs  in landscape */
+			#topbar-second #tabmenu ul.tabbar.hidden-xs {
+				display: none !important;
+			}
+			#topbar-second #tabmenu ul.tabbar.visible-xs {
+				display: block !important;
+			}
+		#topbar-second ul.tabbar {
+			text-align: center;
+			max-width: 100%;
+		}
+			#topbar-second ul.tabbar > li:first-of-type {
+				max-width: 75%;
+				overflow: hidden;
+			}
+				#topbar-second ul.tabbar li:first-of-type ul.tabs {
+					max-width: 100%;
+				}
+					#topbar-second ul.tabbar li:first-of-type ul.tabs li {
+						width: 100%;
+					}
+						#topbar-second ul.tabbar li:first-of-type ul.tabs li a {
+							overflow: hidden;
+							text-overflow: ellipsis;
+							white-space: nowrap;
+						}
+			#dropdownMenuTools-xs {
+				height: 60px;
+			}
+				ul.tabs-extended .dropdown.open .fa-chevron-down::before{
+					content: '\f077';
+				}
+		#jotOpen, #search-save, #mention-link {
+			position: fixed;
+			bottom: 65px;
+			right: 10px;
+			border-radius: 100% !important;
+			height: 50px;
+			width: 50px !important;
+			line-height: 50px;
+			border: none !important;
+    		box-shadow: none !important;
+		}
+			#mention-link span:last-of-type {
+				display: none;
+			}
+			#mention-link span:first-of-type {
+				float: none;
+				position: relative;
+				left: -5px;
+				top: 2px;
+			}
+			#search-save .fa-plus::after,
+			#search-save .fa-floppy-o::after {
+				display: none;
+			}
+			#search-save .fa-plus::before,
+			#search-save .fa-floppy-o::before {
+				content: '\f0c7' !important;
+			}
+			.fa-edit::before,
+			.fa-pencil-square-o::before {
+				content: "\f040";
+			}
+		/* drop-down mobile style*/
+		#topbar-second .dropdown-menu {
+			position: fixed;
+			top: 58px;
+			left: 0px;
+			right: 0px;
+			bottom: 50px;
+			width: 100% !important;
+			overflow: auto !important;
+			overflow-x: hidden !important;
+		}	
+			#topbar-second .dropdown-menu li {
+				height: auto !important;
+			}
+				#topbar-second .dropdown-menu li a,
+				.tabs .dropdown-menu li a {
+					font-size: 18px !important;
+				}
+				.topbar .dropdown-header {
+					font-size: 18px !important;
+				}
+				.topbar .dropdown-header .dropdown-header-link .btn-link {
+					font-size: 18px !important;
+					margin-right: 40px;
+				}
+		aside.offcanvas-xs {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+		.coverphoto,
+		.coverphoto.canvas-sliding,
+    	.coverphoto.canvas-slid{
+			top: 55px !important;
+		}	
+	#message-new {
+		height: 50px;
+		width:  50px;
+		background-color: var(--link-color);
+		line-height: 50px;
+		font-size: 24px;
+		text-align: center;
+		border-radius: 100%;
+	}
+		#message-new a {
+			color: white !important;
+			opacity: 1;
+		}
+			#message-new:hover,
+			#message-new:focus {
+				box-shadow: 0 0 100px rgba(0,0,0,.2);
+			}						
+}
+/*	Narrow Screen Phones in Portrait Orientation
+	============================================
+*/
+@media screen and (max-width: 400px) and (orientation: portrait) {
+	/* remove action button labels if screen is too narrow */
+	.wall-item-actions-row button::after {
+		content: '.';
+		color: transparent;
+	}
+	/* NOTE: cannot simply empty or display none or button alignment gets messed up! */
 }	
+/* 	Narrow Screen Phones in Landscape Orientation
+	==============================================
+*/
+@media screen and (max-height: 400px) and (orientation: landscape) {	
+		#topbar-first {
+			transition-duration: .5s;
+			transition-property: bottom;
+			bottom: -55px;
+		}
+			header #banner {
+				background-color: var(--nav-bg);
+				border-radius: 8px;
+				z-index: 1030;
+			}
+			#topbar-first .navbar-toggle[data-target="aside"] {
+				position: fixed !important;
+				left: 10px;
+				bottom: 10px;
+				transition-duration: .5s;
+				background-color: var(--link-color);
+				color: white;
+				height: 50px;
+				width:  50px;
+				border-radius: 100%;
+				line-height: 32px;
+			}
+			#topbar-first .navbar-toggle[data-target="#search-mobile"],
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:not(.collapsed) {
+				position: fixed !important;
+				top: auto;
+				bottom: 10px;
+				right: 10px;
+				transition-duration: .5s;
+				background-color: var(--link-color);
+				color: white;
+				height: 50px;
+				width:  50px;
+				border-radius: 100%;
+				line-height: 32px;			
+			}
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:hover,
+			#topbar-first .navbar-toggle[data-target="#search-mobile"]:focus {
+				box-shadow: inset 0 0 100px rgba(0,0,0,.2);
+			}
+			.fa-fw {
+				width: auto;
+			}
+			#topbar-first .offcanvas-right-toggle {
+				top: 3px;
+				right: 13px;
+			}
+			#main-menu img {
+				border: 5px solid var(--link-color);
+				border-radius: 100%;
+				box-sizing: unset;
+			}
+		#search-mobile {
+        	top: 40% !important;
+        	border: 10px solid var(--link-color);
+        	border-radius: 8px;
+        	left: 50%;
+        	width: 80%;
+        	margin-left: -40%;
+        	box-shadow: 0 0 50px rgba(0,0,0,.75);
+    	}
+    		#search-mobile .col-xs-12 {
+    			background-color: var(--nav-bg);
+    		}
+		#topbar-second {
+			transition-duration: .5s;
+			transition-property: top;
+			top: -60px;
+		}
+		#topbar-first .nav > li > a:hover, 
+		#topbar-first .nav > li > a:focus, 
+		#topbar-first .nav > li > button:not(#main-menu):hover, 
+		#topbar-first .nav > li > button:not(#main-menu):focus, 
+		#topbar-first button.navbar-toggle:not(.offcanvas-right-toggle):hover, 
+		#topbar-first button.navbar-toggle:not(.offcanvas-right-toggle):focus, 
+		nav.navbar .nav > li > a:hover, 
+		nav.navbar .nav > li > a:focus, 
+		nav.navbar .nav > li > button:hover, 
+		nav.navbar .nav > li > button:focus {
+		  background-color: var(--link-color) !important;
+		  border-radius: 100% !important;
+		  box-shadow: inset 0 0 100px rgba(0,0,0,.2);
+		}
+		#topbar-first button.navbar-toggle.offcanvas-right-toggle:hover, 
+		#topbar-first button.navbar-toggle.offcanvas-right-toggle:focus {
+			border-radius: 100% !important;
+		}
+		#topbar-first .topbar-actions {
+			z-index: 1070;
+		}
+		/* if notifications is left open when phone is rotated */
+		#nav-notifications-menu {
+			top: 0;
+			bottom: 0;
+			z-index: 10000;
+		}
+		#offcanvasUsermenu {
+			top: 0px;
+		}
+			#offcanvasUsermenu li:first-of-type img {
+				display: none;
+			}
+			#offcanvasUsermenu li:first-of-type {
+				font-weight: 700;
+			} 
+		.offcanvas-right-overlay {
+ 			top: 0px;
+ 		}
+ 		.row:has(.coverphoto) #content {
+			margin-top: 200px;
+		}
+		.coverphoto.canvas-sliding,
+    	.coverphoto.canvas-slid,
+ 		.coverphoto {
+			top: 0px !important;
+			left: 0px;
+			right: 0px;
+			height: 500px;
+		}	
+}
+/* LOGIN AND INFO SCREENS */
+.mod-home .navbar,
+.mod-home #topbar-second{
+	background-color: transparent !important;
+}
+.mod-home #nav-about {
+	background-color: var(--link-color);
+	height: 50px;
+	width: 50px;
+	color: white !important;
+	border-radius: 100% !important;
+	right: 15px;
+}
+ .mod-home #nav-about:hover,
+.mod-home #nav-about:focus {
+	background-color: var(--link-color) !important;
+	box-shadow: inset 0 0 100px rgba(0,0,0,.1);
+}
+.mod-home #nav-about .fa-info {
+	line-height: 24px;
+	width: auto;
+	display: block;
+}
+	@media screen and (max-width: 768px){
+		.mod-home #nav-about .fa-info {
+			line-height: 32px;
+		}
+	}
