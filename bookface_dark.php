@@ -7,25 +7,30 @@
  *
  * Name: Bookface Dark
  * Licence: AGPL
- * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml
+ * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml Phil phil@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
- * Accented: Yes
- * Version: 1.2
+ * Accented: yes
+ * Version: 1.3
  */
-
+use Friendica\DI;
 require_once 'view/theme/frio/php/PHPColors/Color.php';
 
 $accentColor = new Color($scheme_accent);
+$customColor = DI::pConfig()->get($uid, 'frio', 'link_color') ?: '';
+if ($customColor){
+	$customColor = new Color(''.$customColor.'');
+}
+//$customColor = ($customColor) ?: new Color(''.$customColor.'');
 
-$menu_background_hover_color = '#' . $accentColor->darken(20);
+$menu_background_hover_color = ($customColor) ? '#'.$customColor->darken(20) : '#'.$accentColor->darken(20);
 $nav_bg = '#252728';
-$link_color = '#' . $accentColor->lighten(10);
-	// override ugly blue accent color
-	if ( $link_color == "#33a2e0" ){
+$background_color = '#1C1C1D';
+$link_color = ($customColor) ? '#'.$customColor->getHex() : '#'.$accentColor->lighten(10);
+	// override ugly blue accent color and prevent setting accent to nav or bg color
+	if ( $link_color == "#33a2e0" || $link_color == $nav_bg || $link_color == $background_color ){
 		 $link_color = "#0066ff";
 	}
 $nav_icon_color = '#B0B3B8';
-$background_color = '#1C1C1D';
 $contentbg_transp = '0';
 $font_color = '#cccccc';
 $font_color_darker = '#acacac';
