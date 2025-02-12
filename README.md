@@ -349,9 +349,9 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 ---
 
 Contributors:
-Kristi H. @kmh@friendica.world
+Pygoscelis Papua @randompenguin@friendica.world
 feb @feb@loma.ml
-Phil phil@loma.ml
+Phil @phil@loma.ml
 
 License: AGPL 3.0 or Later
 
