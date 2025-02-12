@@ -209,7 +209,7 @@ Each "Frio" theme "scheme" consists of two files with the same name but a differ
         Author     : Names and @handles of main contributors
     */
 
-These  into the _/frio/style.php_ file, first the PHP file to get any color variables that have been set. **You cannot add new variables to your PHP file!**  The `style.php` defines these variables in an array (to which your scheme cannot add new entries). These are the ones you can set in your PHP file:
+These PHP file gets read into the _/frio/style.php_ file, to get any color variables that have been set. **You cannot add new variables to your PHP file!**  The `style.php` defines these variables in an array (to which your scheme cannot add new entries). These are the ones you can set in your PHP file:
 
 	$nav_bg
 	$nav_icon_color
@@ -230,7 +230,7 @@ These  into the _/frio/style.php_ file, first the PHP file to get any color vari
 	$font_color_lighter
 	$font_color
 	
-Next, the `style.php` reads in the *contents* of your CSS file and concatenates it to the end of the Frio theme _/frio/css/style.css_. Then it does a simple string replace operation on the merged stylesheet contents to replace the variable names with the values set in your PHP scheme file. This is essentially variable validation and why you can't add new variables, the will neither get read in nor replaced. Finally the `style.php` generates the merged stylesheet.
+Next, the `style.php` reads in the *contents* of your CSS file and concatenates it to the end of the Frio theme _/frio/css/style.css_. Then it does a simple string replace operation on the merged stylesheet contents to replace the variable names with the values set in your PHP scheme file. This is essentially variable validation and why you can't add new variables, they will neither get read in nor replaced. Finally the `style.php` generates the merged stylesheet.
 
 If you want users to be able to pick one of the predefined "Accent Color" options your PHP file needs to include:
 
