@@ -503,7 +503,7 @@ header #banner {
 		clear: both;
 	}
 	/* make textareas resize in the correct direction */
-	textarea {
+	body.mod-settings textarea {
 		resize: vertical !important;
 	}
 /* Other people profiles */
