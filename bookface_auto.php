@@ -10,7 +10,7 @@
  * Author: Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: Yes
- * Version: 1.3
+ * Version: 1.4
  */
 // if there is no cookie create one
 use Friendica\DI;
