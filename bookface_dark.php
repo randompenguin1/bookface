@@ -7,7 +7,7 @@
  *
  * Name: Bookface Dark
  * Licence: AGPL
- * Author: Kristi H. @kmh@friendica.world feb @feb@loma.ml Phil phil@loma.ml
+ * Author: Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: yes
  * Version: 1.3
