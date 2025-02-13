@@ -693,7 +693,7 @@
             display: inline-block !important;
        }
 		/* ACTION BUTTON LABELS */
-		.wall-item-actions-row button,
+		.wall-item-actions-row button:not(button-browser-share),
 		.wall-item-actions-right button {
 		    position: relative;
 			display: block;
@@ -1074,6 +1074,13 @@
 			font-size: 20px;
 			position: relative;
 			top: 1px;
+		}
+		.wall-item-actions ul button,
+    	.wall-item-actions ul a {
+			font-size: 14px !important;
+			color: inherit !important;
+			line-height: 14px !important;
+			margin: 0 !important;
 		}
 		/* little vcard when you scroll down on profiles */
 		#vcard-short-photo-wrapper img, 
@@ -1918,6 +1925,9 @@ a.tag.label,
 		color: transparent;
 	}
 	/* NOTE: cannot simply empty or display none or button alignment gets messed up! */
+	.wall-item-actions-row .button-browser-share::after {
+		display: none !important;
+	}
 }
 /* 	Narrow Screen Phones in Landscape Orientation
 	==============================================
