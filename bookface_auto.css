@@ -1447,6 +1447,12 @@ a.tag.label,
 			border-color: goldenrod !important;
 			color: white !important;
 		}
+	/* Content Filter Buttons */
+	button.content-filter-button {
+    	color: var(--link-color);
+    	background-color: transparent;
+    	border: 1px solid var(--link-color);
+	}
 /*	Greater than Full-HD Width
 	===========================
 */
@@ -1831,6 +1837,8 @@ a.tag.label,
 			height: 50px;
 			width: 50px !important;
 			line-height: 50px;
+			border: none !important;
+			box-shadow: none !important;
 		}
 			#mention-link span:last-of-type {
 				display: none;
