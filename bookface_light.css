@@ -1444,6 +1444,12 @@ a.tag.label,
 			border-color: goldenrod !important;
 			color: white !important;
 		}
+	/* Content Filter Buttons */
+	button.content-filter-button {
+    	color: var(--link-color);
+    	background-color: transparent;
+    	border: 1px solid var(--link-color);
+	}
 /*	Greater than Full-HD Width
 	===========================
 */
