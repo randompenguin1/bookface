@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.3
+Version 1.4
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -209,7 +209,7 @@ Each "Frio" theme "scheme" consists of two files with the same name but a differ
         Author     : Names and @handles of main contributors
     */
 
-These PHP file gets read into the _/frio/style.php_ file, to get any color variables that have been set. **You cannot add new variables to your PHP file!**  The `style.php` defines these variables in an array (to which your scheme cannot add new entries). These are the ones you can set in your PHP file:
+TThe PHP file get read into the _/frio/style.php_ file, to get any color variables that have been set. **You cannot add new variables to your PHP file!**  The `style.php` defines these variables in an array (to which your scheme cannot add new entries). These are the ones you can set in your PHP file:
 
 	$nav_bg
 	$nav_icon_color
@@ -262,6 +262,15 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+1.4 (12 Feb 2025)
+* Limited textarea resize fix to settings pages
+* Edited authors/contributors
+* Edited README for clarity
+* Switched README from plaintext to markdown
+* fixed file browser scroll height issue
+* fixed too much padding at top of login page
+* Added changelog to user styles README
+
 1.3 (11 Feb 2025)
 * Added "Auto" version that automatically detects OS light/dark color mode and applies it.
 * Color and position of Admin "Save" buttons normalized to rest of settings.
