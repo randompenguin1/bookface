@@ -20,6 +20,7 @@
     --border-color: #eeeeee;
     --count-color: #ffffff;
     --count-bg: var(--link-color);
+	--attach-file-button: none; /* none or block */
     
     /* LOCALIZE pseudo-element text below */
     --sign-in-text: 'Sign-In';
@@ -962,17 +963,9 @@
 		#upload-photo:focus {
 			background-color: darkblue !important;
 		}
-    /* 	HIDE ATTACHMENT BUTTON
-    	=======================
-    	This hides the file attachment button in the Compose "Browser" tab
-    	because there is no way to manage/delete uploaded attachments it
-    	was a design choice of this theme mod to hide this button from users.
-    	
-    	If you WANT users to be able to see uploaded files and attach them
-    	to posts either comment out this rule or change "none" to "block"
-    */ 
+    /* 	HIDE ATTACHMENT BUTTON */ 
     .fbswitcher [data-mode="attachment"] {
-           display: none !important;
+           display: var(--attach-file-button) !important;
     }
 /* PROFILE */
 	#profile-photo-wrapper {
@@ -1484,6 +1477,13 @@ a.tag.label,
 		width: 140px !important;
 	}
 }
+/* Frio breakpoints for smaller profile pic */
+	@media screen and (min-width:991px) and (max-width:1199px){
+		.contact-block-img {
+			height: 75px !important;
+			width: 75px !important;
+		}
+	}
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
@@ -3083,17 +3083,9 @@ p.wall-item-announce,
      #upload-photo:focus {
         background-color: darkblue !important;
     }
-    /* 	HIDE ATTACHMENT BUTTON
-    	=======================
-    	This hides the file attachment button in the Compose "Browser" tab
-    	because there is no way to manage/delete uploaded attachments it
-    	was a design choice of this theme mod to hide this button from users.
-    	
-    	If you WANT users to be able to see uploaded files and attach them
-    	to posts either comment out this rule or change "none" to "block"
-    */ 
+    /* 	HIDE ATTACHMENT BUTTON */ 
     .fbswitcher [data-mode="attachment"] {
-           display: none !important;
+           display: var(--attach-file-button) !important;
     }
     .panel,
     .panel-body {
@@ -3618,6 +3610,13 @@ a.tag.label,
 		width: 140px !important;
 	}
 }
+/* Frio breakpoints for smaller profile pic */
+	@media screen and (min-width:991px) and (max-width:1199px){
+		.contact-block-img {
+			height: 75px !important;
+			width: 75px !important;
+		}
+	}
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
