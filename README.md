@@ -149,7 +149,7 @@ Extras spaces are okay, but just make sure there are no carriage returns or othe
 
 ## GENERAL NOTES:
 
-* This theme HIDES the attachment upload button in the file browser since there is no way to manage/delete uploaded files, and this is confusing to users.
+* This theme HIDES the attachment upload button in the file browser since there is no way to manage/delete uploaded files, and this is confusing to users. If you want to show this button anyway change the CSS variable `--attach-file-button` from "none" to "block" at the top of the stylesheets.
 * Overrides nav_bg, nav_icon_color, background_color, background_image, and contentbg_transp
 * Overrides "Frio" blue accent color with one that looks nicer with these schemes.
 * This scheme is still being revised as new things to style are discovered.
@@ -265,6 +265,8 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * fixed browser "Share to.." button display and sizing [Issue #3]
 * fixed wrong sized menu items in action button drop-downs on mobile [related to Issue #3]
 * Styled content filter buttons coming from other platforms.
+* Attach file button visibilty moved to CSS variable
+* Profile contacts size adjust for Frio breakpoints
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
