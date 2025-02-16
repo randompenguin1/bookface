@@ -1348,6 +1348,7 @@ a.tag.label,
   	box-shadow: none !important;
   	color: #0066FF !important;
   	border: 1px solid #0066FF;	
+	text-shadow: none !important;
 }
 	.wall-item-bottom .label {
 		color: inherit;
@@ -3557,6 +3558,7 @@ a.tag.label,
   	box-shadow: none !important;
   	color: #05d8fb !important;
   	border: 1px solid #05d8fb;	
+	text-shadow: none !important;
 }
 	.wall-item-bottom .label {
 		color: inherit;
