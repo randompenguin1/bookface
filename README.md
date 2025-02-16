@@ -268,6 +268,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Attach file button visibilty moved to CSS variable
 * Profile contacts size adjust for Frio breakpoints
 * Fixed Category & Folder tag-buttons [Issue #4]
+* Removed text shadow from tags [Issue #5]
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
