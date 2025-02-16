@@ -69,10 +69,8 @@ You should _avoid_ redefining the default Frio color variables because if a user
     --link-color
     --nav-icon-color
     --background-color
-    --contentbg-transp
     --font-color
     --font-color-darker
-    --background-image
     --menu-background-hover-color
 
 You _can_ safely globally override:
@@ -269,6 +267,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Profile contacts size adjust for Frio breakpoints
 * Fixed Category & Folder tag-buttons [Issue #4]
 * Removed text shadow from tags [Issue #5]
+* Removed unused CSS variables [Issue #6]
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
