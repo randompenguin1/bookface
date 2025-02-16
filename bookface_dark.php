@@ -31,8 +31,6 @@ $link_color = ($customColor) ? '#'.$customColor->getHex() : '#'.$accentColor->li
 		 $link_color = "#0066ff";
 	}
 $nav_icon_color = '#B0B3B8';
-$contentbg_transp = '0';
 $font_color = '#cccccc';
 $font_color_darker = '#acacac';
 $font_color_lighter = '#444444';
-$background_image = '';
