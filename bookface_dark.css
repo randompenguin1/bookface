@@ -1519,6 +1519,31 @@ a.tag.label,
     	background-color: transparent;
     	border: 1px solid var(--link-color);
 	}
+	/* Comment buttons on other peple's profile Conversations */
+	a.btn-link.button-comments {
+		width: fit-content;
+		text-align:center !important;
+		display: block;
+		margin-top:10px;
+		color: var(--nav-icon-color) !important;
+	}
+		a.btn-link.button-comments:hover {
+			text-decoration: none;
+			color: var(--link-color) !important;
+		}
+		a.btn-link.button-comments .fa {
+			width: 50px;
+			display: block;
+			margin: 0 auto;
+		}
+		a.btn-link.button-comments .fa::before {
+			font-size: 24px;
+		}
+		a.btn-link.button-comments::after {
+			font-size: 14px !important;
+			position: relative;
+			top: 5px;
+		}
 /*	Greater than Full-HD Width
 	===========================
 */
