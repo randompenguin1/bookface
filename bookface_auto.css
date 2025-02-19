@@ -684,6 +684,9 @@
 				padding-left: 10px !important;
 				padding-right: 10px !important;
 			}
+  .media hr, aside hr, section hr {
+    border-color: var(--nav-bg);
+  }
        /* keep mentions and tags from spilling out */
        #profile-page .label,
        #profile-page .label a,
@@ -2887,11 +2890,9 @@ p.wall-item-announce,
                      padding-left: 10px !important;
                      padding-right: 10px !important;
               }
-        .media hr, 
-        aside hr, 
-        section hr {
-        	border-color: var(--nav-bg);
-        }
+  .media hr, aside hr, section hr {
+    border-color: var(--nav-bg);
+  }
        /* keep mentions and tags from spilling out */
        #profile-page .label,
        #profile-page .label a,
