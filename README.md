@@ -272,6 +272,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Hide horizontal rules for a cleaner look 
 * Minor style fixes for .panel-body and .help-block
 * Removed box-shadow from .wall-item-comment-wrapper
+* Added `$contentbg_transp` back as "Frio" default stylesheet slipstream needs it.
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
