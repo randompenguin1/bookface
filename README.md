@@ -269,6 +269,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Removed text shadow from tags [Issue #5]
 * Removed unused CSS variables [Issue #6]
 * Comment button not styled on other people's profiles [Issue #7] 
+* Hide horizontal rules for a cleaner look 
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
