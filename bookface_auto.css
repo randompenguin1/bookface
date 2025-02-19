@@ -850,6 +850,7 @@
 	}
 		.wall-item-comment-wrapper {
 			border: none;
+			box-shadow: none;
 		}
 		.photo-comment-wrapper .btn-sm,
 		#profile-jot-wrapper .btn-sm,
@@ -3064,6 +3065,7 @@ p.wall-item-announce,
 }
 	.wall-item-comment-wrapper {
 		border: none;
+		box-shadow: none;
 	}
 		.photo-comment-wrapper .btn-sm,
 		#profile-jot-wrapper .btn-sm,
