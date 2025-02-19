@@ -34,3 +34,4 @@ $nav_icon_color = '#B0B3B8';
 $font_color = '#cccccc';
 $font_color_darker = '#acacac';
 $font_color_lighter = '#444444';
+$contentbg_transp = '0';
