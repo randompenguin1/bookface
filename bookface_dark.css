@@ -1354,7 +1354,8 @@ aside .widget li:hover {
 	background-color: #666;
 }
 .calc-content-wrapper #display {
-  font-size: 36px;
+	appearance: none;
+  	font-size: 36px;
 	font-weight: lighter;
 	text-align: right;
 	color: #eee;
