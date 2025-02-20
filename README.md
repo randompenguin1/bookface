@@ -273,6 +273,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Minor style fixes for .panel-body and .help-block
 * Removed box-shadow from .wall-item-comment-wrapper
 * Added `$contentbg_transp` back as "Frio" default stylesheet slipstream needs it.
+* Fixed Settings > Channels panel padding and Submit button alignment
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
