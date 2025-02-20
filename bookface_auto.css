@@ -304,7 +304,7 @@
 #content .nav > li > .btn-link:hover,
 #content .nav > li > .btn-link:focus {
 	background-color: var(--link-color);
-	color: white;
+	color: white !important;
 }  
 	#topbar-first #nav-notifications-menu {
 		   border: 1px solid var(--background-color) !important;
