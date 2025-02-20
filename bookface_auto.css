@@ -1357,7 +1357,8 @@
 	background-color: #666;
 }
 .calc-content-wrapper #display {
-  font-size: 36px;
+	appearance: none !important;
+  	font-size: 36px;
 	font-weight: lighter;
 	text-align: right;
 	color: #eee;
