@@ -484,6 +484,12 @@
 	  margin-left: 5px !important;
 	  margin-bottom: 20px !important;
 	}
+	#settings-channels .panel {
+		padding: 0 10px 10px 10px;
+	}
+		#settings-channels button {
+			float: right;
+		}
 	#adminpage button[type="sbumit"],
 	input[type="submit"],
 	input[name="page_logs"],
