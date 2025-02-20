@@ -1306,6 +1306,64 @@
 .advancedcontentfilter-content-wrapper pre {
 	margin-top: 20px;
 }
+/* calculator addon */
+.calc-content-wrapper table {
+	margin: 0 auto;
+	color: #333;
+}
+.calc-content-wrapper td[colspan='5']::after {
+  	content: ' ';
+	height: 50px;
+	width: 260px;
+	background-color: black;
+	display: block;
+}
+	.calc-content-wrapper input[type='button']{
+		appearance: none;
+		height: 50px;
+		width: 100%;
+		border: 1px solid #666;
+		color: white;
+		font-size: 18px;
+		font-weight: bold;
+		background-color: #999;
+		text-align: center;
+	}
+.calc-content-wrapper input[name='plus'],
+.calc-content-wrapper input[name='minus'],
+.calc-content-wrapper input[name='multiplication'],
+.calc-content-wrapper input[name='division'],
+.calc-content-wrapper input[name='enter']{
+	background-color: orange;
+}
+.calc-content-wrapper input[name='plus']{
+	padding-left: 10px;
+}
+.calc-content-wrapper input[name='multiplication']{
+	padding-left: 14px;
+}
+.calc-content-wrapper input[name='clear'],
+.calc-content-wrapper input[name='sqareroot'],
+.calc-content-wrapper input[name='squarex'],
+.calc-content-wrapper input[name='deg-rad'],
+.calc-content-wrapper input[name='rad-deg'],
+.calc-content-wrapper input[name='sine'],
+.calc-content-wrapper input[name='arcsine'],
+.calc-content-wrapper input[name='cosine'],
+.calc-content-wrapper input[name='arccosine']{
+	background-color: #666;
+}
+.calc-content-wrapper #display {
+  font-size: 36px;
+	font-weight: lighter;
+	text-align: right;
+	color: #eee;
+	background-color: #666;
+	border: none;
+	display: block;
+	width: 260px;
+	position: absolute;
+}
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px;
