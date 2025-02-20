@@ -8,7 +8,7 @@ Version 1.4
 
 ## INSTALLATION
 
-1. Drop these four files: 
+1. Drop these six files: 
 	* bookface_auto.css
 	* bookface_auto.php
 	* bookface_dark.css
