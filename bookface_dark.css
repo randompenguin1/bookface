@@ -1329,6 +1329,9 @@ aside .widget li:hover {
 		background-color: #999;
 		text-align: center;
 	}
+	.calc-content-wrapper input[type='button']:active {
+		box-shadow: inset 0 0 100px rgba(255,255,255,.2);
+	}
 .calc-content-wrapper input[name='plus'],
 .calc-content-wrapper input[name='minus'],
 .calc-content-wrapper input[name='multiplication'],
@@ -1336,6 +1339,13 @@ aside .widget li:hover {
 .calc-content-wrapper input[name='enter']{
 	background-color: orange;
 }
+	.calc-content-wrapper input[name='plus']:active,
+	.calc-content-wrapper input[name='minus']:active,
+	.calc-content-wrapper input[name='multiplication']:active,
+	.calc-content-wrapper input[name='division']:active,
+	.calc-content-wrapper input[name='enter']:active{
+		box-shadow: inset 0 0 100px rgba(0,0,0,.2);
+	}
 .calc-content-wrapper input[name='plus']{
 	padding-left: 10px;
 }
