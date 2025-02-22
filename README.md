@@ -276,6 +276,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed Settings > Channels panel padding and Submit button alignment
 * Redesigned Calculator Add-On [Issue #8]
 * Fixed Compose text formatting rollover effect [Issue #9]
+* Fixed photo album thumbnail size on mobile [Issue #10]
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
