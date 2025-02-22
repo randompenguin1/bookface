@@ -2098,7 +2098,13 @@ a.tag.label,
 			#message-new:hover,
 			#message-new:focus {
 				box-shadow: 0 0 100px rgba(0,0,0,.2);
-			}						
+			}	
+	.justified-gallery > a, 
+	.justified-gallery > div, 
+	.justified-gallery > figure{
+    	height: 25vw !important;
+    	width:  25vw !important;
+	}					
 }
 /*	Narrow Screen Phones in Portrait Orientation
 	============================================
