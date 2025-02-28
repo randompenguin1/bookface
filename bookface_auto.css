@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.4
+	Version    : 1.5
     Licence    : AGPL
-    Created on : 12 Feb 2025
+    Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -104,23 +104,49 @@
 		content: '\f0f3';	
 		color: var(--link-color);	
 	}
+	ul.nav-tabs {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		padding-bottom: 20px;
+		border-color:rgba(0,0,0,.2);
+	}
 	ul.tabs li {
 		font-size: 15px !important;
 		margin-left: 10px !important;
 	}
-		ul.tabs li a {
-			margin-top: 8px;
-			color: var(--link-color);
-		}
-		ul.tabs li:not(.active):hover {
-			border-bottom-width: 0px !important;
-		}
-			ul.tabs li:hover:not(.active) > a {
-				background-color: rgba(128,128,128,.1) !important;
-				background-image: none !important;
-				border-radius: 8px !important;
-				color: var(--font-color);
+
+		   ul.nav-tabs li a,
+		   ul.tabs li a {
+				  margin-top: 8px;
+				  color: var(--link-color);
+				  border: none;
+		   }
+			ul.nav-tabs li:not(.active):hover,       
+			ul.tabs li:not(.active):hover {
+				border-bottom-width: 0px !important;
 			}
+				ul.nav-tabs li:not(.active):hover > a,
+				ul.tabs li:not(.active):hover > a {
+					background-color: rgba(128,128,128,.1) !important;
+					background-image: none !important;
+					border-radius: 8px !important;
+					color: var(--font-color);
+				}
+					ul.nav-tabs li:not(.active) > a:hover,
+					ul.nav-tabs li:not(.active) > a:focus {
+						border: none;
+					}
+				ul.nav-tabs li.active {
+					border-bottom: 4px solid var(--link-color);
+				}
+					ul.nav-tabs > li.active > a,
+					ul.nav-tabs > li.active a:hover,
+					ul.nav-tabs > li.active a:focus {
+						border: none;
+						color: var(--link-color);
+						background-color: transparent;
+					}
 	.dropdown-menu {
 		padding-bottom: 15px !important;
         background-color: var(--nav-bg) !important;
@@ -862,6 +888,8 @@
 		#profile-jot-wrapper .btn-sm,
 		.wall-item-comment-wrapper .btn-sm {
 			background-color: transparent;
+			-webkit-box-shadow: none;
+			box-shadow: none;
 			color: var(--nav-icon-color);
 			height: 45px;
 			width:  45px;
@@ -971,7 +999,7 @@
 		#upload-photo:focus {
 			background-color: darkblue !important;
 		}
-    .panel-body {
+    body.mod-settings .panel-body {
     	background-color: var(--nav-bg);
     	border-radius: 10px;
     	border-top: none !important;
@@ -1002,7 +1030,7 @@
 		font-size: 32px !important;
 		text-align: center;
 		word-break: break-word;
-		text-shadow: 1px 1px 2px var(--background-color), -1px -1px 2px var(--background-color);
+		text-shadow: 1px 1px 2px var(--background-color), -1px -1px 2px var(--background-color), 1px -1px 2px var(--background-color), -1px 1px 2px var(--background-color);
 	}
 	aside .vcard .p-addr {
 		font-weight: 600;
@@ -1729,28 +1757,126 @@ a.tag.label,
     aside::before {
     	background-color: rgba(255, 255, 255, 0.4);
     }
-    /* Cover Photo Mobile */
-	.row:has(.coverphoto) aside {
-		margin-top: 0px;
-	}   
-    aside:has(.coverphoto){
-    	left: -300px !important;
-    	right: auto !important;
-    	display: block !important;
-    	padding-top: 120px;
-    	background-color: transparent !important;
-    	transition-duration: .5s;
-    	z-index: auto;
-    }
-    aside.canvas-sliding:has(.coverphoto) {
-    	-webkit-transition: none;
-    	transition: none;
-    }
-    aside.canvas-slid:has(.coverphoto) {
-    	left: 0px !important;
-    	right: auto !important;
-    	z-index: 20;
-    }
+	/* Profile Aside Mobile */
+	body.mod-contact #content,
+	body.mod-profile #content,
+	body.mod-photos  #content {
+		margin-top: 350px;
+	}
+		/* only seen on your own Recent Photos page */
+		body.mod-profile #sidebar-photos-albums::before {
+			content: '\f083';
+			font-family: ForkAwesome;
+			font-size: 150px;
+			position: fixed;
+			top: 175px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			color: var(--nav-icon-color);
+			opacity: .5;
+			z-index: -1;
+			transition-duration: .5s;
+			transition-property: left;
+		}
+			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
+			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
+				left: 50%;
+			}
+			/* hide camera icon on other profile Recent Photos pages */
+			body.mod-profile .vcard + #sidebar-photos-albums::before {
+				content: '';
+			}
+	body.mod-contact aside,
+	body.mod-photos  aside,
+	body.mod-profile aside {
+		margin-top: 0px !important;
+		left: -300px !important;
+		right: auto !important;
+		display: block !important;
+		padding-top: 120px;
+		transition-duration: .5s !important;
+		z-index: auto;
+	}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			z-index: 20;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			position: fixed;
+			top: 150px;
+			left: 50%;
+			height: 150px;
+			width:  150px;
+			margin-left: -75px;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			position: fixed;
+			width: 100%;
+			top: 300px;
+			left: 50%;
+			margin-left: -50%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			position: fixed;
+			width: 50%;
+			top: 400px;
+			left: 50%;
+			margin-left: -25%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -150px;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: calc(-50% - 75px);
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -300px;
+			}
+			/* centered in right-hand side */
+			body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-slid #profile-photo-wrapper,
+			body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+				margin-left: -225px;
+			}
+			body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-slid .profile-header h3.p-name,
+			body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+				margin-left: calc(-50% - 150px);
+			}
+			body.mod-contact aside.canvas-slid .profile-header .p-addr,
+			body.mod-photos  aside.canvas-slid .profile-header .p-addr,
+			body.mod-profile aside.canvas-slid .profile-header .p-addr {
+				margin-left: calc(-25% - 150px);
+			}
+		/* Cover Photo Mobile */
+		.coverphoto.canvas-sliding,
     	.coverphoto.canvas-slid{
     		left: 0px !important;
     		right: 0px !important;
@@ -1764,7 +1890,7 @@ a.tag.label,
     			top: 500px;
     			left: 0px;
     			width: 100%;
-    			height: 100%;
+    			height: 500%;
     			display: block;
     			background-color: var(--background-color);
     		}
@@ -1946,7 +2072,7 @@ a.tag.label,
 				display: none !important;
 			}
 			#offcanvasUsermenu li.list-group-item,
-	    #offcanvasUsermenu li.list-group-item a {
+	    	#offcanvasUsermenu li.list-group-item a {
 				border: transparent !important;
 				background-color: transparent !important;
 				color: var(--nav-icon-color) !important;
@@ -1999,18 +2125,28 @@ a.tag.label,
 			#topbar-second ul.tabbar > li:first-of-type {
 				max-width: 75%;
 				overflow: hidden;
+				margin-right: 50px;
 			}
 				#topbar-second ul.tabbar li:first-of-type ul.tabs {
 					max-width: 100%;
 				}
 					#topbar-second ul.tabbar li:first-of-type ul.tabs li {
 						width: 100%;
+						height: 100%;
 					}
 						#topbar-second ul.tabbar li:first-of-type ul.tabs li a {
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
 						}
+			/* prevent dropdown being pushed off toolbar */
+			#topbar-second ul.tabbar > li:last-of-type {
+				margin-left: -50px;
+				border-bottom: 4px solid var(--link-color);
+			}
+				#topbar-second ul.tabbar > li:last-of-type li.dropdown {
+					margin-left: 0px !important;
+				}
 			#dropdownMenuTools-xs {
 				height: 60px;
 			}
@@ -2078,7 +2214,27 @@ a.tag.label,
 			padding-top: 60px;
 			padding-bottom: 60px;
 		}
-		.coverphoto {
+		body.mod-profile #sidebar-photos-albums::before {
+			top: 125px;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 100px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 255px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 345px;
+		}
+		.coverphoto,
+		.coverphoto.canvas-sliding,
+		.coverphoto.canvas-slid {
 			top: 55px;
 		}
 	#message-new {
@@ -2105,6 +2261,109 @@ a.tag.label,
     	width:  25vw !important;
 	}	
 }
+/*	Frio Theme Cut-Off (double sidebar width)
+	=========================================
+*/
+@media screen and (max-width: 600px) and (orientation: portrait) {
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			left: -100% !important;
+			right: 0% !important;
+			max-width: 100% !important;
+			width: 100% !important;
+			padding-top: 60px;
+			background-color: var(--background-color) !important;
+		}
+		/* only seen on your own Recent Photos page */
+		body.mod-profile #sidebar-photos-albums::before {
+			transition-property: top;
+		}
+			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
+			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
+				left: 0px;
+				top: 150%;
+			}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+		}
+			body.mod-contact aside.canvas-slid::before,
+			body.mod-photos  aside.canvas-slid::before,
+			body.mod-profile aside.canvas-slid::before {
+				opacity: 0;
+			}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 100px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 255px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 345px;
+			width: 80%;
+			margin-left: -40%;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -75px;
+				top: 150% !important;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: -50%;
+				top: 150% !important;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -25%;
+				top: 150% !important;
+			}
+			
+		body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+		body.mod-photo   aside.canvas-slid #profile-photo-wrapper,
+		body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+			margin-left: -75px;
+			top: 150% !important;
+		}
+		body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+		body.mod-photo   aside.canvas-slid .profile-header h3.p-name,
+		body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+			margin-left: -50%;
+			top: 150% !important;
+		}
+		body.mod-contact aside.canvas-slid .profile-header .p-addr,
+		body.mod-photo   aside.canvas-slid .profile-header .p-addr,
+		body.mod-profile aside.canvas-slid .profile-header .p-addr {
+			margin-left: -25%;
+			top: 150% !important;
+		}
+		.coverphoto {
+			transition-duration: .5s;
+			transition-property: top;
+		}
+		body.mod-contact.aside-out .coverphoto,
+		body.mod-photo.aside-out .coverphoto,
+		body.mod-profile.aside-out .coverphoto,
+		body.mod-contact aside.canvas-slid .coverphoto,
+		body.mod-photo   aside.canvas-slid .coverphoto,
+		body.mod-profile aside.canvas-slid .coverphoto {
+			top: 150% !important;
+			left: 0px;
+			right: 0px;
+		}
+}
 /*	Narrow Screen Phones in Portrait Orientation
 	============================================
 */
@@ -2117,6 +2376,28 @@ a.tag.label,
 	/* NOTE: cannot simply empty or display none or button alignment gets messed up! */
 	.wall-item-actions-row .button-browser-share::after {
 		display: none !important;
+	}
+	ul.nav-tabs {
+		display: block;
+	}
+	ul.nav-tabs li {
+		width: 98%;
+		text-align: center;
+	}
+	ul.nav-tabs li a {
+		border: 1px solid var(--link-color) !important;
+		border-radius: 8px !important;
+	}
+	 ul.nav-tabs li:not(.active) a:hover,
+	ul.nav-tabs li:not(.active) a:focus {
+		background-color: rgba(0,0,0,.2);
+	}
+	ul.nav-tabs li.active {
+		border: none !important;
+	}
+	ul.nav-tabs li.active a {
+		background-color: var(--link-color) !important;
+		color: #fff !important;
 	}
 }
 /* 	Narrow Screen Phones in Landscape Orientation
@@ -2172,7 +2453,7 @@ a.tag.label,
 				padding: 0 !important;
 			}
 			#topbar-first .nav > .account {
-				top: -5px;
+				top: 0px;
 				right: 5px;
 			}
 			#main-menu img {
@@ -2236,9 +2517,54 @@ a.tag.label,
 		.offcanvas-right-overlay {
  			top: 0px;
  		}
-		.row:has(.coverphoto) #content {
-			margin-top: 200px;
+		/* Profile Pages */
+		body.mod-contact #content,
+		body.mod-profile #content,
+		body.mod-photos  #content {
+			margin-top: 200px !important;
 		}
+		body.mod-profile #sidebar-photos-albums::before {
+			top: 25px;
+		}
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			max-width: 300px !important;
+			background-color: transparent !important;
+			z-index: 20;
+		}
+			body.mod-contact aside.canvas-slid::before,
+			body.mod-photos  aside.canvas-slid::before,
+			body.mod-profile aside.canvas-slid::before {
+				opacity: 1;
+			}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 10px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 155px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 205px;
+			width: 50%;
+			margin-left: -25%;
+		}
+		.coverphoto.canvas-sliding,
+		.coverphoto.canvas-slid,
  		.coverphoto {
 			top: 0px;
 		}	
@@ -2353,23 +2679,48 @@ nav.navbar .nav > li > button:focus {
 		content: '\f0f3';
 		color: var(--link-color);		
 	}
+ul.nav-tabs {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding-bottom: 20px;
+	border-color:rgba(255,255,255,.2);
+}
 ul.tabs li {
        font-size: 15px !important;
        margin-left: 10px !important;
 }
+	   ul.nav-tabs li a,
        ul.tabs li a {
               margin-top: 8px;
               color: var(--link-color);
+              border: none;
        }
-       ul.tabs li:hover:not(.active) {
-              border-bottom-width: 0px !important;
-       }
+        ul.nav-tabs li:not(.active):hover,       
+		ul.tabs li:not(.active):hover {
+			border-bottom-width: 0px !important;
+		}
+			ul.nav-tabs li:not(.active):hover > a,
 			ul.tabs li:not(.active):hover > a {
 				background-color: rgba(128,128,128,.1) !important;
 				background-image: none !important;
 				border-radius: 8px !important;
 				color: var(--font-color);
 			}
+				ul.nav-tabs li:not(.active) > a:hover,
+				ul.nav-tabs li:not(.active) > a:focus {
+					border: none;
+				}
+			ul.nav-tabs li.active {
+				border-bottom: 4px solid var(--link-color);
+			}
+				ul.nav-tabs > li.active > a,
+				ul.nav-tabs > li.active a:hover,
+				ul.nav-tabs > li.active a:focus {
+					border: none;
+					color: var(--link-color);
+					background-color: transparent;
+				}
     .dropdown-menu {
         padding-bottom: 15px !important;
         background-color: var(--nav-bg) !important;
@@ -3158,6 +3509,8 @@ p.wall-item-announce,
 		#profile-jot-wrapper .btn-sm,
 		.wall-item-comment-wrapper .btn-sm {
 			background-color: transparent;
+			-webkit-box-shadow: none;
+			box-shadow: none;
 			color: var(--nav-icon-color);
 			height: 45px;
 			width:  45px;
@@ -3273,7 +3626,7 @@ p.wall-item-announce,
      #upload-photo:focus {
         background-color: darkblue !important;
     }
-    .panel-body {
+    body.mod-setting .panel-body {
     	background-color: var(--nav-bg);
     	border-radius: 10px;
     	border-top: none !important;
@@ -3285,8 +3638,7 @@ p.wall-item-announce,
     .fbswitcher [data-mode="attachment"] {
            display: var(--attach-file-button) !important;
     }
-    .panel,
-    .panel-body {
+    body.mod-settings .panel-body {
     	background-color: var(--nav-bg);
     	border-radius: 10px;
     }
@@ -3322,7 +3674,7 @@ aside .widget h3.p-name {
     font-size: 32px !important;
     text-align: center;
     word-break: break-word;
-	text-shadow: 1px 1px 2px var(--background-color), -1px -1px 2px var(--background-color);
+	text-shadow: 1px 1px 2px var(--background-color), -1px -1px 2px var(--background-color), 1px -1px 2px var(--background-color), -1px 1px 2px var(--background-color);
 	}
 aside .vcard .p-addr {
     font-weight: 600;
@@ -4046,28 +4398,126 @@ a.tag.label,
     aside::before {
     	background-color: rgba(0, 0, 0, 0.4);
     }
-    /* Cover Photo Mobile */
-	.row:has(.coverphoto) aside {
-		margin-top: 0px;
-	}   
-    aside:has(.coverphoto){
-    	left: -300px !important;
-    	right: auto  !important;
-    	display: block !important;
-    	padding-top: 120px;
-    	background-color: transparent !important;
-    	transition-duration: .5s;
-    	z-index: auto;
-    }
-    aside.canvas-sliding:has(.coverphoto) {
-    	-webkit-transition: none;
-    	transition: none;
-    }
-    aside.canvas-slid:has(.coverphoto) {
-    	left: 0px !important;
-    	right: auto !important;
-    	z-index: 20;
-    }
+	/* Profile Aside Mobile */
+	body.mod-contact #content,
+	body.mod-profile #content,
+	body.mod-photos  #content {
+		margin-top: 350px;
+	}
+		/* only seen on your own Recent Photos page */
+		body.mod-profile #sidebar-photos-albums::before {
+			content: '\f083';
+			font-family: ForkAwesome;
+			font-size: 150px;
+			position: fixed;
+			top: 175px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			color: var(--nav-icon-color);
+			opacity: .5;
+			z-index: -1;
+			transition-duration: .5s;
+			transition-property: left;
+		}
+			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
+			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
+				left: 50%;
+			}
+			/* hide camera icon on other profile Recent Photos pages */
+			body.mod-profile .vcard + #sidebar-photos-albums::before {
+				content: '';
+			}
+	body.mod-contact aside,
+	body.mod-photos  aside,
+	body.mod-profile aside {
+		margin-top: 0px !important;
+		left: -300px !important;
+		right: auto !important;
+		display: block !important;
+		padding-top: 120px;
+		transition-duration: .5s !important;
+		z-index: auto;
+	}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			z-index: 20;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			position: fixed;
+			top: 150px;
+			left: 50%;
+			height: 150px;
+			width:  150px;
+			margin-left: -75px;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			position: fixed;
+			width: 100%;
+			top: 300px;
+			left: 50%;
+			margin-left: -50%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			position: fixed;
+			width: 50%;
+			top: 400px;
+			left: 50%;
+			margin-left: -25%;
+			transition-timing-function: ease-in-out;
+			transition-duration: .3s;
+			transition-property: all;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -150px;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: calc(-50% - 75px);
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -300px;
+			}
+			/* centered in right-hand side */
+			body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-slid #profile-photo-wrapper,
+			body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+				margin-left: -225px;
+			}
+			body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-slid .profile-header h3.p-name,
+			body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+				margin-left: calc(-50% - 150px);
+			}
+			body.mod-contact aside.canvas-slid .profile-header .p-addr,
+			body.mod-photos  aside.canvas-slid .profile-header .p-addr,
+			body.mod-profile aside.canvas-slid .profile-header .p-addr {
+				margin-left: calc(-25% - 150px);
+			}
+		/* Cover Photo Mobile */
+		.coverphoto.canvas-sliding,
     	.coverphoto.canvas-slid{
     		left: 0px !important;
     		right: 0px !important;
@@ -4081,7 +4531,7 @@ a.tag.label,
     			top: 500px;
     			left: 0px;
     			width: 100%;
-    			height: 100%;
+    			height: 500%;
     			display: block;
     			background-color: var(--background-color);
     		}
@@ -4316,18 +4766,28 @@ a.tag.label,
 			#topbar-second ul.tabbar > li:first-of-type {
 				max-width: 75%;
 				overflow: hidden;
+				margin-right: 50px;
 			}
 				#topbar-second ul.tabbar li:first-of-type ul.tabs {
 					max-width: 100%;
 				}
 					#topbar-second ul.tabbar li:first-of-type ul.tabs li {
 						width: 100%;
+						height: 100%;
 					}
 						#topbar-second ul.tabbar li:first-of-type ul.tabs li a {
 							overflow: hidden;
 							text-overflow: ellipsis;
 							white-space: nowrap;
 						}
+			/* prevent dropdown being pushed off toolbar */
+			#topbar-second ul.tabbar > li:last-of-type {
+				margin-left: -50px;
+				border-bottom: 4px solid var(--link-color);
+			}
+				#topbar-second ul.tabbar > li:last-of-type li.dropdown {
+					margin-left: 0px !important;
+				}
 			#dropdownMenuTools-xs {
 				height: 60px;
 			}
@@ -4395,9 +4855,29 @@ a.tag.label,
 			padding-top: 60px;
 			padding-bottom: 60px;
 		}
-		.coverphoto {
+		body.mod-profile #sidebar-photos-albums::before {
+			top: 125px;
+		}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 100px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 255px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 345px;
+		}
+		.coverphoto,
+		.coverphoto.canvas-sliding,
+		.coverphoto.canvas-slid {
 			top: 55px;
-		}	
+		}
 	#message-new {
 		height: 50px;
 		width:  50px;
@@ -4422,6 +4902,109 @@ a.tag.label,
     	width:  25vw !important;
 	}					
 }
+/*	Frio Theme Cut-Off (double sidebar width)
+	=========================================
+*/
+@media screen and (max-width: 600px) and (orientation: portrait) {
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			left: -100% !important;
+			right: 0% !important;
+			max-width: 100% !important;
+			width: 100% !important;
+			padding-top: 60px;
+			background-color: var(--background-color) !important;
+		}
+		/* only seen on your own Recent Photos page */
+		body.mod-profile #sidebar-photos-albums::before {
+			transition-property: top;
+		}
+			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
+			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
+				left: 0px;
+				top: 150%;
+			}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+		}
+			body.mod-contact aside.canvas-slid::before,
+			body.mod-photos  aside.canvas-slid::before,
+			body.mod-profile aside.canvas-slid::before {
+				opacity: 0;
+			}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 100px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 255px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 345px;
+			width: 80%;
+			margin-left: -40%;
+		}
+			/* bounce effect */
+			body.mod-contact aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-photos  aside.canvas-sliding #profile-photo-wrapper,
+			body.mod-profile aside.canvas-sliding #profile-photo-wrapper {
+				margin-left: -75px;
+				top: 150% !important;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-photos  aside.canvas-sliding .profile-header h3.p-name,
+			body.mod-profile aside.canvas-sliding .profile-header h3.p-name {
+				margin-left: -50%;
+				top: 150% !important;
+			}
+			body.mod-contact aside.canvas-sliding .profile-header .p-addr,
+			body.mod-photos  aside.canvas-sliding .profile-header .p-addr,
+			body.mod-profile aside.canvas-sliding .profile-header .p-addr {
+				margin-left: -25%;
+				top: 150% !important;
+			}
+			
+		body.mod-contact aside.canvas-slid #profile-photo-wrapper,
+		body.mod-photo   aside.canvas-slid #profile-photo-wrapper,
+		body.mod-profile aside.canvas-slid #profile-photo-wrapper {
+			margin-left: -75px;
+			top: 150% !important;
+		}
+		body.mod-contact aside.canvas-slid .profile-header h3.p-name,
+		body.mod-photo   aside.canvas-slid .profile-header h3.p-name,
+		body.mod-profile aside.canvas-slid .profile-header h3.p-name {
+			margin-left: -50%;
+			top: 150% !important;
+		}
+		body.mod-contact aside.canvas-slid .profile-header .p-addr,
+		body.mod-photo   aside.canvas-slid .profile-header .p-addr,
+		body.mod-profile aside.canvas-slid .profile-header .p-addr {
+			margin-left: -25%;
+			top: 150% !important;
+		}
+		.coverphoto {
+			transition-duration: .5s;
+			transition-property: top;
+		}
+		body.mod-contact.aside-out .coverphoto,
+		body.mod-photo.aside-out .coverphoto,
+		body.mod-profile.aside-out .coverphoto,
+		body.mod-contact aside.canvas-slid .coverphoto,
+		body.mod-photo   aside.canvas-slid .coverphoto,
+		body.mod-profile aside.canvas-slid .coverphoto {
+			top: 150% !important;
+			left: 0px;
+			right: 0px;
+		}
+}
 /*	Narrow Screen Phones in Portrait Orientation
 	============================================
 */
@@ -4434,6 +5017,28 @@ a.tag.label,
 	/* NOTE: cannot simply empty or display none or button alignment gets messed up! */
 	.wall-item-actions-row .button-browser-share::after {
 		display: none !important;
+	}
+	ul.nav-tabs {
+		display: block;
+	}
+	ul.nav-tabs li {
+		width: 98%;
+		text-align: center;
+	}
+	ul.nav-tabs li a {
+		border: 1px solid var(--link-color) !important;
+		border-radius: 8px !important;
+	}
+	 ul.nav-tabs li:not(.active) a:hover,
+	ul.nav-tabs li:not(.active) a:focus {
+		background-color: rgba(255,255,255,.2);
+	}
+	ul.nav-tabs li.active {
+		border: none !important;
+	}
+	ul.nav-tabs li.active a {
+		background-color: var(--link-color) !important;
+		color: #000 !important;
 	}
 }	
 /* 	Narrow Screen Phones in Landscape Orientation
@@ -4486,6 +5091,11 @@ a.tag.label,
 			#topbar-first .offcanvas-right-toggle {
 				top: 3px;
 				right: 13px;
+				padding: 0 !important;
+			}
+			#topbar-first .nav > .account {
+				top: 0px;
+				right: 5px;
 			}
 			#main-menu img {
 				border: 5px solid var(--link-color);
@@ -4548,14 +5158,56 @@ a.tag.label,
 		.offcanvas-right-overlay {
  			top: 0px;
  		}
- 		.row:has(.coverphoto) #content {
-			margin-top: 200px;
+		/* Profile Pages */
+		body.mod-contact #content,
+		body.mod-profile #content,
+		body.mod-photos  #content {
+			margin-top: 200px !important;
 		}
+		body.mod-profile #sidebar-photos-albums::before {
+			top: 25px;
+		}
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+		body.mod-contact aside.canvas-slid,
+		body.mod-photos  aside.canvas-slid,
+		body.mod-profile aside.canvas-slid {
+			left: 0px !important;
+			right: auto !important;
+			max-width: 300px !important;
+			background-color: transparent !important;
+			z-index: 20;
+		}
+			body.mod-contact aside.canvas-slid::before,
+			body.mod-photos  aside.canvas-slid::before,
+			body.mod-profile aside.canvas-slid::before {
+				opacity: 1;
+			}
+		body.mod-contact aside #profile-photo-wrapper,
+		body.mod-photos  aside #profile-photo-wrapper,
+		body.mod-profile aside #profile-photo-wrapper {
+			top: 10px;
+		}
+		body.mod-contact .profile-header h3.p-name,
+		body.mod-photos  .profile-header h3.p-name,
+		body.mod-profile .profile-header h3.p-name {
+			top: 155px;
+		}
+		body.mod-contact .profile-header .p-addr,
+		body.mod-photos  .profile-header .p-addr,
+		body.mod-profile .profile-header .p-addr {
+			top: 205px;
+			width: 50%;
+			margin-left: -25%;
+		}
+		.coverphoto.canvas-sliding,
+		.coverphoto.canvas-slid,
  		.coverphoto {
 			top: 0px;
-			left: 0px;
-			right: 0px;
-			height: 500px;
 		}	
 }
 }	
