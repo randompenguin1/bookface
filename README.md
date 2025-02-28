@@ -260,6 +260,7 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
 * fixed wrong sized menu items in action button drop-downs on mobile [related to Issue #3]
 * Styled content filter buttons coming from other platforms.
@@ -277,6 +278,13 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Redesigned Calculator Add-On [Issue #8]
 * Fixed Compose text formatting rollover effect [Issue #9]
 * Fixed photo album thumbnail size on mobile [Issue #10]
+* Fixed context of .panel-body, was only intended only for Settings page
+* New Mobile Profiles [Issue #11]
+* Added camera icon to user's Recent Photos because no profile photo is shown on it.
+* Adjusted mobile drop-down button appearance and position
+* Made ul.nav-tabs appearance consistent with secondary toolbar tabs 
+* Made ul.nav-tabs turn into buttons on narrow mobile screens
+* Box shadow on Compose formatting buttons removed from dark version 
 
 1.4 (12 Feb 2025)
 * Limited textarea resize fix to settings pages
