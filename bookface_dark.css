@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5
+    Version    : 1.5.4
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -12,6 +12,8 @@
     --link-color: $link_color;
     --nav-icon-color: $nav_icon_color;
     --background-color: $background_color;
+	--content-bg: var(--nav-bg);
+	--comment-bg: var(--background-color);
     --font-color: $font_color;
     --font-color-darker: $font_color_darker;
     --menu-background-hover-color: $menu_background_hover_color;
@@ -447,7 +449,7 @@ header #banner {
 	.tos-content-wrapper, 
 	.fsuggest-content-wrapper,
 	.shared-wrapper {
-		background-color: var(--nav-bg) !important;
+		background-color: var(--content-bg) !important;
 		background-image: none;
 		border-color: #333;
 	}
@@ -658,7 +660,7 @@ aside .widget,
 	}
 /* POSTS */
 .tread-wrapper {
-	background-color: rgb(37, 39, 40) !important;
+	background-color: var(--content-bg) !important;
 	box-shadow: 0 0px 1px rgba(0,0,0,.5) !important;
 	border-radius: 10px !important;
 }
@@ -666,7 +668,7 @@ aside .widget,
 	border-top: none;
 }
 .wall-item-container .media {
-       background-color: rgb(37, 39, 40) !important;
+       background-color: var(--content-bg) !important;
        border-radius: 10px !important;
 }
 	.wall-item-container iframe {
@@ -1087,7 +1089,7 @@ aside .widget li:hover {
 }
 .comment-fake-form textarea {
     border-radius: 50px !important;
-    background-color: rgb(51, 51, 52) !important;
+    background-color: var(--comment-bg) !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
 }    
@@ -1103,7 +1105,7 @@ aside .widget li:hover {
        }
        .comment .media-body {
               padding: 10px;
-              background-color: var(--background-color);
+              background-color: var(--comment-bg);
               border-radius: 20px;
        }
        .wall-item-actions-row .wall-item-emoji {
