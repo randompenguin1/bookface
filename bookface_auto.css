@@ -104,6 +104,10 @@
 		content: '\f0f3';	
 		color: var(--link-color);	
 	}
+	.notif-item img.notif-image,
+	.intro-photo-wrapper img.intro-photo {
+		border-radius: 100%;
+	}
 	ul.nav-tabs {
 		display: flex;
 		flex-wrap: wrap;
@@ -2680,6 +2684,10 @@ nav.navbar .nav > li > button:focus {
 	#nav-notification.dropdown.open #nav-notifications-menu-btn .fa-bell::before {
 		content: '\f0f3';
 		color: var(--link-color);		
+	}
+	.notif-item img.notif-image,
+	.intro-photo-wrapper img.intro-photo {
+		border-radius: 100%;
 	}
 ul.nav-tabs {
 	display: flex;
