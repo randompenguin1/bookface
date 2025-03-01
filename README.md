@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.5
+Version 1.5.1
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -260,6 +260,8 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+* Fixed HR rule on posts [Issue #13]
+
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
 * fixed wrong sized menu items in action button drop-downs on mobile [related to Issue #3]
