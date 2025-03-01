@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.5.2
+Version 1.5.3
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -261,6 +261,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 
 ## CHANGELOG:
 * Fixed HR rule on posts [Issue #13]
+* Fixed notifcation profile pics so they are round [Issue #14]
 * Fixed Post-in-Groups/Mention button alignment [Issue #16]
 
 1.5 (27 Feb 2025)
