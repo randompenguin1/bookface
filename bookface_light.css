@@ -1746,8 +1746,11 @@ a.tag.label,
         content: '';
         margin: 0;
     }
+    #mention-link {
+    	padding: 0 8px !important;
+    }
     #mention-link span:last-of-type {
-        margin-right: 42px;
+        display: none;
     }
     .offcanvas-right-overlay,
     aside::before {
@@ -2166,7 +2169,6 @@ a.tag.label,
 			#mention-link span:first-of-type {
 				float: none;
 				position: relative;
-				left: -5px;
 				top: 2px;
 			}
 			#search-save .fa-plus::after,
