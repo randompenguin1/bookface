@@ -104,6 +104,10 @@ nav.navbar .nav > li > button:focus {
 		content: '\f0f3';
 		color: var(--link-color);		
 	}
+	.notif-item img.notif-image,
+	.intro-photo-wrapper img.intro-photo {
+		border-radius: 100%;
+	}
 ul.nav-tabs {
 	display: flex;
 	flex-wrap: wrap;
