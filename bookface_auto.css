@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.5.4
+	Version    : 1.5.5
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -972,7 +972,6 @@
 	.jot-nav .active a {
 		   background-color: transparent !important;
 		   border-radius: 0 !important;
-		   border-bottom: 3px solid var(--link-color) !important;
 	}
 	.jot-nav .active a:hover, .jot-nav .active a:focus {
 		   background-color: transparent !important;
@@ -3605,7 +3604,6 @@ p.wall-item-announce,
 .jot-nav .active a {
        background-color: transparent !important;
        border-radius: 0 !important;
-       border-bottom: 3px solid var(--link-color) !important;
 }
 .jot-nav .active a:hover, .jot-nav .active a:focus {
        background-color: transparent !important;
