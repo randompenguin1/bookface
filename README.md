@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.5.4
+Version 1.5.5
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -265,6 +265,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed Post and Comment background colors [Issue #15]
 * Made Post and Comment background colors configurable with CSS variables.
 * Fixed Post-in-Groups/Mention button alignment [Issue #16]
+* Fixed double underline on Compose active tab [Issue #17]
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
