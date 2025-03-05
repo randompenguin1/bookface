@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.5.7
+	Version    : 1.5.8
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -2224,6 +2224,26 @@ a.tag.label,
 			.fa-edit::before,
 			.fa-pencil-square-o::before {
 				content: "\f040";
+			}
+		.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
+			background-color: transparent;
+			color: var(--link-color);
+			border-radius: 8px;
+		}
+			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
+			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
+				background-color: rgba(0,0,0,.1);
+			}
+			.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
+				background-color: var(--link-color);
+				color: white;
+				border-radius: 8px;
+			}
+			.dropdown-mobile-jot .dropdown-menu li {
+				margin: 3px auto;
+			}
+			.dropdown-mobile-jot .dropdown-menu .btn-link {
+				min-width: 90%;
 			}
 		/* drop-down mobile style*/
 		#topbar-second .dropdown-menu {
@@ -4908,6 +4928,26 @@ a.tag.label,
 			.fa-edit::before,
 			.fa-pencil-square-o::before {
 				content: "\f040";
+			}
+		.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
+			background-color: transparent;
+			color: var(--link-color);
+			border-radius: 8px;
+		}
+			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:hover,
+			.dropdown-mobile-jot > .dropdown-toggle.btn-primary:focus {
+				background-color: rgba(255,255,255,.1);
+			}
+			.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
+				background-color: var(--link-color);
+				color: white;
+				border-radius: 8px;
+			}
+			.dropdown-mobile-jot .dropdown-menu li {
+				margin: 3px auto;
+			}
+			.dropdown-mobile-jot .dropdown-menu .btn-link {
+				min-width: 90%;
 			}
 		/* drop-down mobile style*/
 		#topbar-second .dropdown-menu {
