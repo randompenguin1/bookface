@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.5
+	Version    : 1.5.6
     Licence    : AGPL
     Created on : 27 Feb 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1663,6 +1663,30 @@ a.tag.label,
 			position: relative;
 			top: 5px;
 		}
+	/* Contact Notification Action Buttons */
+	.intro-wrapper button.intro-action-link {
+		height: 50px;
+		width:  50px;
+		color:  limegreen;
+		border: 2px solid limegreen;
+		border-radius: 100% !important;
+	}
+		.intro-wrapper button.intro-action-link:hover {
+			background-color: limegreen;
+			color: white;
+		}
+	.intro-form {
+		margin-left: 8px;
+	}
+	.intro-form button.intro-submit-ignore,
+	.intro-form button.intro-submit-ignore:hover,
+	.intro-form button.intgro-submi-ignore:focus,
+	.intro-form button.intro-submit-discard,
+	.intro-form button.intro-submit-discard:hover,
+	.intro-form button.intro-submit-discard:focus {
+		color: white;
+		border: none;
+	}
 /*	Greater than Full-HD Width
 	===========================
 */
@@ -1688,12 +1712,17 @@ a.tag.label,
 	}
 }
 /* Frio breakpoints for smaller profile pic */
-	@media screen and (min-width:991px) and (max-width:1199px){
-		.contact-block-img {
-			height: 75px !important;
-			width: 75px !important;
-		}
+@media screen and (min-width:991px) and (max-width:1199px){
+	.contact-block-img {
+		height: 75px !important;
+		width: 75px !important;
 	}
+	/* Contact Notification Action Buttons */
+	.intro-actions {
+		position: relative;
+		float: none !important;
+	}
+}
 /*	Large Tablets in Portrait Orientation
 	=====================================
 */
@@ -2263,6 +2292,11 @@ a.tag.label,
     	height: 25vw !important;
     	width:  25vw !important;
 	}	
+	/* Contact Notification Action Buttons */
+	.intro-actions {
+		position: relative;
+		float: none !important;
+	}
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
