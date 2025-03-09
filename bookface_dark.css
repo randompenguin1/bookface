@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.8
+    Version    : 1.5.9
     Licence    : AGPL
-    Created on : 27 Feb 2025
+    Created on : 09 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -538,6 +538,15 @@ header #banner {
 	#photo-edit-end {
 		clear: both;
 	}
+	/* Group Request Cancel/Confirm */
+	#dfrn-request-submit-wrapper input {
+		margin: 5px;
+	}
+		#dfrn-request-submit-wrapper::after {
+			content: '';
+			display: block;
+			clear: both;
+		}
 	/* make textareas resize in the correct direction */
 	body.mod-settings textarea {
 		resize: vertical !important;
