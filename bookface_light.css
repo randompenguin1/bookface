@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.9
+	Version    : 1.5.10
     Licence    : AGPL
     Created on : 09 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -579,6 +579,8 @@ ul.nav-tabs {
 			line-height: 32px;
 			top: 6px;
 			position:relative;
+			display: block;
+			padding-right: 30px;
 		}
 	#contact-edit-status-wrapper {
 		margin: 15px 0px !important;
