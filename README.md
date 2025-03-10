@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.5.11
+Version 1.5.12
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -271,6 +271,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Cleanup of Compose mobile drop-down menu and button.
 * Fixed misalignment of Cancel/Submit buttons on contact request [Issue #22]
 * Additional fix for "Post in Group" button label spacing [Issue #16]
+* Made Delegation/Account-Switch Profile Photos round.
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
