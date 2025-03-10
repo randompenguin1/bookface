@@ -1715,6 +1715,15 @@ body.mod-delegation .identity-match-photo img,
 body.mod-settings #delegation .contact-block-img {
 	border-radius: 100% !important;
 }
+/* Delegation Buttons and Profile Photos */
+body.mod-delegation .identity-match-photo > button {
+	background-color: transparent !important;
+	margin-bottom: 10px;
+}
+body.mod-delegation .identity-match-photo img,
+body.mod-settings #delegation .contact-block-img {
+	border-radius: 100% !important;
+}
 /*	Greater than Full-HD Width
 	===========================
 */
