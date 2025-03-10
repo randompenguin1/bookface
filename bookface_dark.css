@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.11
+    Version    : 1.5.12
     Licence    : AGPL
-    Created on : 09 Mar 2025
+    Created on : 10 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1702,6 +1702,15 @@ a.tag.label,
 		color: white;
 		border: none;
 	}
+/* Delegation Buttons and Profile Photos */
+body.mod-delegation .identity-match-photo > button {
+	background-color: transparent !important;
+	margin-bottom: 10px;
+}
+body.mod-delegation .identity-match-photo img,
+body.mod-settings #delegation .contact-block-img {
+	border-radius: 100% !important;
+}
 /*	Greater than Full-HD Width
 	===========================
 */
