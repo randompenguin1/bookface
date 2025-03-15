@@ -1064,7 +1064,8 @@ ul.nav-tabs {
 	aside .vcard .about,
 	aside .vcard .xmpp,
 	aside .vcard .matrix,
-	aside .vcard .homepage {
+	aside .vcard .homepage,
+	aside .vcard .account-type {
 		background-color: var(--background-color);
 		padding: 5px;
 		border-radius: 8px;
