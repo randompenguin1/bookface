@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.13
+	Version    : 1.5.14
     Licence    : AGPL
-    Created on : 10 Mar 2025
+    Created on : 19 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1845,6 +1845,41 @@ body.mod-settings #delegation .contact-block-img {
 			body.mod-profile .vcard + #sidebar-photos-albums::before {
 				content: '';
 			}
+		/* only seen on your own Contacts Page */
+		@supports not selector(:has(*)){
+			body.mod-contact #peoplefind-sidebar::before {
+				content: '\f0c0';
+				font-family: ForkAwesome;
+				font-size: 150px;
+				position: fixed;
+				top: 175px;
+				left: 0;
+				right: 0;
+				text-align: center;
+				color: var(--nav-icon-color);
+				opacity: .5;
+				z-index: -1;
+				transition-duration: .5s;
+				transition-property: left;
+			}
+				body.mod-contact aside.canvas-sliding #peoplefind-sidebar::before,
+				body.mod-contact aside.canvas-slid #peoplefind-sidebar::before {
+					left: 50%;
+				}
+		}
+		@supports selector(:has(*)){
+			body.mod-contact aside:has(#peoplefind-sidebar) + #content {
+				margin-top: 0;
+			}
+			/* Fix Scheduled Posts Page spacing 
+				Note: aside not :empty because of whitespace,
+				:blank works but is poorly supported,
+				:not(has(*)) works but not in old browsers
+			*/
+			body.mod-profile aside:not(:has(*)) + #content {
+				margin-top: 0;
+			}
+		}
 	body.mod-contact aside,
 	body.mod-photos  aside,
 	body.mod-profile aside {
