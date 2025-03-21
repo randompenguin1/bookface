@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.15
+	Version    : 1.5.16
     Licence    : AGPL
     Created on : 20 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1148,6 +1148,9 @@ ul.nav-tabs {
 			margin: 0 !important;
 		}
 		/* little vcard when you scroll down on profiles */
+		#vcard-short-desc * {
+			color: var(--font-color) !important;
+		}
 		#vcard-short-photo-wrapper img, 
 		#nav-short-info .contact-wrapper img {
 			border-radius: 100% !important;
