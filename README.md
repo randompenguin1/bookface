@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.5.15
+Version 1.5.16
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -275,6 +275,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Styled profile account type box.
 * Fixed mobile spacing issue on Contacts and Scheduled Posts pages 
 * Fixed "More..." drop menu rollover text color for Dark Mode 
+* Fixed little vcard text color 
 
 1.5 (27 Feb 2025)
 * fixed browser "Share to.." button display and sizing [Issue #3]
