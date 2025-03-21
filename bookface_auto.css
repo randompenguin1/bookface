@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.5.14
+	Version    : 1.5.15
     Licence    : AGPL
-    Created on : 19 Mar 2025
+    Created on : 20 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -171,6 +171,14 @@
 				background-image: none !important;
 				border-radius: 8px ;
 			}
+            /*
+            	Dark Mode has some
+            	additional drop-down
+            	button styling here
+            	that the light mode
+				version does not
+				need.
+			*/
 			.dropdown-menu > li.active,
 			.dropdown-menu > li.active:hover,
 			.dropdown-menu > li.active:focus {
@@ -2877,6 +2885,10 @@ ul.tabs li {
             .dropdown-menu li .btn-link {
             	color: var(--font-color);
             }
+            .dropdown-menu > li > a.btn-link:hover,
+			.dropdown-menu > li > a.btn-link:focus {
+				color: #333 !important;
+			}
 			.dropdown-menu > li.active,
 			.dropdown-menu > li.active:hover,
 			.dropdown-menu > li.active:focus {
