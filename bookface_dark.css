@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.5.18
+    Version    : 1.5.19
     Licence    : AGPL
     Created on : 22 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1434,6 +1434,59 @@ aside .widget li:hover {
 	width: 260px;
 	position: absolute;
 }
+	/* Jot Plugin Buttons */
+	#profile-jot-plugin-wrapper {
+		width: 85% !important;
+		margin: 0 !important;
+	}
+	#profile-jot-plugin-wrapper > div > button {
+		width: 45px !important;
+		height: 45px !important;
+		margin: 5px !important;
+	}
+		#profile-jot-plugin-wrapper > div > button:hover,
+		#profile-jot-plugin-wrapper > div > button:focus {
+			background-color: var(--link-color) !important;
+			color: white !important;
+		}
+	/* Smileys Add-on */
+	.smiley_button {
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+	}
+		/* image icon is not color mode aware
+		   so swap it with an icon font
+		*/
+		.smiley_button > img {
+			display: none !important;
+		}
+		.smiley_button::before {
+			content: '\f055';
+			font-family: ForkAwesome;
+			font-size: inherit;
+			color: inherit;
+		}
+	#smileybutton {
+		position: fixed !important;
+		background-color: #fff !important;
+		width: auto !imporrtant;
+		border-radius: 8px !important;
+		padding: 10px !important;
+		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+		box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+	}
+		table.smiley-preview {
+			border: none !important;
+		}
+		.jotplugins #postboxbutton,
+		.jotplugins #smileybutton {
+			position: absolute !important;
+		}
+	/* Zen Postbox Add-on */
+	.postbox_button > img {
+		width: 32px !important;
+		height: 32px !important;
+	}
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px;
@@ -2500,6 +2553,10 @@ body.mod-settings #delegation .contact-block-img {
 	.intro-actions {
 		position: relative;
 		float: none !important;
+	}
+	/* Jot Plugin Buttons */
+	#profile-jot-plugin-wrapper {
+		width: 100%;
 	}				
 }
 /*	Frio Theme Cut-Off (double sidebar width)
