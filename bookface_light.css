@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.18
+	Version    : 1.5.19
     Licence    : AGPL
     Created on : 22 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1434,6 +1434,59 @@ ul.nav-tabs {
 	width: 260px;
 	position: absolute;
 }
+	/* Jot Plugin Buttons */
+	#profile-jot-plugin-wrapper {
+		width: 85%;
+		margin: 0;
+	}
+	#profile-jot-plugin-wrapper > div > button {
+		width: 45px;
+		height: 45px;
+		margin: 5px;
+	}
+		#profile-jot-plugin-wrapper > div > button:hover,
+		#profile-jot-plugin-wrapper > div > button:focus {
+			background-color: var(--link-color);
+			color: white !important;
+		}
+	/* Smileys Add-on */
+	.smiley_button {
+		-webkit-box-shadow: none !important;
+		box-shadow: none !important;
+	}
+		/* image icon is not color mode aware
+		   so swap it with an icon font
+		*/
+		.smiley_button > img {
+			display: none;
+		}
+		.smiley_button::before {
+			content: '\f055';
+			font-family: ForkAwesome;
+			font-size: inherit;
+			color: inherit;
+		}
+	#smileybutton {
+		position: fixed;
+		background-color: #fff;
+		width: auto;
+		border-radius: 8px;
+		padding: 10px;
+		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	}
+		table.smiley-preview {
+			border: none;
+		}
+		.jotplugins #postboxbutton,
+		.jotplugins #smileybutton {
+			position: absolute;
+		}
+	/* Zen Postbox Add-on */
+	.postbox_button > img {
+		width: 32px;
+		height: 32px;
+	}
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px;
@@ -2500,6 +2553,10 @@ body.mod-settings #delegation .contact-block-img {
 	.intro-actions {
 		position: relative;
 		float: none !important;
+	}
+	/* Jot Plugin Buttons */
+	#profile-jot-plugin-wrapper {
+		width: 100%;
 	}
 }
 /*	Frio Theme Cut-Off (double sidebar width)
