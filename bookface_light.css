@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.16
+	Version    : 1.5.17
     Licence    : AGPL
-    Created on : 20 Mar 2025
+    Created on : 22 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -2526,6 +2526,9 @@ body.mod-settings #delegation .contact-block-img {
 	ul.nav-tabs li.active a {
 		background-color: var(--link-color) !important;
 		color: #fff !important;
+	}
+	.hovercard {
+		max-width: 100%;
 	}
 }
 /* 	Narrow Screen Phones in Landscape Orientation
