@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.5.19
+	Version    : 1.5.20
     Licence    : AGPL
-    Created on : 22 Mar 2025
+    Created on : 23 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1188,6 +1188,22 @@
 				.coverphoto:has(> :last-child:nth-child(n+4)) img {
 					height: 25%;
 				}
+	/* Contact Info Blocks */
+	.contact-info {
+		padding-bottom: 10px;
+	}
+	.contact-info .media-heading,
+	.contact-info small {
+		margin-right: 40px !important;
+		display: inline-block;
+	}
+		.contact-info .media-heading small {
+			margin-right: 0px !important;
+		}
+		.contact-info .navicon,
+		.contact-info .fa {
+			font-size: 16px;
+		}
 	/* not obviously clickable or intuitive what it does */
 	.plink.u-url {
 		/* uncomment to outline as a button
@@ -4141,6 +4157,22 @@ aside .widget li:hover {
 				.coverphoto:has(> :last-child:nth-child(n+4)) img {
 					height: 25%;
 				}
+	/* Contact Info Blocks */
+	.contact-info {
+		padding-bottom: 10px;
+	}
+	.contact-info .media-heading,
+	.contact-info small {
+		margin-right: 40px !important;
+		display: inline-block;
+	}
+		.contact-info .media-heading small {
+			margin-right: 0px !important;
+		}
+		.contact-info .navicon,
+		.contact-info .fa {
+			font-size: 16px;
+		}
     /* not obviously clickable or intuitive what it does */
     .plink.u-url {
     	/* uncomment to outline as a button
