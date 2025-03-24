@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.20
+	Version    : 1.5.21
     Licence    : AGPL
-    Created on : 23 Mar 2025
+    Created on : 24 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1811,6 +1811,13 @@ body.mod-settings #delegation .contact-block-img {
 		padding: 50px 30px;
 		box-sizing: border-box;
 	}
+		[class^="postbox-"] a {
+			color: inherit !important;
+		}
+			[class^="postbox-"]:hover a,
+			[class^="postbox-"]:focus a {
+				text-decoration: underline;
+			}
 		/* Solid Color Backgrounds */
 		.postbox-black {
 			background-color: black;
