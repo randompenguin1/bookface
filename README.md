@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.5.21
+Version 1.6
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -144,6 +144,92 @@ While not really recommended you can place up to four images in the Cover Photo 
 
 Extras spaces are okay, but just make sure there are no carriage returns or other elements inside `[class]..[/class]` or it will mis-count the images and size them wrong. Also keep in mind people not using Bookface will see three thumbnail images on your profile, only Bookface users will see the striped collage.
 
+### POSTBOXES
+
+Starting with Bookface version 1.6 now Friendica will have Postboxes too! Styling similar to the Facebook solid color and gradient backgrounds have been added to the Bookface stylesheets.
+
+**Right now Postbox is exclusively available for people using the Bookface scheme in the Friendica webapp, either on desktop or mobile.**
+
+When a Postbox post is shared to another platform like Mastodon, Sharkey, Disapora, Hubzilla, etc., the Postbox styling does not go with it. The same is true for anyone viewing the post in a third-party app, because none of them support Postbox styling, at least not yet.
+
+There are two Friendica add-ons server administrators can install to add global support for Postbox styling. The "[Postbox](https://gitlab.com/randompenguin/postbox)" add-on simply adds a stylesheet to the `<head>` element. It provides no interface for creating Postboxes, but users can still create them manually with BBcode. The other is the "[Zen Postbox](https://gitlab.com/randompenguin/zen_postbox)" add-on which not only adds the stylesheet to the `<head>` it also adds a Jot Plugin button to the message composer with a menu of all the available Postbox styles.
+
+#### How to Use Postboxes
+
+To make use of a Friendica Postbox simply wrap the text inside a Postbox Class BBcode like this:
+
+`[class=postbox-red]This is the wrapped text[/class]`
+
+#### Available Color Options
+
+In the `[class]` opener add `postbox-` plus any one of the color names after the "=" sign.
+
+**Solid Color Backgrounds:**
+
+- postbox-black
+- postbox-red
+- postbox-green
+- postbox-blue
+- postbox-orange
+- postbox-purple
+- postbox-forest
+- postbox-ocean
+- postbox-pink
+- postbox-salmon
+
+
+**Gradient Backgrounds:**
+
+- postbox-darkgray
+- postbox-minty
+- postbox-mintgray
+- postbox-redblue
+- postbox-violets
+- postbox-grayblack
+- postbox-tealblue
+- postbox-greengray
+- postbox-tealgray
+- postbox-bluegray
+- postbox-lavendergray
+- postbox-sunset
+- postbox-sherbert
+
+#### Content Restrictions
+
+Friendica's Postbox is a bit more forgiving as it allows for more than text-only content. However it does not work with most of the Friendica formatting due to the way BBcode is parsed.
+
+**BBcodes you CANNOT put inside a Postbox:**
+
+- [class], which means you can’t nest Postboxes
+- [hr]
+- [h1],[h2],[h3], etc…
+- [table],[tr],[th],[td]
+- [list],[ul],[ol]
+- [quote]
+- [abstract]
+- [spoiler]
+- [map]
+- [code]
+
+**BBcodes that do not work as intended inside a Postbox:**
+
+- [pre]
+- [noparse]
+- [nobb]
+
+The text will show but will be styled and centered.
+
+**BBcodes that DO WORK inside a Postbox:**
+
+- [b], [i], [u], [o], [s] _(bold has no visible effect)_
+- [url]
+- [img]
+- [audio]
+- [video]
+
+Plus any plain text, including emoji
+
+If you are using Markdown formatting what you can and can’t put in a Postbox is similar, with the exception that (because of how Markdown is parsed into BBcode) you can’t have both a URL and an image in the same Postbox. You can however put inline code in a Postbox with Markdown where BBcode cannot.
 
 ## GENERAL NOTES:
 
@@ -260,6 +346,7 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+1.6 (25 Mar 2025)
 * Fixed HR rule on posts [Issue #13]
 * Fixed notifcation profile pics so they are round [Issue #14]
 * Fixed Post and Comment background colors [Issue #15]
