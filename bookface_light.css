@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.5.21
+	Version    : 1.6
     Licence    : AGPL
-    Created on : 24 Mar 2025
+    Created on : 25 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1089,6 +1089,9 @@ ul.nav-tabs {
 	aside .widget li.selected a {
 		font-weight: bold;
 	}
+		aside .widget li.selected a:hover {
+			color: #333;
+		}
 	aside .widget li:hover {
 		background-color:rgba(255,255,255,1) !important;
 		border-color: transparent !important;
@@ -1503,6 +1506,13 @@ ul.nav-tabs {
 		width: 32px;
 		height: 32px;
 	}
+		/*		
+			BOOKFACE
+			DARK MODE
+			HAS ADDITIONAL
+			STYLING
+			HERE
+		*/
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px;
