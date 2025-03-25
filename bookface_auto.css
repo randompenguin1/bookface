@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.5.21
+	Version    : 1.6
     Licence    : AGPL
-    Created on : 24 Mar 2025
+    Created on : 25 Mar 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -121,7 +121,6 @@
 		font-size: 15px !important;
 		margin-left: 10px !important;
 	}
-
 		   ul.nav-tabs li a,
 		   ul.tabs li a {
 				  margin-top: 8px;
@@ -1152,6 +1151,9 @@
 			margin: 0 !important;
 		}
 		/* little vcard when you scroll down on profiles */
+		#vcard-short-desc * {
+			color: var(--font-color) !important;
+		}
 		#vcard-short-photo-wrapper img, 
 		#nav-short-info .contact-wrapper img {
 			border-radius: 100% !important;
@@ -1453,17 +1455,17 @@
 }
 	/* Jot Plugin Buttons */
 	#profile-jot-plugin-wrapper {
-		width: 85% !important;
-		margin: 0 !important;
+		width: 85%;
+		margin: 0;
 	}
 	#profile-jot-plugin-wrapper > div > button {
-		width: 45px !important;
-		height: 45px !important;
-		margin: 5px !important;
+		width: 45px;
+		height: 45px;
+		margin: 5px;
 	}
 		#profile-jot-plugin-wrapper > div > button:hover,
 		#profile-jot-plugin-wrapper > div > button:focus {
-			background-color: var(--link-color) !important;
+			background-color: var(--link-color);
 			color: white !important;
 		}
 	/* Smileys Add-on */
@@ -1475,7 +1477,7 @@
 		   so swap it with an icon font
 		*/
 		.smiley_button > img {
-			display: none !important;
+			display: none;
 		}
 		.smiley_button::before {
 			content: '\f055';
@@ -1484,26 +1486,33 @@
 			color: inherit;
 		}
 	#smileybutton {
-		position: fixed !important;
-		background-color: #fff !important;
-		width: auto !imporrtant;
-		border-radius: 8px !important;
-		padding: 10px !important;
-		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
-		box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+		position: fixed;
+		background-color: #fff;
+		width: auto;
+		border-radius: 8px;
+		padding: 10px;
+		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+		box-shadow: 0 6px 12px rgba(0,0,0,.175);
 	}
 		table.smiley-preview {
-			border: none !important;
+			border: none;
 		}
 		.jotplugins #postboxbutton,
 		.jotplugins #smileybutton {
-			position: absolute !important;
+			position: absolute;
 		}
 	/* Zen Postbox Add-on */
 	.postbox_button > img {
-		width: 32px !important;
-		height: 32px !important;
+		width: 32px;
+		height: 32px;
 	}
+		/*		
+			BOOKFACE
+			DARK MODE
+			HAS ADDITIONAL
+			STYLING
+			HERE
+		*/
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px;
@@ -4428,17 +4437,17 @@ aside .widget li:hover {
 }
 	/* Jot Plugin Buttons */
 	#profile-jot-plugin-wrapper {
-		width: 85% !important;
-		margin: 0 !important;
+		width: 85%;
+		margin: 0;
 	}
 	#profile-jot-plugin-wrapper > div > button {
-		width: 45px !important;
-		height: 45px !important;
-		margin: 5px !important;
+		width: 45px;
+		height: 45px;
+		margin: 5px;
 	}
 		#profile-jot-plugin-wrapper > div > button:hover,
 		#profile-jot-plugin-wrapper > div > button:focus {
-			background-color: var(--link-color) !important;
+			background-color: var(--link-color);
 			color: white !important;
 		}
 	/* Smileys Add-on */
@@ -4450,7 +4459,7 @@ aside .widget li:hover {
 		   so swap it with an icon font
 		*/
 		.smiley_button > img {
-			display: none !important;
+			display: none;
 		}
 		.smiley_button::before {
 			content: '\f055';
@@ -4459,26 +4468,33 @@ aside .widget li:hover {
 			color: inherit;
 		}
 	#smileybutton {
-		position: fixed !important;
-		background-color: #fff !important;
-		width: auto !imporrtant;
-		border-radius: 8px !important;
-		padding: 10px !important;
-		-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
-		box-shadow: 0 6px 12px rgba(0,0,0,.175) !important;
+		position: fixed;
+		background-color: var(--background-color);
+		width: auto;
+		border-radius: 8px;
+		padding: 10px;
+		-webkit-box-shadow: 0 6px 12px rgba(255,255,255,.175);
+		box-shadow: 0 6px 12px rgba(255,255,255,.175);
 	}
 		table.smiley-preview {
-			border: none !important;
+			border: none;
 		}
 		.jotplugins #postboxbutton,
 		.jotplugins #smileybutton {
-			position: absolute !important;
+			position: absolute;
 		}
 	/* Zen Postbox Add-on */
 	.postbox_button > img {
-		width: 32px !important;
-		height: 32px !important;
+		width: 32px;
+		height: 32px;
 	}
+		#postboxbutton {
+			background-color: var(--background-color);
+			box-shadow: 0 6px 12px rgba(255,255,255,.175);
+		}
+		div.preview-postbox > button {
+			border: 1px solid #444;
+		}
 /* MISCELLANEOUS STUFF */
 div#back-to-top {
 	bottom: 65px;
