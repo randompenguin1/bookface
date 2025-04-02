@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.6
+Version 1.6.1
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -346,6 +346,8 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+* Fixed "New Message" button not being obvious [Issue #24]
+
 1.6 (25 Mar 2025)
 * Fixed HR rule on posts [Issue #13]
 * Fixed notifcation profile pics so they are round [Issue #14]
