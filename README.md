@@ -48,6 +48,7 @@ Bookface uses a number of pseudo-elements to label buttons in the Frio theme. Yo
     --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
     --save-button-text: 'Save';
+	--new-message-text: 'New Message';
 
 ### CUSTOMIZATION
 
