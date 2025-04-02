@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.6
+    Version    : 1.6.1
     Licence    : AGPL
-    Created on : 25 Mar 2025
+    Created on : 2 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1545,6 +1545,21 @@ div#back-to-top {
 	.mail-list-outside-wrapper .contact-photo-wrapper img {
 		border-radius: 100%;
 	}
+	#message-new a::after {
+		content: var(--new-message-text);
+	}
+		#message-new a {
+			color: var(--link-color);
+			opacity: 1 !important;
+			padding: 10px;
+			border-radius: 8px;
+		}
+			#message-new:hover a,
+			#message-new:focus a {
+				color: white;
+				background-color: var(--link-color);
+				border-radius: 8px;
+			}	
 .modal-backdrop {
 	background-color: #000;
 }
@@ -2559,7 +2574,7 @@ body.mod-settings #delegation .contact-block-img {
 		.coverphoto.canvas-slid {
 			top: 55px;
 		}
-	#message-new {
+	#message-new a {
 		height: 50px;
 		width:  50px;
 		background-color: var(--link-color);
@@ -2567,14 +2582,17 @@ body.mod-settings #delegation .contact-block-img {
 		font-size: 24px;
 		text-align: center;
 		border-radius: 100%;
+		display: block;
+		color: white;
+		padding: 0;
 	}
-		#message-new a {
-			color: white !important;
-			opacity: 1;
-		}
-			#message-new:hover,
-			#message-new:focus {
-				box-shadow: 0 0 100px rgba(0,0,0,.2);
+	#message-new a::after {
+		content: '';
+	}
+			#message-new:hover a,
+			#message-new:focus a {
+				box-shadow: inset 0 0 100px rgba(255,255,255,.2);
+				border-radius: 100%;
 			}	
 	.justified-gallery > a, 
 	.justified-gallery > div, 
