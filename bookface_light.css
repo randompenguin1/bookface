@@ -39,7 +39,8 @@
     --attendmaybe-button-text: 'Maybe';
     --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
-    --save-button-text: 'Save';    
+    --save-button-text: 'Save';  
+	--new-message-text: 'New Message';  
 }
 
 	body {
