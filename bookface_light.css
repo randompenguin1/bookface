@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.6.1
+	Version    : 1.6.2
     Licence    : AGPL
-    Created on : 2 APR 2025
+    Created on : 4 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -2071,6 +2071,13 @@ body.mod-settings #delegation .contact-block-img {
 			body.mod-profile .vcard + #sidebar-photos-albums::before {
 				content: '';
 			}
+			
+		/* This is for old browsers that do not understand either @supports or :has() */
+		body.mod-contact aside,
+		body.mod-photos  aside,
+		body.mod-profile aside {
+			position: absolute !important;
+		}
 		/* only seen on your own Contacts Page */
 		@supports not selector(:has(*)){
 			body.mod-contact #peoplefind-sidebar::before {
@@ -2094,6 +2101,12 @@ body.mod-settings #delegation .contact-block-img {
 				}
 		}
 		@supports selector(:has(*)){
+			/* for browsers that DO understand both @supports and :has() */
+			body.mod-contact aside,
+			body.mod-photos  aside,
+			body.mod-profile aside {
+				position: fixed !important;
+			}
 			body.mod-contact aside:has(#peoplefind-sidebar) + #content {
 				margin-top: 0;
 			}
