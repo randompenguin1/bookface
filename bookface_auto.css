@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.6.2
+	Version    : 1.6.3
     Licence    : AGPL
     Created on : 4 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1827,126 +1827,6 @@ body.mod-delegation .identity-match-photo img,
 body.mod-settings #delegation .contact-block-img {
 	border-radius: 100% !important;
 }
-	/* 	Post Backgrounds 
-		================
-		Solid and Gradient backgrounds with larger text
-		to grab reader attention
-	*/
-	[class^="postbox-"]{
-		display: table-cell;
-		height: 350px;
-		width: 1000px;
-		max-width: 100%;
-		vertical-align: middle;
-		font-family: Arial, sans-serif;
-		font-size: 30px;
-		font-weight: 700;
-		line-height: 35px;
-		text-align: center;
-		padding: 50px 30px;
-		box-sizing: border-box;
-	}
-		[class^="postbox-"] a {
-			color: inherit !important;
-		}
-			[class^="postbox-"]:hover a,
-			[class^="postbox-"]:focus a {
-				text-decoration: underline;
-			}
-		/* Solid Color Backgrounds */
-		.postbox-black {
-			background-color: black;
-			color: white;
-		}
-		.postbox-red {
-			background-color: rgb(226, 1, 59);
-			color: white;
-		}
-		.postbox-green {
-			background-color: rgb(38, 146, 127);
-			color: white;
-		}
-		.postbox-blue {
-			background-color: rgb(32, 136, 175);
-			color: black;
-		}
-		.postbox-orange {
-			background-color: rgb(255, 99, 35);
-			color: black;
-		}
-		.postbox-purple {
-			background-color: rgb(115, 33, 173);
-			color: white;
-		}
-		.postbox-forest {
-			background-color: rgb(22, 83, 72);
-			color: white;
-		}
-		.postbox-ocean {
-			background-color: rgb(36, 55, 98);
-			color: white;
-		}
-		.postbox-pink {
-			background-color: rgb(243, 83, 105);
-			color: black;
-		}
-		.postbox-salmon {
-			background-color: rgb(250, 128, 114);
-			color: black;
-		}
-		/* Gradient Backgrounds */
-		.postbox-darkgray {
-			background-image: linear-gradient(135deg, rgb(119, 125, 136), rgb(79, 87, 102));
-			color: white;
-		}
-		.postbox-minty {
-			background-image: linear-gradient(135deg, rgb(143, 199, 173), rgb(72, 229, 169));
-			color: black;
-		}
-		.postbox-mintgray {
-			background-image: linear-gradient(135deg, rgb(143, 199, 173), rgb(72, 229, 169));
-			color: black;
-		}
-		.postbox-redblue {
-			background-image: linear-gradient(45deg, rgb(255, 0, 71), rgb(44, 52, 199));
-			color: white;
-		}
-		.postbox-violets {
-			background-image: linear-gradient(45deg, rgb(93, 63, 218), rgb(252, 54, 253));
-			color: white;
-		}
-		.postbox-grayblack {
-			background-image: linear-gradient(45deg, rgb(93, 99, 116), rgb(22, 24, 29));
-			color: white;
-		}
-		.postbox-tealblue {
-			background-image:  linear-gradient(to bottom,  #4bdfdf 0%,#207cca 50%,#19094a 100%);
-			color: white;
-		}
-		.postbox-greengray {
-			background-image: linear-gradient(to right,  #c8dbbd 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-tealgray {
-			background-image: linear-gradient(to right,  #8dcad0 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-bluegray {
-			background-image:  linear-gradient(to right,  #94bbeb 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-lavendergray {
-			background-image: linear-gradient(to right,  #cfbfda 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-sunset {
-			background-image: linear-gradient(to bottom,  #fecf41 0%,#fd7440 50%,#b623b1 100%);
-			color: white;
-		}
-		.postbox-sherbert {
-			background-image: linear-gradient(45deg,  #fcd6cd 6%,#f8bc44 25%,#fb7d88 44%,#fb7d88 64%,#fb7d88 64%,#fed640 100%);
-			color: black;
-		}
 /*	Greater than Full-HD Width
 	===========================
 */
@@ -4816,126 +4696,6 @@ a.tag.label,
 		color: white;
 		border: none;
 	}
-	/* 	Post Backgrounds 
-		================
-		Solid and Gradient backgrounds with larger text
-		to grab reader attention
-	*/
-	[class^="postbox-"]{
-		display: table-cell;
-		height: 350px;
-		width: 1000px;
-		max-width: 100%;
-		vertical-align: middle;
-		font-family: Arial, sans-serif;
-		font-size: 30px;
-		font-weight: 700;
-		line-height: 35px;
-		text-align: center;
-		padding: 50px 30px;
-		box-sizing: border-box;
-	}
-		[class^="postbox-"] a {
-			color: inherit !important;
-		}
-			[class^="postbox-"]:hover a,
-			[class^="postbox-"]:focus a {
-				text-decoration: underline;
-			}
-		/* Solid Color Backgrounds */
-		.postbox-black {
-			background-color: black;
-			color: white;
-		}
-		.postbox-red {
-			background-color: rgb(226, 1, 59);
-			color: white;
-		}
-		.postbox-green {
-			background-color: rgb(38, 146, 127);
-			color: white;
-		}
-		.postbox-blue {
-			background-color: rgb(32, 136, 175);
-			color: black;
-		}
-		.postbox-orange {
-			background-color: rgb(255, 99, 35);
-			color: black;
-		}
-		.postbox-purple {
-			background-color: rgb(115, 33, 173);
-			color: white;
-		}
-		.postbox-forest {
-			background-color: rgb(22, 83, 72);
-			color: white;
-		}
-		.postbox-ocean {
-			background-color: rgb(36, 55, 98);
-			color: white;
-		}
-		.postbox-pink {
-			background-color: rgb(243, 83, 105);
-			color: black;
-		}
-		.postbox-salmon {
-			background-color: rgb(250, 128, 114);
-			color: black;
-		}
-		/* Gradient Backgrounds */
-		.postbox-darkgray {
-			background-image: linear-gradient(135deg, rgb(119, 125, 136), rgb(79, 87, 102));
-			color: white;
-		}
-		.postbox-minty {
-			background-image: linear-gradient(135deg, rgb(143, 199, 173), rgb(72, 229, 169));
-			color: black;
-		}
-		.postbox-mintgray {
-			background-image: linear-gradient(135deg, rgb(143, 199, 173), rgb(72, 229, 169));
-			color: black;
-		}
-		.postbox-redblue {
-			background-image: linear-gradient(45deg, rgb(255, 0, 71), rgb(44, 52, 199));
-			color: white;
-		}
-		.postbox-violets {
-			background-image: linear-gradient(45deg, rgb(93, 63, 218), rgb(252, 54, 253));
-			color: white;
-		}
-		.postbox-grayblack {
-			background-image: linear-gradient(45deg, rgb(93, 99, 116), rgb(22, 24, 29));
-			color: white;
-		}
-		.postbox-tealblue {
-			background-image:  linear-gradient(to bottom,  #4bdfdf 0%,#207cca 50%,#19094a 100%);
-			color: white;
-		}
-		.postbox-greengray {
-			background-image: linear-gradient(to right,  #c8dbbd 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-tealgray {
-			background-image: linear-gradient(to right,  #8dcad0 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-bluegray {
-			background-image:  linear-gradient(to right,  #94bbeb 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-lavendergray {
-			background-image: linear-gradient(to right,  #cfbfda 0%,#dedede 100%);
-			color: black;
-		}
-		.postbox-sunset {
-			background-image: linear-gradient(to bottom,  #fecf41 0%,#fd7440 50%,#b623b1 100%);
-			color: white;
-		}
-		.postbox-sherbert {
-			background-image: linear-gradient(45deg,  #fcd6cd 6%,#f8bc44 25%,#fb7d88 44%,#fb7d88 64%,#fb7d88 64%,#fed640 100%);
-			color: black;
-		}
 /*	Greater than Full-HD Width
 	===========================
 */
@@ -5968,3 +5728,123 @@ body.mod-home {
 			line-height: 32px;
 		}
 	}
+	/* 	Post Backgrounds 
+		================
+		Solid and Gradient backgrounds with larger text
+		to grab reader attention
+	*/
+	[class^="postbox-"]{
+		display: table-cell;
+		height: 350px;
+		width: 1000px;
+		max-width: 100%;
+		vertical-align: middle;
+		font-family: Arial, sans-serif;
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 35px;
+		text-align: center;
+		padding: 50px 30px;
+		box-sizing: border-box;
+	}
+		[class^="postbox-"] a {
+			color: inherit !important;
+		}
+			[class^="postbox-"]:hover a,
+			[class^="postbox-"]:focus a {
+				text-decoration: underline;
+			}
+		/* Solid Color Backgrounds */
+		.postbox-black {
+			background-color: black;
+			color: white;
+		}
+		.postbox-red {
+			background-color: rgb(226, 1, 59);
+			color: white;
+		}
+		.postbox-green {
+			background-color: rgb(38, 146, 127);
+			color: white;
+		}
+		.postbox-blue {
+			background-color: rgb(32, 136, 175);
+			color: black;
+		}
+		.postbox-orange {
+			background-color: rgb(255, 99, 35);
+			color: black;
+		}
+		.postbox-purple {
+			background-color: rgb(115, 33, 173);
+			color: white;
+		}
+		.postbox-forest {
+			background-color: rgb(22, 83, 72);
+			color: white;
+		}
+		.postbox-ocean {
+			background-color: rgb(36, 55, 98);
+			color: white;
+		}
+		.postbox-pink {
+			background-color: rgb(243, 83, 105);
+			color: black;
+		}
+		.postbox-salmon {
+			background-color: rgb(250, 128, 114);
+			color: black;
+		}
+		/* Gradient Backgrounds */
+		.postbox-darkgray {
+			background-image: linear-gradient(135deg, rgb(119, 125, 136), rgb(79, 87, 102));
+			color: white;
+		}
+		.postbox-minty {
+			background-image: linear-gradient(135deg, rgb(143, 199, 173), rgb(72, 229, 169));
+			color: black;
+		}
+		.postbox-mintgray {
+			background-image: linear-gradient(135deg, rgb(143, 199, 173), rgb(72, 229, 169));
+			color: black;
+		}
+		.postbox-redblue {
+			background-image: linear-gradient(45deg, rgb(255, 0, 71), rgb(44, 52, 199));
+			color: white;
+		}
+		.postbox-violets {
+			background-image: linear-gradient(45deg, rgb(93, 63, 218), rgb(252, 54, 253));
+			color: white;
+		}
+		.postbox-grayblack {
+			background-image: linear-gradient(45deg, rgb(93, 99, 116), rgb(22, 24, 29));
+			color: white;
+		}
+		.postbox-tealblue {
+			background-image:  linear-gradient(to bottom,  #4bdfdf 0%,#207cca 50%,#19094a 100%);
+			color: white;
+		}
+		.postbox-greengray {
+			background-image: linear-gradient(to right,  #c8dbbd 0%,#dedede 100%);
+			color: black;
+		}
+		.postbox-tealgray {
+			background-image: linear-gradient(to right,  #8dcad0 0%,#dedede 100%);
+			color: black;
+		}
+		.postbox-bluegray {
+			background-image:  linear-gradient(to right,  #94bbeb 0%,#dedede 100%);
+			color: black;
+		}
+		.postbox-lavendergray {
+			background-image: linear-gradient(to right,  #cfbfda 0%,#dedede 100%);
+			color: black;
+		}
+		.postbox-sunset {
+			background-image: linear-gradient(to bottom,  #fecf41 0%,#fd7440 50%,#b623b1 100%);
+			color: white;
+		}
+		.postbox-sherbert {
+			background-image: linear-gradient(45deg,  #fcd6cd 6%,#f8bc44 25%,#fb7d88 44%,#fb7d88 64%,#fb7d88 64%,#fed640 100%);
+			color: black;
+		}
