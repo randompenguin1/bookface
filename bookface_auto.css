@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Auto Color Mode
-	Version    : 1.6.5
+	Version    : 1.6.6
     Licence    : AGPL
     Created on : 28 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -828,14 +828,14 @@
 			left: 15px;
 		}
 		.vote-event .wall-item-response:nth-of-type(1) .button-event::after,
-		[id^="attendyes"]::after{
+		.wall-item-actions-row [id^="attendyes"]::after{
 			content: var(--attendyes-button-text);
 		}
 		.vote-event:has(button) .wall-item-response:nth-of-type(2){
 			left: 105px;
 		}
 		.vote-event .wall-item-response:nth-of-type(2) .button-event::after,
-		[id^="attendno"]::after{
+		.wall-item-actions-row [id^="attendno"]::after{
 			content: var(--attendno-button-text);
 			position: relative;
 			height: 20px;
@@ -845,7 +845,7 @@
 			left: 204px;
 		}
 		.vote-event .wall-item-response:nth-of-type(3) .button-event::after,
-		[id^="attendmaybe"]::after{
+		.wall-item-actions-row [id^="attendmaybe"]::after{
 			content: var(--attendmaybe-button-text);
 		}
 		/* prevent "Like Like" and "Dislike Dislike" on photos */
@@ -1130,6 +1130,88 @@
 		.wall-item-actions .checkbox {
 			padding-top: 6px !important;
 		}
+			/* WALL ITEM RESPONSES */
+			.wall-item-responses > div {
+				position: relative;
+			}
+			.wall-item-responses > div > p:first-of-type::before,
+			.hide-comments::before, .hide-comments-total::before {
+				display: inline-block;
+				margin-right: 3px;
+				font-family: ForkAwesome;
+				font-weight: lighter;
+				font-size: 12px;
+				text-align: center;
+				color: white;
+				width: 20px;
+				height:20px;
+				padding: 2px;
+				line-height: 16px;
+				border-radius: 100%;
+			}
+				.wall-item-responses .wall-item-like > p:first-of-type::before {
+					content: '\f164';
+					background-color: #0066FF;
+				}
+				.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+					content: '\f165';
+					background-color: red;
+				}
+				.wall-item-responses .wall-item-announce > p:first-of-type::before{
+					content: '\f079';
+					background-color: #00c100;
+				}
+				.wall-item-responses .wall-item-attendyes > p:first-of-type::before{
+					content: '\f00c';
+					background-color: #00c100;
+				}
+				.wall-item-responses .wall-item-attendno > p:first-of-type::before{
+					content: '\f00d';
+					background-color: red;
+				}
+				.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
+					content: '\f128';
+					background-color: orange;
+				}
+					.wall-item-responses div p[class*="-expanded"] {
+						background-color: rgba(0,0,0,.8);
+						position: absolute;
+						bottom: 100%;
+						padding: 10px;
+						margin-left: 23px;
+						border-radius: 8px;
+						width: 200px;
+						max-height: 415px;
+						font-size: 0px;
+						color: transparent;
+						overflow: hidden;
+						box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+						z-index: 10;
+					}
+						.wall-item-responses div p[class*="-expanded"]:hover,
+						.wall-item-responses div p[class*="-expanded"]:focus {
+							overflow-y: auto;
+						}
+						.wall-item-responses div p[class*="-expanded"] a {
+							color: white !important;
+							display: block;
+							max-width: 100%;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							font-size: 14px;
+							overflow: hidden;
+						}
+							.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74){
+								overflow: visible;
+							}
+								.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+									content: 'and others...';
+									display: block;
+								}
+			.hide-comments::before, .hide-comments-total::before {
+				content: '\f27a';
+				background-color: #0066FF;
+			}
 		.comment .media-body {
 			padding: 10px;
 			background-color: var(--comment-bg);
@@ -2115,6 +2197,9 @@ body.mod-settings #delegation .contact-block-img {
     			display: block;
     			background-color: var(--background-color);
     		}
+		.wall-item-responses div p[class*="-expanded"] {
+			overflow-y: auto;
+		}
 }
 /*	Most Phones in Portrait Orientation
 	Large Screen Phones in Landscape Orientation
@@ -3698,14 +3783,14 @@ p.wall-item-announce,
             left: 15px;
         }
         .vote-event .wall-item-response:nth-of-type(1) .button-event::after,
-        [id^="attendyes"]::after{
+        .wall-item-actions-row [id^="attendyes"]::after{
             content: var(--attendyes-button-text);
         }
         .vote-event:has(button) .wall-item-response:nth-of-type(2){
             left: 105px;
         }
         .vote-event .wall-item-response:nth-of-type(2) .button-event::after,
-        [id^="attendno"]::after{
+        .wall-item-actions-row [id^="attendno"]::after{
             content: var(--attendno-button-text);
             position: relative;
             height: 20px;
@@ -3715,7 +3800,7 @@ p.wall-item-announce,
             left: 204px;
         }
         .vote-event .wall-item-response:nth-of-type(3) .button-event::after,
-        [id^="attendmaybe"]::after{
+        .wall-item-actions-row [id^="attendmaybe"]::after{
             content: var(--attendmaybe-button-text);
         }
 		/* prevent "Like Like" and "Dislike Dislike" on photos */
@@ -4023,6 +4108,88 @@ aside .widget li:hover {
        .wall-item-actions .checkbox {
               padding-top: 6px !important;
        }
+			/* WALL ITEM RESPONSES */
+			.wall-item-responses > div {
+				position: relative;
+			}
+			.wall-item-responses > div > p:first-of-type::before,
+			.hide-comments::before, .hide-comments-total::before {
+				display: inline-block;
+				margin-right: 3px;
+				font-family: ForkAwesome;
+				font-weight: lighter;
+				font-size: 12px;
+				text-align: center;
+				color: white;
+				width: 20px;
+				height:20px;
+				padding: 2px;
+				line-height: 16px;
+				border-radius: 100%;
+			}
+				.wall-item-responses .wall-item-like > p:first-of-type::before {
+					content: '\f164';
+					background-color: #0066FF;
+				}
+				.wall-item-responses .wall-item-dislike > p:first-of-type::before {
+					content: '\f165';
+					background-color: red;
+				}
+				.wall-item-responses .wall-item-announce > p:first-of-type::before{
+					content: '\f079';
+					background-color: #00c100;
+				}
+				.wall-item-responses .wall-item-attendyes > p:first-of-type::before{
+					content: '\f00c';
+					background-color: #00c100;
+				}
+				.wall-item-responses .wall-item-attendno > p:first-of-type::before{
+					content: '\f00d';
+					background-color: red;
+				}
+				.wall-item-responses .wall-item-attendmaybe > p:first-of-type::before{
+					content: '\f128';
+					background-color: orange;
+				}
+					.wall-item-responses div p[class*="-expanded"] {
+						background-color: rgba(0,0,0,.8);
+						position: absolute;
+						bottom: 100%;
+						padding: 10px;
+						margin-left: 23px;
+						border-radius: 8px;
+						width: 200px;
+						max-height: 415px;
+						font-size: 0px;
+						color: transparent;
+						overflow: hidden;
+						box-shadow: 0px 5px 5px rgba(0,0,0,.3);
+						z-index: 10;
+					}
+						.wall-item-responses div p[class*="-expanded"]:hover,
+						.wall-item-responses div p[class*="-expanded"]:focus {
+							overflow-y: auto;
+						}
+						.wall-item-responses div p[class*="-expanded"] a {
+							color: white !important;
+							display: block;
+							max-width: 100%;
+							white-space: nowrap;
+							text-overflow: ellipsis;
+							font-size: 14px;
+							overflow: hidden;
+						}
+							.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74){
+								overflow: visible;
+							}
+								.wall-item-responses div p[class*="-expanded"] a:nth-of-type(74)::after {
+									content: 'and others...';
+									display: block;
+								}
+			.hide-comments::before, .hide-comments-total::before {
+				content: '\f27a';
+				background-color: #0066FF;
+			}
        .comment .media-body {
               padding: 10px;
               background-color: var(--comment-bg);
@@ -4987,6 +5154,9 @@ a.tag.label,
     			display: block;
     			background-color: var(--background-color);
     		}
+		.wall-item-responses div p[class*="-expanded"] {
+			overflow-y: auto;
+		}
 }
 /*	Most Phones in Portrait Orientation
 	Large Screen Phones in Landscape Orientation
