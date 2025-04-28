@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.6.6
+    Version    : 1.6.7
     Licence    : AGPL
     Created on : 28 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1124,9 +1124,12 @@ aside .widget li:hover {
     font-size: 24px !important;
     color: var(--nav-icon-color) !important;
 }
-       .wall-item-actions button:hover {
-              color: var(--link-color) !important;
-       }
+ 		.wall-item-actions button:hover {
+			filter: brightness(1.25);
+		}
+		.wall-item-actions button.active {
+			color: var(--link-color) !important;
+		}
        .wall-item-actions .checkbox {
               padding-top: 6px !important;
        }
