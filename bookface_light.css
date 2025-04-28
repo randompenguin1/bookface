@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.6.5
+	Version    : 1.6.7
     Licence    : AGPL
     Created on : 28 APR 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -1125,6 +1125,9 @@ ul.nav-tabs {
 		color: var(--nav-icon-color) !important;
 	}
 		.wall-item-actions button:hover {
+			filter: brightness(.75);
+		}
+		.wall-item-actions button.active {
 			color: var(--link-color) !important;
 		}
 		.wall-item-actions .checkbox {
