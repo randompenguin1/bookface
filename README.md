@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.6.8
+Version 1.6.9
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -406,6 +406,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Styled Item Responses (part of Issue #25)
 * Action buttons (except Comment and Quote) you've interacted with before now adopt accent color [Issue #25]
 * Fix for disabled Action Buttons 
+* Fixed breaking typo
 
 1.6 (25 Mar 2025)
 * Fixed HR rule on posts [Issue #13]
