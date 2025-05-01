@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.6.7
+	Version    : 1.6.8
     Licence    : AGPL
-    Created on : 28 APR 2025
+    Created on : 01 MAY 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -794,6 +794,10 @@ ul.nav-tabs {
 		.wall-item-actions-right .dropdown-toggle::after,
 		.more-links .dropdown-toggle::after {
 			content: var(--more-button-text);
+		}
+		.wall-item-actions-row button[disabled,
+		.wall-item-actions-right button[disabled] {
+			opacity: .5;
 		}
 		/* engagement counts */
 		.wall-item-actions-row > button span,
