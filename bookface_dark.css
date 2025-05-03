@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.6.9
+    Version    : 1.7.0
     Licence    : AGPL
-    Created on : 01 MAY 2025
+    Created on : 03 MAY 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -2084,8 +2084,10 @@ body.mod-settings #delegation .contact-block-img {
 				:blank works but is poorly supported,
 				:not(has(*)) works but not in old browsers
 			*/
-			body.mod-profile aside:not(:has(*)) + #content {
-				margin-top: 0;
+			@supports not (background: -webkit-named-image(i)) {
+				body.mod-profile aside:not(:has(*)) + #content {
+					margin-top: 0;
+				}
 			}
 		}
 	body.mod-contact aside,
