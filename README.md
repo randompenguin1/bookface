@@ -398,6 +398,7 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+1.7 (06 May 2025)
 * Fixed "New Message" button not being obvious [Issue #24]
 * Fixed Profile Pics and Cover Photos not working in old iOS browsers [Issue #26]
 * Moved Postbox styles to end of stylesheet 
