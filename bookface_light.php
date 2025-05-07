@@ -10,7 +10,7 @@
  * Author: Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: yes
- * Version: 1.6
+ * Version: 1.7
  */
 use Friendica\DI;
 require_once 'view/theme/frio/php/PHPColors/Color.php';
