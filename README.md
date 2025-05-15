@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.7.0
+Version 1.7.1
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -398,6 +398,8 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+* Fixed transparent background on friends-in-common list on other people's profiles.
+
 1.7 (06 May 2025)
 * Fixed "New Message" button not being obvious [Issue #24]
 * Fixed Profile Pics and Cover Photos not working in old iOS browsers [Issue #26]
