@@ -10,7 +10,7 @@
  * Author: Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: Yes
- * Version: 1.7
+ * Version: 1.8
  */
 // if there is no cookie create one
 use Friendica\DI;
@@ -21,7 +21,7 @@ $customColor = DI::pConfig()->get($uid, 'frio', 'link_color') ?: '';
 if ($customColor){
 	$customColor = new Color(''.$customColor.'');
 }
-$menu_background_hover_color = 'rgba(128,128,128,.1)';
+$menu_background_hover_color = ($customColor) ? '#'.$customColor->lighten(45) : '#'.$accentColor->lighten(45);
 $nav_bg = '#ffffff';
 $background_color = '#f2f4f7';
 $link_color = ($customColor) ? '#'.$customColor->getHex() : '#'.$accentColor->getHex();
@@ -31,5 +31,6 @@ $link_color = ($customColor) ? '#'.$customColor->getHex() : '#'.$accentColor->ge
 	}
 $nav_icon_color = '#65686C';
 $font_color = '#313131';
+$font_color_lighter = '#444'; 
 $font_color_darker = '#333';
 $contentbg_transp = '0';
