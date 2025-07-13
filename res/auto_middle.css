@@ -1,0 +1,26 @@
+
+/* =====================================================================
+
+
+			USER PREFERS DARK MODE
+			
+			
+   =====================================================================
+*/
+@media (prefers-color-scheme: dark){
+	:root{
+		--nav-bg: #252728;
+		--link-color: $link_color;
+		--nav-icon-color: #B0B3B8;
+		--background-color: #1C1C1D;
+		--font-color: #cccccc;
+		--font-color-lighter: #acacac;
+		--font-color-darker: #999999;
+		--menu-background-hover-color: color-mix(in oklab, var(--link-color) 50%, black);
+		--border-color: #333333;
+		--count-color:  #ffffff;
+		--count-bg: var(--link-color);
+    	--shadowglow: rgba(255,255,255,.3);
+    	--dimbright:  rgba(255,255,255,.1);
+	}
+	
