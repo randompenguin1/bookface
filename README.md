@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.7.1
+Version 1.8.0
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -27,13 +27,42 @@ into _/friendica/view/theme/frio/scheme/_
 
 Starting with Version 1.3 it is much easier for server admins to customize and localize Bookface. Everything you can safely change is now defined in the CSS variables at the top of the stylsheets.  You could also override these with another stylesheet loaded after Bookface the redefines the variables.
 
-### LOCALIZATION
-
 Bookface uses a number of pseudo-elements to label buttons in the Frio theme. You can easily change these to say something else or to display them in another language:
 
+  	/* Fonts and Colors */
+    --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
+    --nav-bg: #ffffff;
+    --link-color: #0066ff;
+    --nav-icon-color: #65686c;
+    --background-color: #f2f4f7;
+    --content-bg: var(--nav-bg);
+    --comment-bg: var(--background-color);
+    --font-color: #313131;
+    --font-color-lighter: #444444; 
+    --font-color-darker: #333333;
+    --menu-background-hover-color: #cee9f7;
+    --border-color: #eeeeee;
+    --count-color:  #ffffff;
+    --count-bg: var(--link-color);
+    --shadowglow: rgba(0,0,0,.3);	
+    --dimbright:  rgba(0,0,0,.1);	
+    
+    /* Theme Features */
+	--attach-file-button: none; /* none or block */
+	--show-tooltips: block; /* none or block */ 
+	--show-navbar-labels: none; /*none or block */ 
+    
     /* LOCALIZE pseudo-element text below */
+    --navbar-network-text: 'Network';
+    --navbar-profile-text: 'Home';
+    --navbar-community-text: 'News Feed';
+    --navbar-messages-text: 'Messages';
+    --navbar-calendar-text: 'Calendar';
+    --navbar-contact-text: 'Friends';
+    --navbar-notices-text: 'Notices';
     --sign-in-text: 'Sign-In';
     --compose-text: 'Compose';
+    --new-note-text: 'New Note';
     --save-search-text: 'Save Search';
     --follow-tag-text: 'Follow Tag';
     --comment-button-text: 'Comment';
@@ -47,59 +76,11 @@ Bookface uses a number of pseudo-elements to label buttons in the Frio theme. Yo
     --attendmaybe-button-text: 'Maybe';
     --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
-    --save-button-text: 'Save';
+    --save-button-text: 'Save';  
 	--new-message-text: 'New Message';
+	--calendar-today-text: 'Today';  
 
-### CUSTOMIZATION
-
-Some people have found the accent color engagement counts on action buttons distracting or busy. You can easily change it be redefining the variables. You could either set it to another already defined variable or set it to a specific color:
-
-	--count-color: black; /* make number black */
-    --count-bg: var(--nav-icon-color); /* makes it same color as button */
-
-    --count-bg: black; /* makes the background of counts black, font is white */
-
-	--count-color: purple; /* number is purple */
-    --count-color: rgba(0,0,0,.5); /* semi-transparent gray */
-
-You get the idea.
-
-You should _avoid_ redefining the default Frio color variables because if a user on your server changes the "Theme Customization" settings you'd be overriding the user's color scheme.  The default variables you should *NOT* override globally are:
-
-    --nav-bg
-    --link-color
-    --nav-icon-color
-    --background-color
-    --font-color
-    --font-color-darker
-    --menu-background-hover-color
-
-You _can_ safely globally override:
-
-    --border-color
-
-Depending on the font(s) you define, you _might_ be able to safely override:
-
-    --global-font-family
-
-But make sure the font is available to users of your site.  Don't assume they have it installed on their system! Either load them remotely using the `<link>` tag or locally using `@font-face`.
-
-You should *NOT* use the `@import` method to remote load fonts if you can help it because it loads them sequentially and will hurt server performance. So if you're going to load a remote font use the `<link>` method. However you'll need to edit the "Frio" theme _/friendica/view/theme/frio/templates/head.tpl_ file to add something like this:
-
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-If the font you want to use is local you'd just need to add something like this to the top of the Bookface stylesheets:
-
-     @font-face{
-          font-family: Roboto;
-          src: url('../font/Roboto-Regular.ttf'); /* or where ever you put it */
-     }
-
-Then set the CSS variable to use it:
-
-     -global-font-family: 'Roboto', sans-serif;
-
-Some fonts may cause misalignment problems in various places, make sure you test the font before deploying it for everyone.
+You can either add these to a user content stylesheet in your web browser to customize the appearance or there is now an optional "Bookface Custom" addon (https://gitlab.com/randompenguin/bookface_custom) Friendica server admins can install allowing their users to each set their own customizations.
 
 ### COVER PHOTOS
 
@@ -398,7 +379,40 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
+* All stylesheets now have lighter font color variable.
+* Added customization for drop-shadows and outer glows.
+* Button rollover effects now consistent for different types of buttons.
+* Added customization of color for rollover effect.
+* Added customization to show/hide bootstrap tooltips.
+* Added customization to show/hide main navigation buttons labels and customize each label (Note: navbar labels do not work on tablets in portrait mode, there isn't room for all of them, they do work for phones in portrait because there are fewer buttons shown).
+* Added customization to change Calendar "Today" icon to text label and customize the label.
+* Body now has a default font color.
+* Button-link and anchor-button now adopt link color
+* Muted text now uses lighter font color.
+* Nav Tabs no longer have a border color (but nav tabs list items do)
+* Nav Tab link colors are now consistent.
+* Drop-down menus now all adopt same drop-shadow/outer-glow
+* Drop-down menus now have a max-width. Any overflow text is truncated. This prevents menu from growing so wide it spills off the screen of mobile devices.
+* Forms now use color variables.
+* User Menus now have icons for the first few items (this has been added to the 2025 Release Candidate, but Bookface brings it to Friendica 2024.12 as well).
+* Jot/Compose modal tabs appearance now consistent with second topbar tabs.
+* General containers now use box-shadow instead of border for outline.
+* Common Contacts photos are now round.
+* Light Mode admin page submit buttons styling typo fixed.
+* Profile extra links buttons restyled (were limited to 50% width of aside, text sometimes didn't fit, made those consistent width and stacked).
+* Popover Hovercard styling now consistent between Light and Dark modes
+* Thread font color hover effect fixed.
+* Position of "More" drop-down menu on Event posts with engagement fixed.
+* Modal "Close" button rollover effect fixed.
+* Fixed typo in styling for #profile-jot-wrapper
+* Verified checkmark on Profile URL restyled.
+* Responses restyled to only show counts and reveal popover list of who responded on mouseover/touch.
+* Tag Cloud colors now set by CSS variables.
+* Message Preview media list now styled.
+* Action Button Labels now adopt global font family variable.
+* Fixed Auto selected menu color in light mode
 
 1.7 (06 May 2025)
 * Fixed "New Message" button not being obvious [Issue #24]
