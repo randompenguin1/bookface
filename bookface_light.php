@@ -10,7 +10,7 @@
  * Author: Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
  * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
  * Accented: yes
- * Version: 1.7
+ * Version: 1.8
  */
 use Friendica\DI;
 require_once 'view/theme/frio/php/PHPColors/Color.php';
@@ -30,6 +30,7 @@ $link_color = ($customColor) ? '#'.$customColor->getHex() : '#'.$accentColor->li
 	}
 $nav_icon_color = '#65686C';
 $font_color = '#313131';
+$font_color_lighter = '#444';
 $font_color_darker = '#333';
 $contentbg_transp = 100;
 
