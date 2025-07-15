@@ -141,7 +141,7 @@ nav.navbar .nav > li > button{
 				content: var(--navbar-contact-text);
 			}
 			#topbar-first .topbar-nav #nav-notifications-menu-btn::after{
-				content: 'Notices';
+				content: var(--navbar-notices-text);
 				font-size: 12px;
 				text-align: center;
 				position: absolute;
@@ -3476,7 +3476,7 @@ nav.navbar .nav > li > button{
 				content: var(--navbar-contact-text);
 			}
 			#topbar-first .topbar-nav #nav-notifications-menu-btn::after{
-				content: 'Notices';
+				content: var(--navbar-notices-text);
 				font-size: 12px;
 				text-align: center;
 				position: absolute;
