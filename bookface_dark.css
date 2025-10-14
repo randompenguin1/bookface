@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.8.2
+    Version    : 1.8.3
     Licence    : AGPL
-    Created on : 27 AUG 2025
+    Created on : 14 OCT 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -755,7 +755,9 @@ ul.tabs li {
 		color: white; 
 		background-color: var(--link-color); 
 		border-radius: 8px !important;
-} 
+		min-height: 36px;
+		white-space: wrap;
+	} 
 		#profile-extra-links .btn:hover,
 		#profile-extra-links .btn:focus {
 			box-shadow: inset 0 0 100px var(--dimbright);
