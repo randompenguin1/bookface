@@ -924,6 +924,14 @@ ul.tabs li {
 	.contact-wrapper .media-body .contact-entry-name h4.media-heading a {
 		color: var(--link-color);
 	}
+	.contact-wrapper .contact-action-link, 
+	.contact-wrapper .contact-action-link:hover, 
+	.textcomplete-item .contact-wrapper .contact-action-link {
+		color: var(--font-color);
+	}
+	.contact-entry-desc {
+		color: var(--font-color);
+	}
 .hovercard {
        background-color: var(--nav-bg) !important;
        border: 1px solid var(--background-color) !important;        
@@ -1164,7 +1172,7 @@ ul.tabs li {
 }
 .fbrowser .folders button {
        background-color: var(--dimbright) !important;
-       color: black !important;
+       color: var(--font-color) !important;
        appearance: none;
        border: none;
        border-radius: 8px;
@@ -4275,6 +4283,14 @@ ul.tabs li {
 	.contact-wrapper .media-body .contact-entry-name h4.media-heading a {
 		color: var(--link-color);
 	}
+	.contact-wrapper .contact-action-link, 
+	.contact-wrapper .contact-action-link:hover, 
+	.textcomplete-item .contact-wrapper .contact-action-link {
+		color: var(--font-color);
+	}
+	.contact-entry-desc {
+		color: var(--font-color);
+	}
 .hovercard {
        background-color: var(--nav-bg) !important;
        border: 1px solid var(--background-color) !important;        
@@ -4515,7 +4531,7 @@ ul.tabs li {
 }
 .fbrowser .folders button {
        background-color: var(--dimbright) !important;
-       color: black !important;
+       color: var(--font-color) !important;
        appearance: none;
        border: none;
        border-radius: 8px;
