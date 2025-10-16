@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.8.3
+    Version    : 1.8.4
     Licence    : AGPL
-    Created on : 14 OCT 2025
+    Created on : 16 OCT 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1749,7 +1749,7 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 } 
 .fc-unthemed td.fc-today {
 	background-color: var(--menu-background-hover-color);
-	/* auto has background-image here */
+/*	background-image: linear-gradient(var(--menu-background-hover-color),var(--menu-background-hover-color)) !important; uncomment for auto version */
 }
 
 .event-card .event-card-title, 
