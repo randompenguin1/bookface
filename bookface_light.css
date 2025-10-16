@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.8.5
+	Version    : 1.8.5-2025.07-rc
     Licence    : AGPL
     Created on : 16 OCT 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -38,11 +38,6 @@
     --navbar-calendar-text: 'Calendar';
     --navbar-contact-text: 'Friends';
     --navbar-notices-text: 'Notices';
-    --sign-in-text: 'Sign-In';
-    --compose-text: 'Compose';
-    --new-note-text: 'New Note';
-    --save-search-text: 'Save Search';
-    --follow-tag-text: 'Follow Tag';
     --comment-button-text: 'Comment';
     --share-button-text: 'Share';
     --quote-button-text: 'Quote';
@@ -52,12 +47,9 @@
     --attendyes-button-text: 'Going';
     --attendno-button-text: 'Can\'t Go';
     --attendmaybe-button-text: 'Maybe';
-    --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
     --save-button-text: 'Save';  
-	--new-message-text: 'New Message';
-	--calendar-today-text: 'Today';  
-	--community-post-text: 'Community Posts MUST be Public!';
+	--community-post-text: 'Community Posts MUST be Public!';  
 }
 
 body {
@@ -89,6 +81,17 @@ body {
 	.btn-link.active {
 		color: var(--link-color);
 	} 
+	.btn.btn-primary {
+		color: var(--nav-icon-color);
+		background-color: transparent;
+	}
+		.btn.btn-primary:hover,
+		.btn.btn-primary:focus,
+		.btn.btn-primary:active,
+		.btn.btn-primary:focus-within {
+			color: var(--nav-icon-color);
+			background-color: rgba(128,128,128,.1);
+		}
 	.text-muted {
 		color: var(--font-color-lighter);
 	} 
@@ -332,9 +335,6 @@ ul.tabs li {
        		font-weight: 700;
        		color: var(--link-color) !important;
        }
-       #nav-login::before{
-       	content: var(--sign-in-text);
-       }
 	.topbar ul.nav {
 		left: 50% !important;
 		margin-left: -25% !important;
@@ -371,9 +371,13 @@ ul.tabs li {
 		border-radius: 50px !important;
 		background: transparent !important;
 		width: 100% !important;
+		padding-left: 30px;
 	}
 	#search-box .form-control::placeholder {
 		color: #666 !important;
+	}
+	#nav-search-input-field {
+		padding-right: 12px !important;
 	}
 	#topbar-first #search-box .btn {
 		font-size: 0px !important;
@@ -548,18 +552,10 @@ ul.tabs li {
 			color: #ffffff !important;
 			border-color: var(--border-color) !important;
 			box-shadow: none !important;
+			padding: 12px;
 		}
 		#jotOpen:hover, #jotOpen:focus {
 			box-shadow: inset 0 0 100px var(--dimbright) !important;
-		}
-		#jotOpen::before {
-			content: var(--compose-text);
-			font-size: 15px;
-			margin-right: 10px;
-			line-height: 32px;
-			position: relative;
-			display: inline;
-			top: -4px;
 		}
 		/* Enable Posting from Community Page */
 		body.mod-community #jotOpen {
@@ -575,9 +571,6 @@ ul.tabs li {
 			body.mod-community #acl-wrapper .panel-info {
 				opacity: .2;
 			}
-		body.mod-notes #jotOpen::before {
-			content: var(--new-note-text);
-		}
 		body.mod-notes .sectiontop h3::before {
   			content: '\f023';
   			font-family: ForkAwesome;
@@ -641,7 +634,6 @@ ul.tabs li {
     .settings-submit.form-button-search,
     button[type="submit"].form-button-search {
         border-radius:50px !important;
-        margin-top:-.5px !important;
     }
     #adminpage a.btn:hover,
     #adminpage a.btn:focus,
@@ -711,6 +703,14 @@ ul.tabs li {
 	#photo-edit-end {
 		clear: both;
 	}
+	#photo_edit_form::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	body.mod-photos #photo-tags {
+		margin-bottom: 10px;
+	}
 	/* Group Request Cancel/Confirm */
 	#dfrn-request-submit-wrapper input {
 		margin: 5px;
@@ -727,34 +727,12 @@ ul.tabs li {
 	/* Other people profiles */
 	#mention-link {
 		border-radius: 8px !important;
-		background-color: var(--link-color) !important;
+		background-color: transparent !important;
 		color: #ffffff !important;
-		border-color: var(--border-color) !important;
+		border-color: transparent !important;
 		box-shadow: none !important;
-		padding: 0 16px !important;
+		padding: 0 8px !important;
 	}
-		#mention-link:hover,
-		#mention-link:focus {
-			box-shadow: inset 0 0 100px var(--dimbright) !important;
-		}
-		#mention-link span:first-of-type {
-			float: right;
-			font-size: 32px;
-			line-height: 45px;
-			top: 4px;
-		}
-		#mention-link span:first-of-type .fa-2x {
-			font-size: inherit !important;
-		}
-		#mention-link span:last-of-type {
-			font-size: 15px;
-			margin-right: 10px;
-			line-height: 32px;
-			top: 6px;
-			position:relative;
-			display: block;
-			padding-right: 30px;
-		}
 	#rfic-desc, #remote-friends-in-common { 
 		background-color: var(--content-bg);
 	}
@@ -777,12 +755,18 @@ ul.tabs li {
 		#profile-extra-links .btn:focus {
 			box-shadow: inset 0 0 100px var(--dimbright);
 		} 
+	#showgroup-button {
+		text-align: center;
+	}
+		#showgroup-button #showgroup {
+			width: 71%;
+		}
 	/* SEARCH RESULTS */
 	#search-save {
 		background-color: var(--link-color) !important;
 		color: white !important;
 		border-radius: 8px !important;
-		padding: 6px 8px !important;
+		padding: 12px !important;
 	}
 		#search-save:hover,
 		#search-save:focus {
@@ -799,28 +783,9 @@ ul.tabs li {
 		display: inline-block;
 		margin-top: 2px;
 	}
-	#search-save .fa-floppy-o::after,
-	#search-save .fa-plus::after{
-		content: var(--save-search-text);
-		font-family: var(--global-font-family);
-		font-size: 15px;
-		float: left;
-		margin-right: 10px;
-		line-height: 32px;
-		position: relative;
-		display: block;
-		top: -2px;
-		font-weight: 700;
-	}
-	#search-save .fa-floppy-o::after {
-		  content: var(--save-search-text);
-	}
 	#search-save .fa-plus::before {
 		display: inline-block;
 		margin-top: 2px;
-	}
-	#search-save .fa-plus::after {
-		  content: var(--follow-tag-text);
 	}
 	/* popovers */
 	.popover.hovercard {
@@ -1766,10 +1731,6 @@ aside .widget h3.p-name {
 		border-radius: 100%;
 	}
 /* Calendar */
-body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
-	content: var(--calendar-today-text);
-	font-family: var(--global-font-family);
-} 
 .fc-unthemed td.fc-today {
 	background-color: var(--menu-background-hover-color);
 /*	background-image: linear-gradient(var(--menu-background-hover-color),var(--menu-background-hover-color)) !important; uncomment for auto version */
@@ -1813,22 +1774,30 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 .photo-edit-link-wrap .icon-padding {
     margin-left: 10px !important;
 }
-.photos-upload-link {
-    font-size: 28px;
-    color: var(--link-color) !important;
-    opacity: 1 !important;
-    border-radius: 8px;
-    padding: 0px 8px;
+.photo-album-edit-name,
+#photo-album-edit-submit {
+	width: 100%;
 }
+	#photo-album-edit-submit input {
+		float: right;
+		margin-top: 10px;
+		width: auto;
+	}
 #photo-album-link {
     opacity: 1 !important;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+    top: 9px;
+    color: var(--nav-icon-color);
 }
-.photos-upload-link i,
-#photo-album-link i,
-#photo-edit-link i,
-#photo-toprofile-link i,
-#album-edit-link i,
-#album-drop-link i,
+	#photo-album-link:hover,
+	#photo-album-link:focus,
+	#photo-album-link:active,
+	#photo-album-link:focus-within {
+		background-color: var(--dimbright);
+	}
+.widget .photos-upload-link i,
 .photos-order-link i {
     font-size: 24px !important;
     color: var(--link-color) !important;
@@ -1838,34 +1807,28 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
     height: 40px;
     width:  40px;
 }
+.widget .photos-upload-link i {
+	position: relative;
+	top: -9px;
+	left: 19px;
+}
 #photo-edit-link i.fa-image {
     padding: 6px 7px !important;
 }
 .photos-order-link {
-    margin-top: 5px !important;
+    margin-top: 0px !important;
 }
-    .photos-upload-link:hover i,
-    .photos-upload-link:focus i,
-    #photo-album-link:hover i,
-    #photo-album-link:focus i,
-    #photo-edit-link:hover i,
-    #photo-toprofile-link:hover i,
-    #photo-toprofile-link:focus i,
-    #album-edit-link:hover i,
-    #album-edit-link:focus i,
-    #album-drop-link:hover i,
-    #album-drop-link:focus i,
-    .photos-order-link:hover i,
-    .photos-upload-link:hover i,
-    .photos-upload-link:focus i {
+    .photos-order-link:hover i, 
+    .widget .photos-upload-link:hover i,
+    .widget .photos-upload-link:focus i {
        background-color: var(--dimbright) !important;
     }
-.photos-content-wrapper .photos-upload-link::before {
-    content: var(--add-photo-button-text);
-    font-size: 15px; 
-    vertical-align: middle; 
-    margin-top: -10px;
-    display: inline-block;
+	#photo-toprofile-link, .photo-back-link, #album-drop-link {
+  		margin-right: 0px;
+	}
+.photos-content-wrapper h3,
+#photo-album-title {
+	margin-top: 5px;
 }
 .justified-gallery {
     overflow: visible !important;
@@ -2084,9 +2047,6 @@ div#back-to-top {
 	.mail-list-outside-wrapper .contact-photo-wrapper img {
 		border-radius: 100%;
 	}
-	#message-new a::after {
-		content: var(--new-message-text);
-	}
 		#message-new a {
 			color: var(--link-color);
 			opacity: 1 !important;
@@ -2106,7 +2066,11 @@ div#back-to-top {
 			#message-preview .media-list a:hover,
 			#message-preview .media-list a:focus {
 				color: var(--link-color) !important;
-			}	
+			}
+		/* change icon on message submit for consistency */
+		#prvmail-submit i::before {
+			content: '\f0e0';
+		}	
 .modal-backdrop {
 	background-color: #fff;
 }
@@ -2429,6 +2393,15 @@ body.mod-settings #delegation .contact-block-img {
     		top: 115px !important;
     		border-color: var(--border-color);
     	}
+    		#search-mobile .navbar-form {
+    			padding: 10px;
+    		}
+    			#search-mobile input {
+    				width: 100%;
+    			}
+    			#search-mobile .form-button-search {
+    				border-radius: 50px !important;
+    			}
     		#search-mobile .col-xs-12 {
     			background-color: var(--nav-bg);
     		}
@@ -2458,10 +2431,17 @@ body.mod-settings #delegation .contact-block-img {
 	#topbar-first #nav-notifications-menu-btn::after{
 		display: none;
 	}
-    #jotOpen::before {
-        content: '';
-        margin: 0;
+    #jotOpen span,
+    #search-save span,
+    #mention-link span {
+        display: none;
     }
+    	#jotOpen i,
+    	#search-save i,
+    	#mention-link i {
+    		width: 100%;
+    		text-align: center;
+    	}
     #mention-link {
     	padding: 0 8px !important;
     }
@@ -2473,36 +2453,11 @@ body.mod-settings #delegation .contact-block-img {
     	background-color: rgba(255, 255, 255, 0.4);
     }
 	/* Profile Aside Mobile */
-	body.mod-contact #content,
-	body.mod-profile #content,
-	body.mod-photos  #content {
-		margin-top: 350px;
-	}
-		/* only seen on your own Recent Photos page */
-		body.mod-profile #sidebar-photos-albums::before {
-			content: '\f083';
-			font-family: ForkAwesome;
-			font-size: 150px;
-			position: fixed;
-			top: 175px;
-			left: 0;
-			right: 0;
-			text-align: center;
-			color: var(--nav-icon-color);
-			opacity: .5;
-			z-index: -1;
-			transition-duration: .5s;
-			transition-property: left;
-		}
-			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
-			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
-				left: 50%;
-			}
-			/* hide camera icon on other profile Recent Photos pages */
-			body.mod-profile .vcard + #sidebar-photos-albums::before {
-				content: '';
-			}
-			
+	body.mod-contact .row:has(.coverphoto) #content,
+	body.mod-profile .row:has(.coverphoto) #content,
+	body.mod-photos  .row:has(.coverphoto) #content {
+			margin-top: 350px;
+	}	
 		/* This is for old browsers that do not understand either @supports or :has() */
 		body.mod-contact aside,
 		body.mod-photos  aside,
@@ -2677,6 +2632,9 @@ body.mod-settings #delegation .contact-block-img {
 		left: 10% !important;
 		margin-left: 0 !important;
 	}
+		.topbar ul.nav li.sr-only {
+			display: none;	/* mobile UI does not need keyboard nav support I guess? */
+		}
 	#search-save {
 		width: 100px !important;
 	}
@@ -3006,6 +2964,9 @@ body.mod-settings #delegation .contact-block-img {
 			padding-top: 60px;
 			padding-bottom: 60px;
 		}
+		body.mod-community #jotOpen {
+			line-height: 30px;
+		}
 		body.mod-profile #sidebar-photos-albums::before {
 			top: 125px;
 		}
@@ -3064,6 +3025,19 @@ body.mod-settings #delegation .contact-block-img {
 	#profile-jot-plugin-wrapper {
 		width: 100%;
 	}
+	#photo-edit-link-wrap.pull-right a {
+		font-size: 0px;
+		border-radius: 100% !important;
+		height: 40px;
+		width:  40px;
+		text-align: center;
+		padding: 7px 0 0 0;
+		line-height: 40px;
+	}
+		#photo-edit-link-wrap.pull-right a i {
+			font-size: 24px;
+		}
+				
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
@@ -3419,6 +3393,14 @@ body.mod-home {
 	line-height: 24px;
 	width: auto;
 	display: block;
+}
+.mod-home.is-not-singleuser .login-form,
+.mod-login #content #login-form,
+.mod-home.is-not-singleuser .login-form::before, 
+.mod-login #content #login-form::before,
+.mod-home.is-not-singleuser .login-form::after, 
+.mod-login #content #login-form::after {
+	border-radius: 20px;
 }
 	@media screen and (max-width: 768px){
 		.mod-home #nav-about .fa-info {
