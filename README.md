@@ -384,6 +384,8 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed text space on profile extra buttons [Issue #34]
 * Added commented background-image line to light and dark, which needs to be uncommented after concatenating files to build auto version.
 * Enabled the hidden Composer and "New Post" button on the Community pages and new text explaining posts there need to be public.
+* Override styling for contact-wrapper
+* Override styling for file browser category button text.
 
 1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
