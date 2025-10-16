@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.8.3
+Version 1.8.4
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -382,6 +382,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
 * Fixed misaligned "View Group" button on Group profile page.
 * Fixed text space on profile extra buttons [Issue #34]
+* Added commented background-image line to light and dark, which needs to be uncommented after concatenating files to build auto version.
 
 1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
