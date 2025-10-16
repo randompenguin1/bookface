@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 1.8.4
+	Version    : 1.8.5
     Licence    : AGPL
     Created on : 16 OCT 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -57,6 +57,7 @@
     --save-button-text: 'Save';  
 	--new-message-text: 'New Message';
 	--calendar-today-text: 'Today';  
+	--community-post-text: 'Community Posts MUST be Public!';
 }
 
 body {
@@ -560,6 +561,20 @@ ul.tabs li {
 			display: inline;
 			top: -4px;
 		}
+		/* Enable Posting from Community Page */
+		body.mod-community #jotOpen {
+			display: block !important;
+		}
+			body.mod-community #jot-popup {
+				display: block !important;
+			} 
+			body.mod-community #acl-wrapper::before {
+				content: var(--community-post-text);
+				margin-bottom: 10px;
+			}
+			body.mod-community #acl-wrapper .panel-info {
+				opacity: .2;
+			}
 		body.mod-notes #jotOpen::before {
 			content: var(--new-note-text);
 		}
@@ -3897,6 +3912,20 @@ ul.tabs li {
               display: inline;
               top: -4px;
        }
+		/* Enable Posting from Community Page */
+		body.mod-community #jotOpen {
+			display: block !important;
+		}
+			body.mod-community #jot-popup {
+				display: block !important;
+			} 
+			body.mod-community #acl-wrapper::before {
+				content: var(--community-post-text);
+				margin-bottom: 10px;
+			}
+			body.mod-community #acl-wrapper .panel-info {
+				opacity: .2;
+			}
 		body.mod-notes #jotOpen::before {
 			content: var(--new-note-text);
 		}
