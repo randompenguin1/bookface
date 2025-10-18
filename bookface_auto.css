@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 1.8.5-2025.07-rc
+	Version    : 1.8.6-2025.07-rc
     Licence    : AGPL
-    Created on : 16 OCT 2025
+    Created on : 18 OCT 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1725,6 +1725,11 @@ aside .widget h3.p-name {
 		}	
 	.img-allocated-max-width {
 		margin: 20px auto;
+	}
+	/* fix ALT badge position */
+	a:has(img.has-alt-description){
+		position: relative;
+		display: inline-block;
 	}
 	#vcard-short-photo-wrapper img, 
 	#nav-short-info .contact-wrapper img {
@@ -5066,6 +5071,11 @@ aside .widget li:hover {
 		}	
 	.img-allocated-max-width {
 		margin: 20px auto;
+	}
+	/* fix ALT badge position */
+	a:has(img.has-alt-description){
+		position: relative;
+		display: inline-block;
 	}
 	#vcard-short-photo-wrapper img, 
 	#nav-short-info .contact-wrapper img {
