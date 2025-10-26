@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA RELEASE CANDIDATE
 =========================================
-Version 1.8.6-2025.07-rc
+Version 1.8.7-2025.07-rc
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -380,6 +380,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 
 ## CHANGELOG:
 * Fix for [Issue #37] misalignment of ALT badge on some images.
+* Added sidebar widget icons (contributed by Matthias feb@loma.ml)
 
 1.8.5 (16 Oct 2025)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
