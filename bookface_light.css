@@ -863,10 +863,6 @@ ul.tabs li {
 	aside .badge {
 		background-color: var(--link-color);
 	}
-	aside .widget button.fakelink {
-		width: 100%;
-		text-align: left;
-	}
 	/* 	Contributed by Matthias (feb@loma.ml):
 		Widgets mit einem Icon versehen
 		Gemeinsame Basisregeln für alle Sidebar-Icons */	
