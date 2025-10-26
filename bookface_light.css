@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 1.8.6-2025.07-rc
+	Version    : 1.8.7-2025.07-rc
     Licence    : AGPL
-    Created on : 18 OCT 2025
+    Created on : 26 OCT 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -828,6 +828,60 @@ ul.tabs li {
 	aside .badge {
 		background-color: var(--link-color);
 	}
+	/* 	Contributed by Matthias (feb@loma.ml):
+		Widgets mit einem Icon versehen
+		Gemeinsame Basisregeln für alle Sidebar-Icons */	
+	aside .widget.fakelink h3::before {
+		font-family: "ForkAwesome";
+		margin-right: 8px;
+		font-size: 14px;
+	}
+	
+	/* Individuelle Icons */
+	#circle-sidebar-inflated.fakelink h3::before,
+	#circle-sidebar .fakelink h3::before { content: "\f2bd"; } /* user-circle */
+	#saved-search-list-inflated.fakelink h3::before,
+	#saved-search-list .fakelink h3::before { content: "\f002"; } /* search */
+	#group-list-sidebar-inflated.fakelink h3::before,
+	#group-list-sidebar .fakelink h3::before { content: "\f0c0"; } /* users */
+	#nets-sidebar-inflated.fakelink h3::before,
+	#nets-sidebar .fakelink h3::before { content: "\f233"; } /* server */
+	#trending-tags-sidebar-inflated.fakelink h3::before,
+	#trending-tags-sidebar .fakelink h3::before,
+	#tagblock-inflated.fakelink h3::before,
+	#tagblock faklink h3::before { content: "\f02b"; } /* tag */
+	#datebrowse-sidebar-inflated.fakelink h3::before,
+	#datebrowse-sidebar .fakelink h3::before { content: "\f187"; } /* archive */
+	#file-sidebar-inflated.fakelink h3::before,
+	#file-sidebar .fakelink h3::before { content: "\f07b"; } /* folder */
+	#channel-sidebar-inflated.fakelink h3::before,
+	#channel-sidebar .fakelink h3::before { content: "\f009"; } /* th-large */
+	#accounttype-sidebar-inflated.fakelink h3::before,
+	#accounttype-sidebar .fakelink h3::before { content: "\f0e9"; } /* umbrella */
+	#sidebar-community-no-sharer-inflated.fakelink h3::before,
+	#sidebar-community-no-sharer .fakelink h3::before { content: "\f2c0"; } /* user-o */
+	#rel-sidebar-inflated.fakelink h3::before,
+	#rel-sidebar .fakelink h3::before { content: "\f2b5"; } /* handshake-o */
+	#category-sidebar-inflated.fakelink h3::before,
+	#category-sidebar .fakelink h3::before { content: "\f00b"; } /* th-list */
+
+	aside .widget.inflated.fakelink h3::after {
+		font-family: "ForkAwesome";
+  		content: "\f0d7";
+  		display: inline-block;
+  		float: right;
+	}
+	
+	aside .widget.inflated:hover,
+	aside .widget.inflated:focus,
+	aside .widget.inflated:active,
+	aside .widget.inflated:focus-within {
+		background-color: var(--nav-bg) !important;
+	}
+		aside .widget.inflated h3 {
+			padding-bottom: 0px;
+		}		
+	
 /* POSTS */
 .tread-wrapper {
 	background-color: var(--content-bg) !important;
