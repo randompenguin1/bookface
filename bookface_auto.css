@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 1.8.6
+	Version    : 1.8.7
     Licence    : AGPL
-    Created on : 26 OCT 2025
+    Created on : 01 NOV 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1400,13 +1400,13 @@ aside .widget h3.p-name {
 	aside .vcard #subscribe-feed-link-button,
 	aside .vcard #dfrn-request-link-button,
 	aside .vcard #wallmessage-link-button,
-	aside .vcard #show-group-button {
+	aside .vcard #showgroup-button {
 		width: 75%;
 		float: none;
 		margin: 0 auto;
 		padding: 5px;
 	} 
-		aside .vcard #show-group-button a {
+		aside .vcard #showgroup-button a {
 			width: 100%;
 		}
 	aside .widget, .nav-container .widget {
