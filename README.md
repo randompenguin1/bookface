@@ -379,9 +379,8 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
-* Fix for [Issue #37] misalignment of ALT badge on some images.
 * Added sidebar widget icons (contributed by Matthias feb@loma.ml)
-* Fix for [Issue #38] reverting fix from Issue #37 which no longer appears to be necessary in latest RC.
+* Fix for [Issue #37] and [Issue #38] that does not conflict with the two ways images may be embedded.
 
 1.8.5 (16 Oct 2025)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
