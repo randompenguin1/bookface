@@ -1785,7 +1785,7 @@ aside .widget h3.p-name {
 		margin: 20px auto;
 	}
 	/* fix for misplaced ALT badge */
-	p > a.has(img.has-alt-description){
+	p > a:has(img.has-alt-description){
         position: relative;
         width: fit-content;
         height: fit-content;
