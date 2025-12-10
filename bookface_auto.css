@@ -6535,6 +6535,12 @@ body.mod-settings #delegation .contact-block-img {
 	#profile-jot-plugin-wrapper {
 		width: 100%;
 	}
+	/* prevent action button drop-downs from being inaccessible
+	   when viewing a single/last post on mobile devices
+	*/
+	body {
+		padding-bottom: 300px !important;
+	}
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
