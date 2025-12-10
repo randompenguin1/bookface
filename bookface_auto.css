@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 1.8.7
+	Version    : 1.8.8
     Licence    : AGPL
-    Created on : 01 NOV 2025
+    Created on : 10 DEC 2025
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -3117,6 +3117,12 @@ body.mod-settings #delegation .contact-block-img {
 	/* Jot Plugin Buttons */
 	#profile-jot-plugin-wrapper {
 		width: 100%;
+	}
+	/* prevent action button drop-downs from being inaccessible
+	   when viewing a single/last post on mobile devices
+	*/
+	body {
+		padding-bottom: 300px !important;
 	}
 }
 /*	Frio Theme Cut-Off (double sidebar width)
