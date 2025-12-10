@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA RELEASE CANDIDATE
 =========================================
-Version 1.8.9-2025.07-rc
+Version 1.9.0-2025.07-rc
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -379,9 +379,11 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+1.9.0 (10 Dec 2025)
 * Added sidebar widget icons (contributed by Matthias feb@loma.ml)
 * Fix for [Issue #37] and [Issue #38] that does not conflict with the two ways images may be embedded.
 * Border radius on "change profile photo" link to match border radius of profile photo.
+* Fixed drop-down menus becoming partly inaccessible if post is near bottom of screen [Issue #39]
 
 1.8.5 (16 Oct 2025)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
