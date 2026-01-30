@@ -141,7 +141,7 @@ nav.navbar .nav > li > button{
 			#topbar-first .topbar-nav a[href="contact"]::after{
 				content: var(--navbar-contact-text);
 			}
-			#topbar-first .topbar-nav #nav-notifications-menu-btn::after{
+			#topbar-first .topbar-nav #nav-notification::after{
 				content: var(--navbar-notices-text);
 				font-size: 12px;
 				text-align: center;
@@ -3586,7 +3586,7 @@ nav.navbar .nav > li > button{
 			#topbar-first .topbar-nav a[href="contact"]::after{
 				content: var(--navbar-contact-text);
 			}
-			#topbar-first .topbar-nav #nav-notifications-menu-btn::after{
+			#topbar-first .topbar-nav #nav-notification::after{
 				content: var(--navbar-notices-text);
 				font-size: 12px;
 				text-align: center;
