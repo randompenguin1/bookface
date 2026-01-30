@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.8.8
+Version 1.8.9
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -389,6 +389,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Added sidebar widget icons (contributed by Matthias feb@loma.ml)
 * Refix for misaligned group button, accidentally applied RC fix to Stable (it is #showgroup in stable and #show-group in the Release Candidate)
 * Fix for drop-menus being inaccessible if post is near bottom of screen on mobile [Issue #39]
+* Fix for [Issue #41] to make nav label on Notifications consistent with other nav buttons.
 
 1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
