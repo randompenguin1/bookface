@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 1.8.8
+    Version    : 1.8.9
     Licence    : AGPL
-    Created on : 10 DEC 2025
+    Created on : 30 JAN 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -145,17 +145,14 @@ nav.navbar .nav > li > button{
 				content: var(--navbar-notices-text);
 				font-size: 12px;
 				text-align: center;
-				position: absolute;
+				position: relative;
 				width: 100%;
-				left: 50%;
-				margin-left: -50%;
+				margin-top: -13px;
 				display: var(--show-navbar-labels);
 			}
 			/* end navbar labels */  
 #topbar-first .nav > li > a:hover, 
-#topbar-first .nav > li > a:focus, 
-#topbar-first .nav > li > button:not(#main-menu):hover, 
-#topbar-first .nav > li > button:not(#main-menu):focus, 
+#topbar-first .nav > li > a:focus,
 #topbar-first button.navbar-toggle:hover,
 #topbar-first button.navbar-toggle:focus, 
 nav.navbar .nav > li > a:hover, 
@@ -166,9 +163,13 @@ nav.navbar .nav > li > button:focus {
 	border-radius: 8px !important;
        
 }    
-	#topbar-first button.navbar-toggle,
-	#nav-notifications-menu-btn {
+	#topbar-first button.navbar-toggle {
 		width: 50px;
+		height: 50px;
+	}
+	#nav-notifications-menu-btn {
+		width: 100%;
+		min-width: 50px;
 		height: 50px;
 	}	
 	#topbar-first .nav > li > a.selected,
@@ -185,10 +186,28 @@ nav.navbar .nav > li > button:focus {
        background-color: transparent !important;
        border-radius: 0 !important;
 }
+/* notifications has different structure */
+#nav-notification:hover,
+#nav-notification:focus {
+	background-color: var(--dimbright) !important;
+	border-radius: 8px !important;
+}
+	#nav-notifications-menu-btn:hover,
+	#nav-notifications-menu-btn:focus {
+		background-color: transparent !important;
+	}
+	#topbar-first .topbar-nav .nav-segment .nav-notification {
+		right: 6px;
+	}
 	#nav-notification.dropdown.open #nav-notifications-menu-btn .fa-bell::before {
 		content: '\f0f3';
 		color: var(--link-color);		
 	}
+		#nav-notification.dropdown.open:hover,
+		#nav-notification.dropdown.open:focus {
+			border-bottom-left-radius:  0px !important;
+			border-bottom-right-radius: 0px !important;
+		}	
 	.notif-item img.notif-image,
 	.intro-photo-wrapper img.intro-photo {
 		border-radius: 100%;
@@ -2509,8 +2528,8 @@ body.mod-settings #delegation .contact-block-img {
 	}
 	/* navbar labels will not fit for tablets in portrait */
 	#topbar-first .nav > li > a::after,
-	#topbar-first #nav-notifications-menu-btn::after{
-		display: none;
+	#topbar-first .topbar-nav #nav-notification::after{
+		display: none !important;
 	}
     #jotOpen::before {
         content: '';
@@ -2827,8 +2846,8 @@ body.mod-settings #delegation .contact-block-img {
 				}
 	/* navbar labels will work again for mobile */
 	#topbar-first .nav > li > a::after,
-	#topbar-first #nav-notifications-menu-btn::after{
-		display: var(--show-navbar-labels);
+	#topbar-first .topbar-nav #nav-notification::after{
+		display: var(--show-navbar-labels) !important;
 	}
 		/* fix spacing of icons */
 		.topbar ul.nav {
@@ -3227,6 +3246,13 @@ body.mod-settings #delegation .contact-block-img {
 			left: 0px;
 			right: 0px;
 		}
+	/* truncate navbar labels if necessary */
+	#topbar-first .nav > li > a::after,
+	#topbar-first .topbar-nav #nav-notification::after {
+		width: 50px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
  /* new */
 /*	Narrow Screen Phones in Either Orienation
