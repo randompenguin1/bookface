@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA RELEASE CANDIDATE
 =========================================
-Version 1.9.0-2025.07-rc
+Version 1.9.1-2025.07-rc
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -379,6 +379,8 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+* Fix for [Issue #41] to make long label on Notifications button align with icon.
+
 1.9.0 (10 Dec 2025)
 * Added sidebar widget icons (contributed by Matthias feb@loma.ml)
 * Fix for [Issue #37] and [Issue #38] that does not conflict with the two ways images may be embedded.
