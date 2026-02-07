@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 1.8.9
+Version 2.0.0
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
@@ -379,6 +379,7 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+2.0 (07 February 2026)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
 * Fixed misaligned "View Group" button on Group profile page.
 * Fixed text space on profile extra buttons [Issue #34]
@@ -389,7 +390,17 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Added sidebar widget icons (contributed by Matthias feb@loma.ml)
 * Refix for misaligned group button, accidentally applied RC fix to Stable (it is #showgroup in stable and #show-group in the Release Candidate)
 * Fix for drop-menus being inaccessible if post is near bottom of screen on mobile [Issue #39]
-* Fix for [Issue #41] to make nav label on Notifications consistent with other nav buttons.
+* Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
+* Moved User Menu and Notifications Menu to the far right on Desktop Layout
+* Changed Username so it is always shown when User Menu is open
+* Fixed alignment and spacing of Page Navigation buttons
+* Fixed Notifications label alignment [Issue #41]
+* Fixed Widget Folding Indicator [Issue #42]
+* Fixed long nav items cut off in submenus [Issue #43]
+* Fixed Alignment of Event Action Buttons [Issue #44]
+* Fixed Search Box so it expands on focus [Issue #45]
+* Remove user nav icons from 2026.01 version and RC hack from 2024.12 [Issue #46]
+* Fixed lines in auto version that are supposed to be uncommented.
 
 1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
