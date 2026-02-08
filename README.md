@@ -394,6 +394,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed Search Box so it expands on focus [Issue #45]
 * Remove user nav icons from 2026.01 version and RC hack from 2024.12 [Issue #46]
 * Fixed lines in auto version that are supposed to be uncommented.
+* Updated Light and Dark screenshots
 
 1.9.0 (10 Dec 2025)
 * Added sidebar widget icons (contributed by Matthias feb@loma.ml)
