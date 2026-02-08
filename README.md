@@ -2,9 +2,12 @@ BOOKFACE FOR FRIENDICA
 ======================
 Version 2.0.0
 
+**Requirements** Friendica "Blutwurz" 2026.01 or Friendica Release Candidate 2025.07-rc
+
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
 **Disclaimer:** _This is a Work-In-Progress, use in production at your own risk!_
+_This will NOT work with "Interrupted Fern" 2024.12, there is another branch for that version__
 
 ## INSTALLATION
 
@@ -379,17 +382,7 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
-2.0 (07 February 2026)
-* Fixed Navbar Labels not applying Notices variable [Issue #33]
-* Fixed misaligned "View Group" button on Group profile page.
-* Fixed text space on profile extra buttons [Issue #34]
-* Added commented background-image line to light and dark, which needs to be uncommented after concatenating files to build auto version.
-* Enabled the hidden Composer and "New Post" button on the Community pages and new text explaining posts there need to be public.
-* Override styling for contact-wrapper
-* Override styling for file browser category button text.
-* Added sidebar widget icons (contributed by Matthias feb@loma.ml)
-* Refix for misaligned group button, accidentally applied RC fix to Stable (it is #showgroup in stable and #show-group in the Release Candidate)
-* Fix for drop-menus being inaccessible if post is near bottom of screen on mobile [Issue #39]
+2.0.0 (08 February 2026)
 * Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
 * Moved User Menu and Notifications Menu to the far right on Desktop Layout
 * Changed Username so it is always shown when User Menu is open
@@ -401,6 +394,22 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed Search Box so it expands on focus [Issue #45]
 * Remove user nav icons from 2026.01 version and RC hack from 2024.12 [Issue #46]
 * Fixed lines in auto version that are supposed to be uncommented.
+
+1.9.0 (10 Dec 2025)
+* Added sidebar widget icons (contributed by Matthias feb@loma.ml)
+* Fix for [Issue #37] and [Issue #38] that does not conflict with the two ways images may be embedded.
+* Border radius on "change profile photo" link to match border radius of profile photo.
+* Fixed drop-down menus becoming partly inaccessible if post is near bottom of screen [Issue #39]
+
+1.8.5 (16 Oct 2025)
+* Fixed Navbar Labels not applying Notices variable [Issue #33]
+* Fixed misaligned "View Group" button on Group profile page.
+* Fixed text space on profile extra buttons [Issue #34]
+* Added commented background-image line to light and dark, which needs to be uncommented after concatenating files to build auto version.
+* Enabled the hidden Composer and "New Post" button on the Community pages and new text explaining posts there need to be public.
+* Override styling for contact-wrapper
+* Override styling for file browser category button text.
+* Over 50 fixes specifically for Friendica 2025.07-rc Release Candidate 
 
 1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
