@@ -2,9 +2,12 @@ BOOKFACE FOR FRIENDICA
 ======================
 Version 2.0.0
 
+**Requirements** Friendica "Interrupted Fern" 2024.12
+
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
 **Disclaimer:** _This is a Work-In-Progress, use in production at your own risk!_
+_This will NOT work with Friendica "Blutwurz" 2026.01 or Release Candidate 2025.07-rc. There are other branches for those versions_
 
 ## INSTALLATION
 
@@ -401,6 +404,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed Search Box so it expands on focus [Issue #45]
 * Remove user nav icons from 2026.01 version and RC hack from 2024.12 [Issue #46]
 * Fixed lines in auto version that are supposed to be uncommented.
+* Updated Screenshots
 
 1.8 (12 July 2025)
 * Fixed transparent background on friends-in-common list on other people's profiles.
