@@ -26,6 +26,14 @@ body.mod-home {
 	width: auto;
 	display: block;
 }
+.mod-home.is-not-singleuser .login-form,
+.mod-login #content #login-form,
+.mod-home.is-not-singleuser .login-form::before, 
+.mod-login #content #login-form::before,
+.mod-home.is-not-singleuser .login-form::after, 
+.mod-login #content #login-form::after {
+	border-radius: 20px;
+}
 	@media screen and (max-width: 768px){
 		.mod-home #nav-about .fa-info {
 			line-height: 32px;
