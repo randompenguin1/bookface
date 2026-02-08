@@ -2,7 +2,7 @@
     Name	 : Bookface Dark
     Version    : 2.0.0
     Licence    : AGPL
-    Created on : 07 FEB 2026
+    Created on : 08 FEB 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -38,11 +38,6 @@
     --navbar-calendar-text: 'Calendar';
     --navbar-contact-text: 'Friends';
     --navbar-notices-text: 'Notices';
-    --sign-in-text: 'Sign-In';
-    --compose-text: 'Compose';
-    --new-note-text: 'New Note';
-    --save-search-text: 'Save Search';
-    --follow-tag-text: 'Follow Tag';
     --comment-button-text: 'Comment';
     --share-button-text: 'Share';
     --quote-button-text: 'Quote';
@@ -52,11 +47,8 @@
     --attendyes-button-text: 'Going';
     --attendno-button-text: 'Can\'t Go';
     --attendmaybe-button-text: 'Maybe';
-    --add-photo-button-text: 'Add Photos';
     --follow-button-text: 'Follow';
     --save-button-text: 'Save';  
-	--new-message-text: 'New Message';
-	--calendar-today-text: 'Today';  
 	--community-post-text: 'Community Posts MUST be Public!';
 }
 
@@ -89,6 +81,17 @@ body {
 	.btn-link.active {
 		color: var(--link-color);
 	} 
+	.btn.btn-primary {
+		color: var(--nav-icon-color);
+		background-color: transparent;
+	}
+		.btn.btn-primary:hover,
+		.btn.btn-primary:focus,
+		.btn.btn-primary:active,
+		.btn.btn-primary:focus-within {
+			color: var(--nav-icon-color);
+			background-color: rgba(128,128,128,.1);
+		}
 	.text-muted {
 		color: var(--font-color-lighter);
 	} 
@@ -171,7 +174,7 @@ nav.navbar .nav > li > button:focus {
 		min-width: 50px;
 		height: 50px;
 		display: inline-block;
-	}	
+	}
 	#topbar-first .nav > li > a.selected,
 	#nav-notification.dropdown.open {
 		border-bottom: 3px solid var(--link-color) !important;
@@ -274,6 +277,10 @@ ul.tabs li {
 			ul.dropdown-menu li:hover {
 				border-color: transparent  !important;
 			}
+			ul.dropdown-menu > li > a { 
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 			ul.dropdown-menu > li > a:hover,
 			ul.dropdown-menu > li > a:focus {
 				background-image: none !important;
@@ -285,7 +292,7 @@ ul.tabs li {
             }
             ul.dropdown-menu > li > a.btn-link:hover,
 			ul.dropdown-menu > li > a.btn-link:focus {
-				color: var(--font-color-lighter) !important; 
+				color: #333 !important;
 			}
 			ul.dropdown-menu > li.active,
 			ul.dropdown-menu > li.active:hover,
@@ -316,10 +323,10 @@ ul.tabs li {
     	background-color: var(--nav-bg);
     }
 	header #banner {
-		left: 0 !important;
-		right: auto !important;
-		margin-top: 10px;
-		padding-left: 20px;
+	   left: 0 !important;
+	   right: auto !important;
+	   margin-top: 10px;
+	   padding-left: 20px;
 	}
 	.navbar-brand #logo-img {
 		margin-top: 20px;
@@ -348,16 +355,13 @@ ul.tabs li {
 			color: var(--link-color);
 		}
 
-		#navbar-brand-text {
+       #navbar-brand-text {
        		line-height: 40px;
        		font-weight: 700;
        		color: var(--link-color) !important;
        }
-       #nav-login::before{
-       	content: var(--sign-in-text);
-       }
 	.topbar ul.nav {
-	   position: relative;
+		position: relative;
 		width: 100%;
 		display: flex;
 		justify-content: center;
@@ -374,6 +378,10 @@ ul.tabs li {
 	   position: fixed !important;
 	   left: 60px;
 	}
+	#search-box .navbar-form {
+		margin: 0;
+		padding: 12px;
+	}
 	#topbar-first #search-box .form-search {
 	   height: 40px !important;
 	   font-size: 15px;
@@ -388,12 +396,13 @@ ul.tabs li {
 	   top: 8px;
 	}
 	#search-box .form-control.form-search {
-		border-radius: 50px !important;
-		background: var(--background-color) !important;
-		width: 100% !important;
+	   border-radius: 50px !important;
+	   background: transparent !important;
+	   width: 100% !important;
+	   padding-left: 30px;
 	}
 	#search-box .form-control::placeholder {
-		color: var(--nav-icon-color) !important;
+		   color: var(--nav-icon-color) !important;
 	}
 	#nav-search-input-field {
 		padding-right: 12px !important;
@@ -404,12 +413,12 @@ ul.tabs li {
 			width: 500px !important;
 		}
 	#topbar-first #search-box .btn {
-		font-size: 0px !important;
-		height: 32px;
-		width: 32px;
-		top: 2px !important;
-		background-color: black !important;
-		margin-top: 2px !important;
+		   font-size: 0px !important;
+			 height: 32px;
+		   width: 32px;
+		   top: 2px !important;
+		   background-color: black !important;
+		   margin-top: 2px !important;
 	}
 	#topbar-first #search-box .btn::before {
 		   content: '\f061';
@@ -427,7 +436,7 @@ ul.tabs li {
 			right: 15px;
 			width: 0px;
 			max-width: 250px;
-			margin: 0;
+			margin: 7px 0 0 0;
 			padding: 13px 55px 13px 10px;
 			text-align: right;
 			overflow: hidden;
@@ -453,36 +462,6 @@ ul.tabs li {
 		min-width: 250px !important;
 		overflow-x: hidden;
 	}
-	/* add missing main menu icons */ 
-	#nav-user-menu li a::before,
-	#offcanvasUsermenu li a::before {
-		font-family: ForkAwesome;
-		margin-right: 5px;
-	}
-	#nav-user-menu li:nth-of-type(1) a::before,
-	#offcanvasUsermenu li:nth-of-type(2) a::before {
-		content: '\f27a';
-	}
-	#nav-user-menu li:nth-of-type(2) a::before,
-	#offcanvasUsermenu li:nth-of-type(3) a::before {
-		content: '\f007';
-	}
-	#nav-user-menu li:nth-of-type(3) a::before,
-	#offcanvasUsermenu li:nth-of-type(4) a::before {
-		content: '\f03e';
-	}
-	#nav-user-menu li:nth-of-type(4) a::before,
-	#offcanvasUsermenu li:nth-of-type(5) a::before {
-		content: '\f044';
-	}
-	#nav-user-menu li:nth-of-type(5) a::before,
-	#offcanvasUsermenu li:nth-of-type(6) a::before {
-		content: '\f073';
-	}
-	#nav-user-menu li:nth-of-type(6) a::before,
-	#offcanvasUsermenu li:nth-of-type(7) a::before {
-		content: '\f02d';
-	}
 	.nav-pills ul.dropdown-menu li a, 
 	.nav-pills ul.dropdown-menu li .btn-link, 
 	.nav-tabs ul.dropdown-menu li a, 
@@ -491,27 +470,27 @@ ul.tabs li {
 	.account ul.dropdown-menu li .btn-link, 
 	.contact-photo-wrapper ul.dropdown-menu li a, 
 	.contact-photo-wrapper ul.dropdown-menu li .btn-link {
-		color: var(--nav-icon-color) !important;
-		border-color: var(--nav-bg) !important;
+		   color: var(--nav-icon-color) !important;
+		   border-color: var(--nav-bg) !important;
 	}
-		.nav-pills ul.dropdown-menu li > a:hover, 
-		.nav-tabs ul.dropdown-menu li > a:hover, 
-		.account ul.dropdown-menu li > a:hover, 
-		.contact-photo-wrapper ul.dropdown-menu li > a:hover, 
-		.nav-pills ul.dropdown-menu li.selected a, 
-		.nav-tabs ul.dropdown-menu li.selected a, 
-		.account ul.dropdown-menu li.selected a, 
-		.contact-photo-wrapper ul.dropdown-menu li.selected a {
-			color: #333 !important;
-			background: #f2f2f2 !important;
-			border-radius: 8px;
-		}  
+		   .nav-pills ul.dropdown-menu li > a:hover, 
+		   .nav-tabs ul.dropdown-menu li > a:hover, 
+		   .account ul.dropdown-menu li > a:hover, 
+		   .contact-photo-wrapper ul.dropdown-menu li > a:hover, 
+		   .nav-pills ul.dropdown-menu li.selected a, 
+		   .nav-tabs ul.dropdown-menu li.selected a, 
+		   .account ul.dropdown-menu li.selected a, 
+		   .contact-photo-wrapper ul.dropdown-menu li.selected a {
+				  color: #333 !important;
+				  background: #f2f2f2 !important;
+				  border-radius: 8px;
+		   }  
 	.nav-pills ul.dropdown-menu li.divider, 
 	.nav-tabs ul.dropdown-menu li.divider, 
 	.account ul.dropdown-menu li.divider, 
 	.contact-photo-wrapper ul.dropdown-menu li.divider {
-		background-color: var(--nav-bg) !important;
-	}
+		   background-color: var(--nav-bg) !important;
+	}  
 #content .nav > li > .btn-link {
 	margin: 5px;
 }
@@ -576,7 +555,7 @@ ul.tabs li {
 		#dropdownMenuTools {
 			height: 40px;
 			width: 40px;
-			background-color: rgba(128,128,128,.1) !important;
+			background-color: rgba(128,128,128,.1) !important; 
 			border-radius: 100% !important;
 			margin-top: 5px !important;
 			margin-right: 10px !important;
@@ -591,18 +570,10 @@ ul.tabs li {
 			color: #ffffff !important;
 			border-color: var(--border-color) !important;
 			box-shadow: none !important;
+			padding: 12px;
 		}
        #jotOpen:hover, #jotOpen:focus {
-            box-shadow: inset 0 0 100px var(--dimbright) !important;
-       }
-       #jotOpen::before {
-            content: var(--compose-text);
-            font-size: 15px;
-            margin-right: 10px;
-            line-height: 32px;
-            position: relative;
-            display: inline;
-            top: -4px;
+              box-shadow: inset 0 0 100px var(--dimbright) !important;
        }
 		/* Enable Posting from Community Page */
 		body.mod-community #jotOpen {
@@ -618,9 +589,6 @@ ul.tabs li {
 			body.mod-community #acl-wrapper .panel-info {
 				opacity: .2;
 			}
-		body.mod-notes #jotOpen::before {
-			content: var(--new-note-text);
-		}
 		body.mod-notes .sectiontop h3::before {
   			content: '\f023';
   			font-family: ForkAwesome;
@@ -628,9 +596,9 @@ ul.tabs li {
 		}
 		#jotOpen .fa-pencil-square-o {
 			font-size: 32px !important;
-			position: relative;
-			top: 4px;
-		}
+ 			position: relative;
+ 			top: 4px;
+ 		}
 		#topbar-second #nav-short-info {
 			margin-top: 10px;
 		}
@@ -684,7 +652,6 @@ ul.tabs li {
     .settings-submit.form-button-search,
     button[type="submit"].form-button-search {
         border-radius:50px !important;
-        margin-top:-.5px !important;
     }
     #adminpage a.btn:hover,
     #adminpage a.btn:focus,
@@ -754,6 +721,14 @@ ul.tabs li {
 	#photo-edit-end {
 		clear: both;
 	}
+	#photo_edit_form::after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	body.mod-photos #photo-tags {
+		margin-bottom: 10px;
+	}
 	/* Group Request Cancel/Confirm */
 	#dfrn-request-submit-wrapper input {
 		margin: 5px;
@@ -768,36 +743,14 @@ ul.tabs li {
 		resize: vertical !important;
 	}
 /* Other people profiles */
-	#mention-link {
-		border-radius: 8px !important;
-		background-color: var(--link-color) !important;
-		color: #ffffff !important;
-		border-color: var(--border-color) !important;
-		box-shadow: none !important;
-		padding: 0 16px !important;
-	}
-       #mention-link:hover,
-       #mention-link:focus {
-              box-shadow: inset 0 0 100px var(--dimbright) !important; 
-       }
-       #mention-link span:first-of-type {
-              float: right;
-              font-size: 32px;
-              line-height: 45px;
-              top: 4px;
-       }
-       #mention-link span:first-of-type .fa-2x {
-              font-size: inherit !important;
-       }
-       #mention-link span:last-of-type {
-              font-size: 15px;
-              margin-right: 10px;
-              line-height: 32px;
-              top: 6px;
-              position:relative;
-			  display: block;
-			  padding-right: 30px;
-       }
+#mention-link {
+	border-radius: 8px !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    padding: 0 8px !important;
+}
 	#rfic-desc, #remote-friends-in-common { 
 		background-color: var(--content-bg);
 	}
@@ -820,12 +773,18 @@ ul.tabs li {
 		#profile-extra-links .btn:focus {
 			box-shadow: inset 0 0 100px var(--dimbright);
 		} 
+	#showgroup-button {
+		text-align: center;
+	}
+		#showgroup-button #showgroup {
+			width: 71%;
+		}
 	/* SEARCH RESULTS */
 	#search-save {
 		background-color: var(--link-color) !important;
 		color: white !important;
 		border-radius: 8px !important;
-		padding: 6px 8px !important;
+		padding: 12px !important;
 	}
 		#search-save:hover,
 		#search-save:focus {
@@ -842,28 +801,9 @@ ul.tabs li {
 		display: inline-block;
 		margin-top: 2px;
 	}
-	#search-save .fa-floppy-o::after,
-	#search-save .fa-plus::after{
-		content: var(--save-search-text);
-		font-family: var(--global-font-family);
-		font-size: 15px;
-		float: left;
-		margin-right: 10px;
-		line-height: 32px;
-		position: relative;
-		display: block;
-		top: -2px;
-		font-weight: 700;
-	}
-	#search-save .fa-floppy-o::after {
-		  content: var(--save-search-text);
-	}
 	#search-save .fa-plus::before {
 		display: inline-block;
 		margin-top: 2px;
-	}
-	#search-save .fa-plus::after {
-		  content: var(--follow-tag-text);
 	}
 	/* popovers */
 	.popover.hovercard {
@@ -905,6 +845,10 @@ ul.tabs li {
 	}
 	aside .badge {
 		background-color: var(--link-color);
+	}
+	aside .widget button.fakelink {
+		width: 100%;
+		text-align: left;
 	}
 	/* 	Contributed by Matthias (feb@loma.ml):
 		Widgets mit einem Icon versehen
@@ -1045,17 +989,17 @@ ul.tabs li {
             font-size: 13px !important;
 			color: var(--font-color); 
        }
-              .type-link, .type-video {
-                     padding: 0 !important;
-                     margin:  0 !important;
-                     background-color: rgb(51, 51, 52) !important;
-                     border: 1px solid rgb(101, 104, 108) !important;
-              }
-              .type-link h4, .type-link blockquote, .type-link sup,
-              .type-video h4, .type-video blockquote, .type-video sup {
-                     padding-left: 10px !important;
-                     padding-right: 10px !important;
-              }
+		  .type-link, .type-video {
+				 padding: 0 !important;
+				 margin:  0 !important;
+				 background-color: rgb(51, 51, 52) !important;
+				 border: 1px solid rgb(101, 104, 108) !important;
+		  }
+		  .type-link h4, .type-link blockquote, .type-link sup,
+		  .type-video h4, .type-video blockquote, .type-video sup {
+				 padding-left: 10px !important;
+				 padding-right: 10px !important;
+		  }
   .media hr:first-of-type, aside hr, section hr {
     border-color: var(--nav-bg);
   }
@@ -1139,8 +1083,8 @@ ul.tabs li {
               top: 0px;
               z-index: 1;
        }
- 		/* Event Response Buttons */
-		.wall-item-actions-row:has(.vote-event button){
+        /* Event Response Buttons */
+ 		.wall-item-actions-row:has(.vote-event button){
 			margin-bottom: 68px;
 		}
 		.vote-event:has(button) {
@@ -1153,6 +1097,9 @@ ul.tabs li {
 		}
 		.vote-event .wall-item-response:empty{
 			display: none;
+		}
+		.vote-event:has(button) .wall-item-response:nth-of-type(1){
+			left: 15px;
 		}
 		.vote-event .wall-item-response:nth-of-type(1) .button-event::after,
 		.wall-item-actions-row [id^="attendyes"]::after{
@@ -1370,6 +1317,9 @@ ul.tabs li {
     background-color: var(--background-color);
     border-radius: 100%
 }
+	#change-profile-picture {
+		border-radius: 100%;
+	}
 aside .widget li {
     margin-bottom: 8px;
 }
@@ -1438,13 +1388,13 @@ aside .widget h3.p-name {
 	aside .vcard #subscribe-feed-link-button,
 	aside .vcard #dfrn-request-link-button,
 	aside .vcard #wallmessage-link-button,
-	aside .vcard #showgroup-button {
+	aside .vcard #show-group-button {
 		width: 75%;
 		float: none;
 		margin: 0 auto;
 		padding: 5px;
-	}
-		aside .vcard #showgroup-button a {
+	} 
+		aside .vcard #show-group-button a {
 			width: 100%;
 		}
 	aside .widget, .nav-container .widget {
@@ -1457,8 +1407,8 @@ aside .widget h3.p-name {
 	 /* end */
 	aside .widget li.selected {
 		background-color: var(--menu-background-hover-color) !important;
-		/* uncomment below for bookface auto */
-/*		background-image: linear-gradient(var(--menu-background-hover-color),var(--menu-background-hover-color)) !important; */
+		/* uncomment line below for bookface_auto */
+/* 		background-image: linear-gradient(var(--menu-background-hover-color),var(--menu-background-hover-color)) !important; */
 		border-color: transparent !important;
 		border-radius: 8px;
 	}
@@ -1854,18 +1804,21 @@ aside .widget h3.p-name {
 	.img-allocated-max-width {
 		margin: 20px auto;
 	}
+	/* fix for misplaced ALT badge */
+	p > a:has(img.has-alt-description){
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        display: block;
+    }
 	#vcard-short-photo-wrapper img, 
 	#nav-short-info .contact-wrapper img {
 		border-radius: 100%;
 	}
 /* Calendar */
-body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
-	content: var(--calendar-today-text);
-	font-family: var(--global-font-family);
-} 
 .fc-unthemed td.fc-today {
 	background-color: var(--menu-background-hover-color);
-	/* uncomment line below for bookface_auto */
+	/* uncomment below for bookface_auto */
 /*	background-image: linear-gradient(var(--menu-background-hover-color),var(--menu-background-hover-color)) !important; */
 }
 
@@ -1907,22 +1860,30 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
 .photo-edit-link-wrap .icon-padding {
     margin-left: 10px !important;
 }
-.photos-upload-link {
-    font-size: 28px;
-    color: var(--link-color) !important;
-    opacity: 1 !important;
-    border-radius: 8px;
-    padding: 0px 8px;
+.photo-album-edit-name,
+#photo-album-edit-submit {
+	width: 100%;
 }
+	#photo-album-edit-submit input {
+		float: right;
+		margin-top: 10px;
+		width: auto;
+	}
 #photo-album-link {
     opacity: 1 !important;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+    top: 9px;
+    color: var(--nav-icon-color);
 }
-.photos-upload-link i,
-#photo-album-link i,
-#photo-edit-link i,
-#photo-toprofile-link i,
-#album-edit-link i,
-#album-drop-link i,
+	#photo-album-link:hover,
+	#photo-album-link:focus,
+	#photo-album-link:active,
+	#photo-album-link:focus-within {
+		background-color: var(--dimbright);
+	}
+.widget .photos-upload-link i,
 .photos-order-link i {
     font-size: 24px !important;
     color: var(--link-color) !important;
@@ -1932,34 +1893,28 @@ body.mod-calendar .calendar-content-wrapper .fa-bullseye::before {
     height: 40px;
     width:  40px;
 }
+.widget .photos-upload-link i {
+	position: relative;
+	top: -9px;
+	left: 19px;
+}
 #photo-edit-link i.fa-image {
     padding: 6px 7px !important;
 }
 .photos-order-link {
-    margin-top: 5px !important;
+    margin-top: 0px !important;
 }
-    .photos-upload-link:hover i,
-    .photos-upload-link:focus i,
-    #photo-album-link:hover i,
-    #photo-album-link:focus i,
-    #photo-edit-link:hover i,
-    #photo-toprofile-link:hover i,
-    #photo-toprofile-link:focus i,
-    #album-edit-link:hover i,
-    #album-edit-link:focus i,
-    #album-drop-link:hover i,
-    #album-drop-link:focus i,
     .photos-order-link:hover i,
-    .photos-upload-link:hover i,
-    .photos-upload-link:focus i {
+    .widget .photos-upload-link:hover i,
+    .widget .photos-upload-link:focus i {
        background-color: var(--dimbright) !important;
     }
-.photos-content-wrapper .photos-upload-link::before {
-    content: var(--add-photo-button-text);
-    font-size: 15px; 
-    vertical-align: middle; 
-    margin-top: -10px;
-    display: inline-block;
+	#photo-toprofile-link, .photo-back-link, #album-drop-link {
+  		margin-right: 0px;
+	}
+.photos-content-wrapper h3,
+#photo-album-title {
+	margin-top: 5px;
 }
 .justified-gallery {
     overflow: visible !important;
@@ -2178,9 +2133,6 @@ div#back-to-top {
 	.mail-list-outside-wrapper .contact-photo-wrapper img {
 		border-radius: 100%;
 	}
-	#message-new a::after {
-		content: var(--new-message-text);
-	}
 		#message-new a {
 			color: var(--link-color);
 			opacity: 1 !important;
@@ -2200,7 +2152,11 @@ div#back-to-top {
 			#message-preview .media-list a:hover,
 			#message-preview .media-list a:focus {
 				color: var(--link-color) !important;
-			}	
+			}
+		/* change icon on message submit for consistency */
+		#prvmail-submit i::before {
+			content: '\f0e0';
+		}		
 .modal-backdrop {
 	background-color: #000;
 }
@@ -2530,6 +2486,15 @@ body.mod-settings #delegation .contact-block-img {
     		top: 115px !important;
     		border-color: var(--border-color);
     	}
+    		#search-mobile .navbar-form {
+    			padding: 10px;
+    		}
+    			#search-mobile input {
+    				width: 100%;
+    			}
+    			#search-mobile .form-button-search {
+    				border-radius: 50px !important;
+    			}
     		#search-mobile .col-xs-12 {
     			background-color: var(--nav-bg);
     		}
@@ -2539,7 +2504,7 @@ body.mod-settings #delegation .contact-block-img {
     			}
 		#topbar-first .navbar-toggle[data-target="aside"] {
 			position: fixed;
-			top:  0px;
+			top: 0px;
 			left: 55px;
 			z-index: 10;
 		}
@@ -2563,10 +2528,17 @@ body.mod-settings #delegation .contact-block-img {
 	#topbar-first .topbar-nav #nav-notification::after{
 		display: none !important;
 	}
-    #jotOpen::before {
-        content: '';
-        margin: 0;
+    #jotOpen span,
+    #search-save span,
+    #mention-link span {
+        display: none;
     }
+    	#jotOpen i,
+    	#search-save i,
+    	#mention-link i {
+    		width: 100%;
+    		text-align: center;
+    	}
     #mention-link {
     	padding: 0 8px !important;
     }
@@ -2578,36 +2550,11 @@ body.mod-settings #delegation .contact-block-img {
     	background-color: rgba(0, 0, 0, 0.4);
     }
 	/* Profile Aside Mobile */
-	body.mod-contact #content,
-	body.mod-profile #content,
-	body.mod-photos  #content {
+	body.mod-contact .row:has(.coverphoto) #content,
+	body.mod-profile .row:has(.coverphoto) #content,
+	body.mod-photos  .row:has(.coverphoto) #content {
 		margin-top: 350px;
 	}
-		/* only seen on your own Recent Photos page */
-		body.mod-profile #sidebar-photos-albums::before {
-			content: '\f083';
-			font-family: ForkAwesome;
-			font-size: 150px;
-			position: fixed;
-			top: 175px;
-			left: 0;
-			right: 0;
-			text-align: center;
-			color: var(--nav-icon-color);
-			opacity: .5;
-			z-index: -1;
-			transition-duration: .5s;
-			transition-property: left;
-		}
-			body.mod-profile aside.canvas-sliding #sidebar-photos-albums::before,
-			body.mod-profile aside.canvas-slid #sidebar-photos-albums::before {
-				left: 50%;
-			}
-			/* hide camera icon on other profile Recent Photos pages */
-			body.mod-profile .vcard + #sidebar-photos-albums::before {
-				content: '';
-			}
-			
 		/* This is for old browsers that do not understand either @supports or :has() */
 		body.mod-contact aside,
 		body.mod-photos  aside,
@@ -2774,24 +2721,27 @@ body.mod-settings #delegation .contact-block-img {
 	======================================
 */
 @media screen and (max-width: 768px), (max-height: 480px) and (max-width: 960px) and (orientation: landscape) {
-		#topbar-first .navbar-toggle[data-target="#search-mobile"]{
-			left: 10%;
+	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
+		left: 10%;
+	}
+		.topbar ul.nav li.sr-only {
+			display: none;	/* mobile UI does not need keyboard nav support I guess? */
 		}
-		#search-save {
-			width: 100px !important;
+	#search-save {
+		width: 100px !important;
+	}
+		#search-save .fa-plus::after {
+			content: var(--follow-button-text);
 		}
-			#search-save .fa-plus::after {
-				content: var(--follow-button-text);
-			}
-			#search-save .fa-floppy-o::after {
-				content: var(--save-button-text);
-			}
-		a.wall-item-name-link, span.fakelink {
-    		font-weight: bold;
+		#search-save .fa-floppy-o::after {
+			content: var(--save-button-text);
 		}
-		.wall-item-container iframe {
-    		aspect-ratio: 5/4;
-    	}
+	a.wall-item-name-link, span.fakelink {
+		font-weight: bold;
+	}
+	.wall-item-container iframe {
+		aspect-ratio: 5/4;
+	}
 	/* new mobile layout */
 	body {
 		padding-top: 65px !important;
@@ -3096,10 +3046,8 @@ body.mod-settings #delegation .contact-block-img {
 				height: auto !important;
 			}
 				#topbar-second ul.dropdown-menu li a,
-				.tabs .dropdown-menu li a {
+				.tabs ul.dropdown-menu li a {
 					font-size: 18px !important;
-					overflow: hidden;
-					text-overflow: ellipsis;
 				}
 				.topbar .dropdown-header {
 					font-size: 18px !important;
@@ -3111,6 +3059,9 @@ body.mod-settings #delegation .contact-block-img {
 		aside.offcanvas-xs {
 			padding-top: 60px;
 			padding-bottom: 60px;
+		}
+		body.mod-community #jotOpen {
+			line-height: 30px;
 		}
 		body.mod-profile #sidebar-photos-albums::before {
 			top: 125px;
@@ -3170,12 +3121,24 @@ body.mod-settings #delegation .contact-block-img {
 	#profile-jot-plugin-wrapper {
 		width: 100%;
 	}
+	#photo-edit-link-wrap.pull-right a {
+		font-size: 0px;
+		border-radius: 100% !important;
+		height: 40px;
+		width:  40px;
+		text-align: center;
+		padding: 7px 0 0 0;
+		line-height: 40px;
+	}
+		#photo-edit-link-wrap.pull-right a i {
+			font-size: 24px;
+		}
 	/* prevent action button drop-downs from being inaccessible
 	   when viewing a single/last post on mobile devices
 	*/
 	body {
 		padding-bottom: 300px !important;
-	}
+	}				
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
@@ -3538,6 +3501,14 @@ body.mod-home {
 	line-height: 24px;
 	width: auto;
 	display: block;
+}
+.mod-home.is-not-singleuser .login-form,
+.mod-login #content #login-form,
+.mod-home.is-not-singleuser .login-form::before, 
+.mod-login #content #login-form::before,
+.mod-home.is-not-singleuser .login-form::after, 
+.mod-login #content #login-form::after {
+	border-radius: 20px;
 }
 	@media screen and (max-width: 768px){
 		.mod-home #nav-about .fa-info {
