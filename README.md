@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.0
+Version 2.0.1
 
 **Requirements** Friendica "Blutwurz" 2026.01 or Friendica Release Candidate 2025.07-rc
 
@@ -382,6 +382,8 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+* Fixed too short Notifications drop-down menu [Issue #49]
+
 2.0.0 (08 February 2026)
 * Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
 * Moved User Menu and Notifications Menu to the far right on Desktop Layout
