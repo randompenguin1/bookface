@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.0
+Version 2.0.2
 
 **Requirements** Friendica "Interrupted Fern" 2024.12
 
@@ -382,6 +382,9 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+* Notifications Menu length fix [Issue #49] does not apply to 2024.12
+* Fixed Action Button spacing on non-event posts [Issue #50]
+
 2.0 (07 February 2026)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
 * Fixed misaligned "View Group" button on Group profile page.
