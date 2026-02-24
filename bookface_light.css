@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 2.0.0
+	Version    : 2.0.2
     Licence    : AGPL
-    Created on : 08 FEB 2026
+    Created on : 24 FEB 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -504,7 +504,7 @@ ul.tabs li {
 	background-color: var(--content-bg);
 }   
 	#topbar-first #nav-notifications-menu {
-		   max-height: calc(100vh - 75px);
+		   max-height: calc(100vh - 75px) !important;
 		   margin-left: -228px;
 		   border: 1px solid var(--background-color) !important;
 	}
@@ -1084,6 +1084,11 @@ ul.tabs li {
 			z-index: 1;
 		}
 		/* Event Response Buttons */
+		.vote-event {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
 		.wall-item-actions-row:has(.vote-event button){
 			margin-bottom: 68px;
 		}
