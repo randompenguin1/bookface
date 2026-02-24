@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 2.0.1
+    Version    : 2.0.2
     Licence    : AGPL
-    Created on : 21 FEB 2026
+    Created on : 24 FEB 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -1084,6 +1084,11 @@ ul.tabs li {
               z-index: 1;
        }
         /* Event Response Buttons */
+		.vote-event {
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
  		.wall-item-actions-row:has(.vote-event button){
 			margin-bottom: 68px;
 		}
