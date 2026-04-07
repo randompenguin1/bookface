@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.2
+Version 2.0.3
 
 **Requirements** Friendica "Blutwurz" 2026.01 or Friendica Release Candidate 2025.07-rc
 
@@ -384,6 +384,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 ## CHANGELOG:
 * Fixed too short Notifications drop-down menu [Issue #49]
 * Fixed Action Button spacing [Issue #50]
+* Fit search text autocomplete suggestion list on screen.
 
 2.0.0 (08 February 2026)
 * Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
