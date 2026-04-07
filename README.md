@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.2
+Version 2.0.3
 
 **Requirements** Friendica "Interrupted Fern" 2024.12
 
@@ -384,6 +384,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 ## CHANGELOG:
 * Notifications Menu length fix [Issue #49] does not apply to 2024.12
 * Fixed Action Button spacing on non-event posts [Issue #50]
+* Fit search autocomplete suggestion list on screen so it also scrolls.
 
 2.0 (07 February 2026)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
