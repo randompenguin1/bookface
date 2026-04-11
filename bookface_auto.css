@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 2.0.3
+	Version    : 2.0.4
     Licence    : AGPL
-    Created on : 06 APR 2026
+    Created on : 11 APR 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -3185,6 +3185,15 @@ body.mod-settings #delegation .contact-block-img {
 	body {
 		padding-bottom: 300px !important;
 	}
+	/* adjustment for XMPP Chat add-on */
+	.converse-chatboxes {
+		bottom: 61px !important;
+	}
+	.conversejs .converse-chatboxes #controlbox .box-flyout {
+		height: calc(var(--fullpage-chat-height) - 115px) !important;
+		margin-bottom: -6px;
+		box-shadow: none;
+	}	
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
@@ -3520,6 +3529,17 @@ body.mod-settings #delegation .contact-block-img {
 		.coverphoto.canvas-slid,
  		.coverphoto {
 			top: 0px;
+		}	
+		/* adjustment for XMPP Chat add-on */
+		.converse-chatboxes {
+			bottom: 0 !important;
+			right: 61px !important;
+		}
+		.conversejs .converse-chatboxes #controlbox .box-flyout {
+			height: 100vh !important;
+			margin-bottom: 0px;
+			margin-left: 61px !important;
+			box-shadow: none;
 		}	
 	}
 /* =====================================================================
@@ -6672,6 +6692,15 @@ body.mod-settings #delegation .contact-block-img {
 	body {
 		padding-bottom: 300px !important;
 	}
+	/* adjustment for XMPP Chat add-on */
+	.converse-chatboxes {
+		bottom: 61px !important;
+	}
+	.conversejs .converse-chatboxes #controlbox .box-flyout {
+		height: calc(var(--fullpage-chat-height) - 115px) !important;
+		margin-bottom: -6px;
+		box-shadow: none;
+	}	
 }
 /*	Frio Theme Cut-Off (double sidebar width)
 	=========================================
@@ -7007,6 +7036,17 @@ body.mod-settings #delegation .contact-block-img {
 		.coverphoto.canvas-slid,
  		.coverphoto {
 			top: 0px;
+		}	
+		/* adjustment for XMPP Chat add-on */
+		.converse-chatboxes {
+			bottom: 0 !important;
+			right: 61px !important;
+		}
+		.conversejs .converse-chatboxes #controlbox .box-flyout {
+			height: 100vh !important;
+			margin-bottom: 0px;
+			margin-left: 61px !important;
+			box-shadow: none;
 		}	
 	}
 } /* end of prefers darkmode */	
