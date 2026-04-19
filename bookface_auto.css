@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 2.0.4
+	Version    : 2.0.5
     Licence    : AGPL
-    Created on : 07 APR 2026
+    Created on : 19 APR 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -3147,6 +3147,10 @@ body.mod-settings #delegation .contact-block-img {
 	*/
 	body {
 		padding-bottom: 300px !important;
+	}
+	/* Prevent infinite iframe resizing in Admin theme settings */	
+	body.minimal {
+		padding: 10px !important;
 	}	
 	/* adjustment for XMPP Chat add-on */
 	.converse-chatboxes {
@@ -6625,6 +6629,10 @@ body.mod-settings #delegation .contact-block-img {
 	*/
 	body {
 		padding-bottom: 300px !important;
+	}
+	/* Prevent infinite iframe resizing in Admin theme settings */	
+	body.minimal {
+		padding: 10px !important;
 	}
 	/* adjustment for XMPP Chat add-on */
 	.converse-chatboxes {
