@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 2.0.5
+	Version    : 2.0.6
     Licence    : AGPL
-    Created on : 19 APR 2026
+    Created on : 21 APR 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -90,6 +90,17 @@ body {
 		.btn.btn-primary:active,
 		.btn.btn-primary:focus-within {
 			color: var(--nav-icon-color);
+			background-color: rgba(128,128,128,.1);
+		}
+	a.btn.btn-default {
+		background-color: var(--dimbright);
+		color: var(--font-color) !important;
+	}
+		a.btn.btn-default:hover,
+		a.btn.btn-default:focus,
+		a.btn.btn-default:active,
+		a.btn.btn-default:focus-within {
+			color: var(--link-color) !important;
 			background-color: rgba(128,128,128,.1);
 		}
 	.text-muted {
