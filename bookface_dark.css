@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 2.0.7
+    Version    : 2.0.8
     Licence    : AGPL
     Created on : 21 APR 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -882,6 +882,8 @@ ul.tabs li {
 	#saved-search-list .fakelink h3::before { content: "\f002"; } /* search */
 	#group-list-sidebar-inflated.fakelink h3::before,
 	#group-list-sidebar .fakelink h3::before { content: "\f0c0"; } /* users */
+	#pages-list-sidebar-inflated.fakelink h3::before,
+	#pages-list-sidebar .fakelink h3::before { content: "\f1ea"; } /* newspaper */
 	#nets-sidebar-inflated.fakelink h3::before,
 	#nets-sidebar .fakelink h3::before { content: "\f233"; } /* server */
 	#trending-tags-sidebar-inflated.fakelink h3::before,
@@ -902,6 +904,11 @@ ul.tabs li {
 	#rel-sidebar .fakelink h3::before { content: "\f2b5"; } /* handshake-o */
 	#category-sidebar-inflated.fakelink h3::before,
 	#category-sidebar .fakelink h3::before { content: "\f00b"; } /* th-list */
+	
+	.group-list-img,
+	.pages-list-img {
+		border-radius: 100%;
+	}
 
 	aside .widget.inflated.fakelink h3::after {
 		font-family: "ForkAwesome";
