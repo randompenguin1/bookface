@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.6
+Version 2.0.7
 
 **Requirements** Friendica "Blutwurz" 2026.01 or Friendica Release Candidate 2025.07-rc
 
@@ -388,6 +388,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fix for XMPP Add-on elements in mobile UI [Issue #51]
 * Fix for [Issue #52] where in Admin Theme Settings for Frio, if Bookface scheme was selected the IFRAME would increase in height infinitely.
 * Restyle "Register additional accounts" link (and other a.btn.btn-default) as button.
+* Fix for nav pills drop menu rollover background color.
 
 2.0.0 (08 February 2026)
 * Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
