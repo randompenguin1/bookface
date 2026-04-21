@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.6
+Version 2.0.7
 
 **Requirements** Friendica "Interrupted Fern" 2024.12
 
@@ -388,6 +388,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fix for [Issue #51] where XMPP add-on UI overlaps Bookface Mobile UI
 * Fix for [Issue #52] where in Admin Theme Settings for Frio, if Bookface scheme was selected the IFRAME would increase in height infinitely.
 * Restyle "Register Additional Accounts" (and other a.btn.btn-default) as buttons.
+* Fix for nav pills drop menu rollover background color.
 
 2.0 (07 February 2026)
 * Fixed Navbar Labels not applying Notices variable [Issue #33]
