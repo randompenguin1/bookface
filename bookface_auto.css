@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 2.0.6
+	Version    : 2.0.7
     Licence    : AGPL
     Created on : 21 APR 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -488,6 +488,7 @@ ul.tabs li {
 		color: var(--nav-icon-color) !important;
 		border-color: var(--nav-bg) !important;
 	}
+	 	.nav-pills ul.dropdown-menu li > button:hover,
 		.nav-pills ul.dropdown-menu li > a:hover, 
 		.nav-tabs ul.dropdown-menu li > a:hover, 
 		.account ul.dropdown-menu li > a:hover, 
@@ -3981,6 +3982,7 @@ ul.tabs li {
 		   color: var(--nav-icon-color) !important;
 		   border-color: var(--nav-bg) !important;
 	}
+	 	   .nav-pills ul.dropdown-menu li > button:hover,
 		   .nav-pills ul.dropdown-menu li > a:hover, 
 		   .nav-tabs ul.dropdown-menu li > a:hover, 
 		   .account ul.dropdown-menu li > a:hover, 
