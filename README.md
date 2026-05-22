@@ -2,7 +2,7 @@ BOOKFACE FOR FRIENDICA
 ======================
 Version 2.0.8
 
-**Requirements** Friendica "Blutwurz" 2026.01 or Friendica Release Candidate 2025.07-rc
+**Requirements** Friendica "Blutwurz" 2026.01, 2026.05, or Friendica Release Candidate 2025.07-rc
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
