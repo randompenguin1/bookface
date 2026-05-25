@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 2.0.8
+	Version    : 2.1.1
     Licence    : AGPL
-    Created on : 21 APR 2026
+    Created on : 25 May 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -190,6 +190,12 @@ nav.navbar .nav > li > button:focus {
 	#nav-notification.dropdown.open {
 		border-bottom: 3px solid var(--link-color) !important;
 		color: var(--link-color) !important;
+		height: 50px;							/* pengy */
+	}
+	/* pengy */
+	#topbar-first .nav > li > a.selected i, #nav-notification.dropdown.open {
+  		border-bottom: none;
+  		padding-bottom: 0px;
 	}
 #topbar-first .nav > li > a.selected:hover,
 #topbar-first .nav > li > a.selected:focus,
@@ -926,7 +932,12 @@ ul.tabs li {
 		aside .widget.inflated h3 {
 			padding-bottom: 0px;
 		}		
-	
+		aside .widget.inflated button {
+			display: block !important;
+		}
+		aside .widget.inflated button small {
+			display: none;
+		}		
 /* POSTS */
 .tread-wrapper {
 	background-color: var(--content-bg) !important;
@@ -1315,6 +1326,9 @@ ul.tabs li {
 		   margin-top:20px !important;
 		   border-radius: none !important;
 		   background-color: transparent;
+	}
+	#profile-jot-wrapper .nav > li > .btn-link {
+		margin: 0px;
 	}
 		/* file browser */
 		#upload-photo {
@@ -3691,6 +3705,12 @@ nav.navbar .nav > li > button:focus {
 	#nav-notification.dropdown.open {
 		border-bottom: 3px solid var(--link-color) !important;
 		color: var(--link-color) !important;
+		height: 50px;							/* pengy */
+	}
+	/* pengy */
+	#topbar-first .nav > li > a.selected i, #nav-notification.dropdown.open {
+  		border-bottom: none;
+  		padding-bottom: 0px;
 	}
 #topbar-first .nav > li > a.selected:hover,
 #topbar-first .nav > li > a.selected:focus,
@@ -4427,7 +4447,12 @@ ul.tabs li {
 		aside .widget.inflated h3 {
 			padding-bottom: 0px;
 		}		
-	
+		aside .widget.inflated button {
+			display: block !important;
+		}
+		aside .widget.inflated button small {
+			display: none;
+		}		
 /* POSTS */
 .tread-wrapper {
 	background-color: var(--content-bg) !important;
@@ -4816,6 +4841,9 @@ ul.tabs li {
 		   margin-top:20px !important;
 		   border-radius: none !important;
 		   background-color: transparent;
+	}
+	#profile-jot-wrapper .nav > li > .btn-link {
+		margin: 0px;
 	}
 		/* file browser */
 		#upload-photo {
