@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.1.1
+Version 2.1.4
 
 **Requirements** Friendica "Blutwurz" 2026.01, 2026.05, or Friendica Release Candidate 2025.07-rc
 
@@ -393,6 +393,9 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fixed misaligned compose buttons in 2026.05 [Issue #53]
 * Fixed misplaced collapsed arrow on Trending Tags Widget in 2026.05 [Issue #54]
 * Fixed main nav selected double underscore in 2026.05 [Issue #55] 
+* Fixed Comment Compose button styling changes in 2026 versions [Issue #56]
+* Fixed Submit Button in Search Field styling change [Issue #57]
+* Fixed Contact action link styling change in 2026 [Issue #58]
 
 2.0.0 (08 February 2026)
 * Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
