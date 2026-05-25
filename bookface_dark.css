@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 2.1.3
+    Version    : 2.1.4
     Licence    : AGPL
     Created on : 25 May 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -671,6 +671,7 @@ ul.tabs li {
         border-radius: 8px !important;
         border: none !important;
         box-shadow: none !important;
+		margin-left: 5px;
     }
     .settings-submit.form-button-search,
     button[type="submit"].form-button-search {
@@ -1228,7 +1229,8 @@ ul.tabs li {
 		}
 		.photo-comment-wrapper .btn-sm,
 		#profile-jot-wrapper .btn-sm,
-		.wall-item-comment-wrapper .btn-sm {
+		.wall-item-comment-wrapper .btn-sm,
+		.comment-icon-list .btn-default {
 			background-color: transparent;
 			-webkit-box-shadow: none;
 			box-shadow: none;
@@ -1242,7 +1244,9 @@ ul.tabs li {
 			#profile-jot-wrapper .btn-sm:hover,
 			#profile-jot-wrapper .btn-sm:focus,
 			.wall-item-comment-wrapper .btn-sm:hover,
-			.wall-item-comment-wrapper .btn-sm:focus {
+			.wall-item-comment-wrapper .btn-sm:focus,
+			.comment-icon-list .btn-default:hover,
+			.comment-icon-list .btn-default:focus {
 				background-color: transparent;
 				color: var(--link-color);
 			}
