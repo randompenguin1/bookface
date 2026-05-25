@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Light
-	Version    : 2.1.1
+	Version    : 2.1.2
     Licence    : AGPL
     Created on : 25 May 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -663,6 +663,7 @@ ul.tabs li {
     #adminpage a.btn,
     .settings-submit,
     button[type="submit"],
+	button[type="submit"].btn-default,
     input[type="submit"],
     #photos-upload-submit {
         background-color: var(--link-color) !important;
@@ -681,10 +682,13 @@ ul.tabs li {
     .settings-submit:focus,
     button[type="submit"]:hover,
     button[type="submit"]:focus,
+	button[type="submit"].btn-default:hover,
+	button[type="submit"].btn-default:focus,
     input[type="submit"]:hover,
     input[type="submit"]:focus,
     #photos-upload-submit:hover,
     #photos-upload-submit:focus{
+		color: white !important;
         box-shadow: inset 0 0 100px var(--dimbright) !important;
     }
     #delegate-parent .submit button {
