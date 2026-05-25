@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.0.8
+Version 2.0.9
 
 **Requirements** Friendica "Blutwurz" 2026.01, 2026.05, or Friendica Release Candidate 2025.07-rc
 
@@ -390,6 +390,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Restyle "Register additional accounts" link (and other a.btn.btn-default) as button.
 * Fix for nav pills drop menu rollover background color.
 * Added styling for the future Pages widget.
+* Fixed main nav selected double underscore in 2026.05 [Issue #55] 
 
 2.0.0 (08 February 2026)
 * Fixed alignment and z-index of Sidebar and Search buttons for narrow screens
