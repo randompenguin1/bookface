@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 2.1.2
+    Version    : 2.1.3
     Licence    : AGPL
     Created on : 25 May 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -92,14 +92,14 @@ body {
 			color: var(--nav-icon-color);
 			background-color: rgba(128,128,128,.1);
 		}
-	a.btn.btn-default {
+	.btn.btn-default {
 		background-color: var(--dimbright);
 		color: var(--font-color) !important;
 	}
-		a.btn.btn-default:hover,
-		a.btn.btn-default:focus,
-		a.btn.btn-default:active,
-		a.btn.btn-default:focus-within {
+		.btn.btn-default:hover,
+		.btn.btn-default:focus,
+		.btn.btn-default:active,
+		.btn.btn-default:focus-within {
 			color: var(--link-color) !important;
 			background-color: rgba(128,128,128,.1);
 		}
@@ -1006,6 +1006,7 @@ ul.tabs li {
 	.contact-wrapper .contact-action-link, 
 	.contact-wrapper .contact-action-link:hover, 
 	.textcomplete-item .contact-wrapper .contact-action-link {
+		background-color: transparent !important;
 		color: var(--font-color);
 	}
 	.contact-entry-desc {
