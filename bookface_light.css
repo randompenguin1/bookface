@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 2.0.8
+	Version    : 2.0.9
     Licence    : AGPL
-    Created on : 21 APR 2026
+    Created on : 25 May 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -190,6 +190,12 @@ nav.navbar .nav > li > button:focus {
 	#nav-notification.dropdown.open {
 		border-bottom: 3px solid var(--link-color) !important;
 		color: var(--link-color) !important;
+		height: 50px;							/* pengy */
+	}
+	/* pengy */
+	#topbar-first .nav > li > a.selected i, #nav-notification.dropdown.open {
+  		border-bottom: none;
+  		padding-bottom: 0px;
 	}
 #topbar-first .nav > li > a.selected:hover,
 #topbar-first .nav > li > a.selected:focus,
