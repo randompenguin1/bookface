@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.1.0
+Version 2.1.1
 
 **Requirements** Friendica "Blutwurz" 2026.01, 2026.05, or Friendica Release Candidate 2025.07-rc
 
@@ -391,6 +391,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 * Fix for nav pills drop menu rollover background color.
 * Added styling for the future Pages widget.
 * Fixed misaligned compose buttons in 2026.05 [Issue #53]
+* Fixed misplaced collapsed arrow on Trending Tags Widget in 2026.05 [Issue #54]
 * Fixed main nav selected double underscore in 2026.05 [Issue #55] 
 
 2.0.0 (08 February 2026)
