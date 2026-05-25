@@ -1,6 +1,6 @@
 /*
     Name	 : Bookface Dark
-    Version    : 2.1.1
+    Version    : 2.1.4
     Licence    : AGPL
     Created on : 25 May 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -92,14 +92,14 @@ body {
 			color: var(--nav-icon-color);
 			background-color: rgba(128,128,128,.1);
 		}
-	a.btn.btn-default {
+	.btn.btn-default {
 		background-color: var(--dimbright);
 		color: var(--font-color) !important;
 	}
-		a.btn.btn-default:hover,
-		a.btn.btn-default:focus,
-		a.btn.btn-default:active,
-		a.btn.btn-default:focus-within {
+		.btn.btn-default:hover,
+		.btn.btn-default:focus,
+		.btn.btn-default:active,
+		.btn.btn-default:focus-within {
 			color: var(--link-color) !important;
 			background-color: rgba(128,128,128,.1);
 		}
@@ -663,6 +663,7 @@ ul.tabs li {
     #adminpage a.btn,
     .settings-submit,
     button[type="submit"],
+	button[type="sbumit"].btn-default,
     input[type="submit"],
     #photos-upload-submit {
         background-color: var(--link-color) !important;
@@ -670,6 +671,7 @@ ul.tabs li {
         border-radius: 8px !important;
         border: none !important;
         box-shadow: none !important;
+		margin-left: 5px;
     }
     .settings-submit.form-button-search,
     button[type="submit"].form-button-search {
@@ -681,10 +683,13 @@ ul.tabs li {
     .settings-submit:focus,
     button[type="submit"]:hover,
     button[type="submit"]:focus,
+	button[type="submit"].btn-default:hover,
+	button[type="submit"].btn-default:focus,
     input[type="submit"]:hover,
     input[type="submit"]:focus,
     #photos-upload-submit:hover,
     #photos-upload-submit:focus{
+		color: white !important;
         box-shadow: inset 0 0 100px var(--dimbright) !important;
     }
     #delegate-parent .submit button {
@@ -1002,6 +1007,7 @@ ul.tabs li {
 	.contact-wrapper .contact-action-link, 
 	.contact-wrapper .contact-action-link:hover, 
 	.textcomplete-item .contact-wrapper .contact-action-link {
+		background-color: transparent !important;
 		color: var(--font-color);
 	}
 	.contact-entry-desc {
@@ -1223,7 +1229,8 @@ ul.tabs li {
 		}
 		.photo-comment-wrapper .btn-sm,
 		#profile-jot-wrapper .btn-sm,
-		.wall-item-comment-wrapper .btn-sm {
+		.wall-item-comment-wrapper .btn-sm,
+		.comment-icon-list .btn-default {
 			background-color: transparent;
 			-webkit-box-shadow: none;
 			box-shadow: none;
@@ -1237,7 +1244,9 @@ ul.tabs li {
 			#profile-jot-wrapper .btn-sm:hover,
 			#profile-jot-wrapper .btn-sm:focus,
 			.wall-item-comment-wrapper .btn-sm:hover,
-			.wall-item-comment-wrapper .btn-sm:focus {
+			.wall-item-comment-wrapper .btn-sm:focus,
+			.comment-icon-list .btn-default:hover,
+			.comment-icon-list .btn-default:focus {
 				background-color: transparent;
 				color: var(--link-color);
 			}
