@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 2.1.4
+	Version    : 2.1.5
     Licence    : AGPL
-    Created on : 25 May 2026
+    Created on : 10 JUNE 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -3369,6 +3369,12 @@ body.mod-settings #delegation .contact-block-img {
 	}
 	.hovercard {
 		max-width: 100%;
+	}
+	#topbar-first .topbar-nav .nav-segment a {
+		width: 50px;
+	}
+	#topbar-first .nav > li > a::after {
+		margin-left: -10px;
 	}
 }
 /* 	Narrow Screen Phones in Landscape Orientation
@@ -6893,6 +6899,12 @@ body.mod-settings #delegation .contact-block-img {
 	}
 	.hovercard {
 		max-width: 100%;
+	}
+	#topbar-first .topbar-nav .nav-segment a {
+		width: 50px;
+	}
+	#topbar-first .nav > li > a::after {
+		margin-left: -10px;
 	}
 }
 /* 	Narrow Screen Phones in Landscape Orientation
