@@ -942,7 +942,41 @@ ul.tabs li {
 		}
 		aside .widget.inflated button small {
 			display: none;
-		}		
+		}
+
+/* POST LINK PREVIEW */
+.wall-item-container .wall-item-content .type-link
+{
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        margin-top: 10px !important;
+        padding-bottom: 10px !important;
+}
+.wall-item-container .wall-item-content .type-link h4
+{
+        padding: 0;
+        padding-bottom: 10px;
+}
+.wall-item-container .wall-item-content .type-link blockquote
+{
+        padding: 0 10px 10px;
+        margin-bottom: 10px;
+}
+.wall-item-container .wall-item-content .type-link sup
+{
+        padding: 10px 10px 0 10px;
+        line-height: inherit;
+        border-top: 1px solid rgb(208,211,215);
+}
+.wall-item-container .wall-item-content .type-link img.attachment-preview
+{
+        width: 100%;
+        border-radius: 8px 8px 0 0;
+        max-width: none;
+        max-height: none;
+}
+
 /* POSTS */
 .tread-wrapper {
 	background-color: var(--content-bg) !important;
