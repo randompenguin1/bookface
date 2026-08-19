@@ -382,6 +382,10 @@ And then use it in your stylesheet like so:
 I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+2.1.6 (18 August 2026)
+* Fixed Notifications being too narrow.
+
+2.1.5 (31 July 2026)
 * Fixed too short Notifications drop-down menu [Issue #49]
 * Fixed Action Button spacing [Issue #50]
 * Fit search text autocomplete suggestion list on screen.
