@@ -1,8 +1,8 @@
 /*
     Name	 : Bookface Dark
-    Version    : 2.1.5
+    Version    : 2.1.6
     Licence    : AGPL
-    Created on : 10 JUNE 2026
+    Created on : 18 AUG 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -943,6 +943,40 @@ ul.tabs li {
 		aside .widget.inflated button small {
 			display: none;
 		}		
+
+/* POST LINK PREVIEW */
+.wall-item-container .wall-item-content .type-link
+{
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	margin-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+.wall-item-container .wall-item-content .type-link h4
+{
+	padding: 0;
+	padding-bottom: 10px;
+}
+.wall-item-container .wall-item-content .type-link blockquote
+{
+	padding: 0 10px 10px;
+	margin-bottom: 10px;
+}
+.wall-item-container .wall-item-content .type-link sup
+{
+	padding: 10px 10px 0 10px;
+	line-height: inherit;
+	border-top: 1px solid rgb(101,104,108);
+}
+.wall-item-container .wall-item-content .type-link img.attachment-preview
+{
+	width: 100%;
+	border-radius: 8px 8px 0 0;
+	max-width: none;
+	max-height: none;
+}
+
 /* POSTS */
 .tread-wrapper {
 	background-color: var(--content-bg) !important;
@@ -3370,7 +3404,7 @@ body.mod-settings #delegation .contact-block-img {
 	.hovercard {
 		max-width: 100%;
 	}
-	#topbar-first .topbar-nav .nav-segment a {
+	#topbar-first .topbar-nav .nav-segment > a {
 		width: 50px;
 	}
 	#topbar-first .nav > li > a::after {
