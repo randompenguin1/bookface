@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Light
-	Version    : 2.1.5
+	Version    : 2.1.6
     Licence    : AGPL
-    Created on : 10 JUNE 2026
+    Created on : 18 AUG 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -3370,7 +3370,7 @@ body.mod-settings #delegation .contact-block-img {
 	.hovercard {
 		max-width: 100%;
 	}
-	#topbar-first .topbar-nav .nav-segment a {
+	#topbar-first .topbar-nav .nav-segment > a {
 		width: 50px;
 	}
 	#topbar-first .nav > li > a::after {
