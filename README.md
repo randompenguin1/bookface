@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.1.5
+Version 2.1.6
 
 **Requirements** Friendica "Blutwurz" 2026.01, 2026.05, or Friendica Release Candidate 2025.07-rc
 
@@ -384,6 +384,7 @@ I figured out how the "Frio" theme worked by looking at the code. I may not be 1
 ## CHANGELOG:
 2.1.6 (18 August 2026)
 * Fixed Notifications being too narrow.
+* Merged Link Preview styling [PR 28  @leanderl]
 
 2.1.5 (31 July 2026)
 * Fixed too short Notifications drop-down menu [Issue #49]
