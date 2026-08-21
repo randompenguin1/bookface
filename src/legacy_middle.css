@@ -1,0 +1,39 @@
+/* =====================================================================
+
+
+			USER PREFERS DARK MODE
+			
+			
+   =====================================================================
+*/
+@media (prefers-color-scheme: dark){
+	:root {
+		--nav-bg: #252728;
+		/* link-color is for text, accent-color is for backgrounds and borders */
+		--link-color: $link_color;
+		--link-hover-color: $link_hover_color;
+		--accent-color: var(--link-color);
+		/* fallbacks if color-mix is not supported, hsl is more widely supported */
+		--background-color: #1c1c1d;
+		--menu-background-hover-color: hsl(from var(--accent-color) h s calc(l - 12));
+		@supports (background-color: color-mix(in oklab, black 50%, white)){
+			--background-color: color-mix(in oklab, var(--accent-color) 5%, #1c1c1d);
+			--menu-background-hover-color: var(--accent-shade, color-mix(in oklab, var(--link-color) 50%, black));
+		}
+		--nav-icon-color: #b0b3b8;
+		--nav-icon-hover-color: #b0b3b8;
+		
+		--content-bg: var(--nav-bg);
+		--comment-bg: var(--background-color);
+		--font-color: #cccccc;
+		--font-color-lighter: #acacac; 
+		--font-color-darker: #999999;
+		
+		--border-color: var(--accent-shade);
+		--count-color:  #000;
+		--count-bg: var(--link-color);
+		--tintshade: var(--accent-shade);
+		--shadowglow: rgba(0,0,0,.5);	
+		--dimbright:  rgba(255,255,255,.1);
+	}
+
