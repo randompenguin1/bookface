@@ -1,0 +1,57 @@
+/* LOGIN AND INFO SCREENS */
+body.mod-home {
+	padding-top: 0px !important;
+}
+	body.mod-home #navbar-brand-text,
+	body.mod-friendica #navbar-brand-text {
+		margin-top: -24px;
+	}
+.mod-home .navbar ;
+	background-color: transparent !important;
+}
+.mod-home #nav-about {
+	background-color: var(--accent-color, black);
+	height: 50px;
+	width: 50px;
+	color: white !important;
+	border-radius: 100% !important;
+	right: 15px;
+	font-size: 0px;	
+}
+ .mod-home #nav-about:hover,
+ .mod-home #nav-about:focus {
+	background-color: var(--accent-color, black) !important;
+	box-shadow: inset 0 0 100px var(--dimbright);
+}
+.mod-home #nav-about i {
+	font-size:   24px;
+	line-height: 24px;
+	width: auto;
+	display: block;
+}
+	.mod-home #nav-about i::before {
+		position: relative;
+		top:  -2px;
+		left: -2px;
+	}
+.mod-friendica .navbar-right ;
+	margin-right: 5px;
+}
+.mod-home #topbar-second,
+.mod-home .navbar-toggle,
+.mod-friendica .navbar-toggle ;
+	display: none !important;
+}
+.mod-home.is-not-singleuser .login-form,
+.mod-login #content #login-form,
+.mod-home.is-not-singleuser .login-form::before, 
+.mod-login #content #login-form::before,
+.mod-home.is-not-singleuser .login-form::after, 
+.mod-login #content #login-form::after {
+	border-radius: 20px;
+}
+	@media screen and (max-width: 768px){
+		.mod-home #nav-about i::before {
+			line-height: 32px;
+		}
+	}
