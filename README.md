@@ -1,95 +1,43 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.1.6
+Version 2.1.7-rc
 
-**Requirements** Friendica "Blutwurz" 2026.01, 2026.05, or Friendica Release Candidate 2025.07-rc
+**Requirements** Friendica "Blutwurz" **2026.08-rc ONLY**
+
+**Keep in mind the Release Candidate is still in flux with frequent and  possibly breaking changes!**
 
 **Description:** A Friendica Theme Template/Scheme for the "Frio" theme that gives it a modern makeover.
 
-**Disclaimer:** _This is a Work-In-Progress, use in production at your own risk!_
-_This will NOT work with "Interrupted Fern" 2024.12, there is another branch for that version__
+**Disclaimer:** _This is a Work-In-Progress, use in production at your own risk! This will NOT work with **ANY** previous version of Friendica!_
 
 ## INSTALLATION
 
-1. Drop these six files: 
+1. Drop these files in _/friendica/view/theme/frio/scheme/_: 
 	* bookface_auto.css
 	* bookface_auto.php
 	* bookface_dark.css
 	* bookface_dark.php
 	* bookface_light.css
 	* bookface_light.php
+	* bookface_legacy.css
+	* bookface_legacy.php
 
-into _/friendica/view/theme/frio/scheme/_
+And the **bookface_assets** folder. _This is new, no previous Bookface release had this folder._
+
+You do _not_ need to copy the _/src_ folder unless you are working on changes to the stylesheets.
 
 2. Go to _Settings > Display > Theme Customization > Appearance_
-    1. Select either "Bookface Light", "Bookface Dark", or "Bookface Auto"
-	2. (optional) Select Accent Color
-	3. click "Submit" button.
-
-## CUSTOMIZATION/LOCALIZATION
-
-Starting with Version 1.3 it is much easier for server admins to customize and localize Bookface. Everything you can safely change is now defined in the CSS variables at the top of the stylsheets.  You could also override these with another stylesheet loaded after Bookface the redefines the variables.
-
-Bookface uses a number of pseudo-elements to label buttons in the Frio theme. You can easily change these to say something else or to display them in another language:
-
-  	/* Fonts and Colors */
-    --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
-    --nav-bg: #ffffff;
-    --link-color: #0066ff;
-    --nav-icon-color: #65686c;
-    --background-color: #f2f4f7;
-    --content-bg: var(--nav-bg);
-    --comment-bg: var(--background-color);
-    --font-color: #313131;
-    --font-color-lighter: #444444; 
-    --font-color-darker: #333333;
-    --menu-background-hover-color: #cee9f7;
-    --border-color: #eeeeee;
-    --count-color:  #ffffff;
-    --count-bg: var(--link-color);
-    --shadowglow: rgba(0,0,0,.3);	
-    --dimbright:  rgba(0,0,0,.1);	
-    
-    /* Theme Features */
-	--attach-file-button: none; /* none or block */
-	--show-tooltips: block; /* none or block */ 
-	--show-navbar-labels: none; /*none or block */ 
-    
-    /* LOCALIZE pseudo-element text below */
-    --navbar-network-text: 'Network';
-    --navbar-profile-text: 'Home';
-    --navbar-community-text: 'News Feed';
-    --navbar-messages-text: 'Messages';
-    --navbar-calendar-text: 'Calendar';
-    --navbar-contact-text: 'Friends';
-    --navbar-notices-text: 'Notices';
-    --sign-in-text: 'Sign-In';
-    --compose-text: 'Compose';
-    --new-note-text: 'New Note';
-    --save-search-text: 'Save Search';
-    --follow-tag-text: 'Follow Tag';
-    --comment-button-text: 'Comment';
-    --share-button-text: 'Share';
-    --quote-button-text: 'Quote';
-    --like-button-text: 'Like';
-    --dislike-button-text: 'Dislike';
-    --more-button-text: 'More';
-    --attendyes-button-text: 'Going';
-    --attendno-button-text: 'Can\'t Go';
-    --attendmaybe-button-text: 'Maybe';
-    --add-photo-button-text: 'Add Photos';
-    --follow-button-text: 'Follow';
-    --save-button-text: 'Save';  
-	--new-message-text: 'New Message';
-	--calendar-today-text: 'Today';  
-
-You can either add these to a user content stylesheet in your web browser to customize the appearance or there is now an optional "Bookface Custom" addon (https://gitlab.com/randompenguin/bookface_custom) Friendica server admins can install allowing their users to each set their own customizations.
+    1. Select either "Bookface Light", "Bookface Dark", "Bookface Auto", or "Bookface Auto Legacy"
+    2. (optional) Select Accent Color
+    3. click "Submit" button.
 
 ### COVER PHOTOS
 
+> There is a "Coverphoto" Add-on for Friendica which is much better than the work-around built into Bookface! It allows you to set cover photos on your profile that _everyone_ can see no matter what theme they are using AND they can be seen on other platforms. You can get the add-on here: https://gitlab.com/randompenguin/coverphoto
+
 From Bookface 1.3 it supports adding a "Cover Photo" to profiles. There are two places you can add the Cover Photo, depending on whether you want it used on all of your profile section pages or if you want it to appear on ONLY your actual profile page.
 
-Note that this feature ONLY works is recent, modern browsers!  Every *current* and *supported* desktop and mobile version should be able to show it, but nothing *unsupoorted* nor released before 2022 will (see caniuse.com entry for "has()" for specific verssions).
+Note that this feature ONLY works is recent, modern browsers!  Every *current* and *supported* desktop and mobile version should be able to show it. **However it will ONLY be visible to other Friendica contacts also using the Bookface scheme**
 
 #### ON ALL PROFILE PAGES
 
@@ -119,25 +67,15 @@ For people who are not using the Bookface scheme they will simply see a thumbnai
 
 People who are not using the Bookface scheme will see a thumbnail of your Cover Photo in your Profile details. The Cover Photo will only appear on your Profile page.
 
-#### Multiple Cover Photos
-
-Technically you can have one Cover Photo for our actual Profile page by putting it in a Custom Field and another one in the Profile Description that will be shown on the other profile pages.  But if you want to get really creative you can also have multiple images per Cover Photo.
-
-While not really recommended you can place up to four images in the Cover Photo container and Bookface will show them as a collage of stripes.  For example:
-
-`[class=coverphoto][img=https://friendica.server/photo/1649cc674810612350.png]Cover photo 1 description alt-text here[/img][img=https://friendica.server/photo/1649cc677034958382350.png]Cover photo 2 description alt-text here[/img][img=https://friendica.server/photo/1649c038920505603674810612350.png]Cover photo 3 description alt-text here[/img][img=https://friendica.server/photo/3464771649cc674810612350.png]Cover photo 4 description alt-text here[/img][/class]`
-
-Extras spaces are okay, but just make sure there are no carriage returns or other elements inside `[class]..[/class]` or it will mis-count the images and size them wrong. Also keep in mind people not using Bookface will see three thumbnail images on your profile, only Bookface users will see the striped collage.
-
 ### POSTBOXES
 
 Starting with Bookface version 1.6 now Friendica will have Postboxes too! Styling similar to the Facebook solid color and gradient backgrounds have been added to the Bookface stylesheets.
 
-**Right now Postbox is exclusively available for people using the Bookface scheme in the Friendica webapp, either on desktop or mobile.**
-
 When a Postbox post is shared to another platform like Mastodon, Sharkey, Disapora, Hubzilla, etc., the Postbox styling does not go with it. The same is true for anyone viewing the post in a third-party app, because none of them support Postbox styling, at least not yet.
 
-There are two Friendica add-ons server administrators can install to add global support for Postbox styling. The "[Postbox](https://gitlab.com/randompenguin/postbox)" add-on simply adds a stylesheet to the `<head>` element. It provides no interface for creating Postboxes, but users can still create them manually with BBcode. The other is the "[Zen Postbox](https://gitlab.com/randompenguin/zen_postbox)" add-on which not only adds the stylesheet to the `<head>` it also adds a Jot Plugin button to the message composer with a menu of all the available Postbox styles.
+> There are two Friendica add-ons server administrators can install to add global support for Postbox styling. The "[Postbox](https://gitlab.com/randompenguin/postbox)" add-on simply adds a stylesheet to the `<head>` element. It provides no interface for creating Postboxes, but users can still create them manually with BBcode. The other is the "[Zen Postbox](https://gitlab.com/randompenguin/zen_postbox)" add-on which not only adds the stylesheet to the `<head>` it also adds a Jot Plugin button to the message composer with a menu of all the available Postbox styles.
+
+**Right now Postbox is exclusively available for people using the Bookface scheme in the Friendica webapp, either on desktop or mobile, or if the Friendica server has either the _Postbox_ or _Zen Postbox_ add-on installed and activated.**
 
 #### How to Use Postboxes
 
@@ -145,135 +83,23 @@ To make use of a Friendica Postbox simply wrap the text inside a Postbox Class B
 
 `[class=postbox-red]This is the wrapped text[/class]`
 
-### Available Postbox styles
+Bookface implements the Solid, Gradient, and Pattern backgrounds but **not the Animated backgrounds**.
 
-Old names are in parenthesis next to the new names to which they've been mapped.
-
-**Solid Color Backgrounds:**
-
-- .postbox-black
-- .postbox-cornflowerblue (.postbox-blue)
-- .postbox-darkblue (.postbox-ocean)
-- .postbox-darkgray
-- .postbox-darkorange (.postbox-orange)
-- .postbox-darkred
-- .postbox-darkslateblue
-- .postbox-forestgreen (.postbox-forest)
-- .postbox-gold
-- .postbox-goldenrod
-- .postbox-honeydew
-- .postbox-hotpink
-- .postbox-lavender
-- .postbox-lightpink
-- .postbox-lightyellow
-- .postbox-limegreen (.postbox-green)
-- .postbox-lightsalmon (.postbox-salmon)
-- .postbox-mediumaquamarine
-- .postbox-mediumslateblue
-- .postbox-mediumvioletred
-- .postbox-mintcream
-- .postbox-olivedrab
-- .postbox-palegreen
-- .postbox-peachpuff
-- .postbox-pink
-- .postbox-purple
-- .postbox-red
-- .postbox-seagreen
-- .postbox-sienna
-- .postbox-skyblue
-- .postbox-thistle
-- .postbox-violet
-- .postbox-whitesmoke
-- .postbox-yellowgreen
-
-
-**Gradient Backgrounds:**
-
-- .postbox-aurora
-- .postbox-bluegray
-- .postbox-graygrey (.postbox-darkgray)
-- .postbox-grayblack
-- .postbox-greengray
-- .postbox-lavendergray
-- .postbox-minty
-- .postbox-mintgray
-- .postbox-rainbow
-- .postbox-redblue
-- .postbox-sherbet (.postbox-sherbert)
-- .postbox-spectrum
-- .postbox-strawberrycream
-- .postbox-sunset
-- .postbox-tealblue
-- .postbox-tealgray
-- .postbox-violets
-- .postbox-violetblue
-
-**Pattern Backgrounds:**
-
-- .postbox-blueprint
-- .postbox-birds
-- .postbox-checkered
-- .postbox-cubes
-- .postbox-lemonlime
-- .postbox-gingham
-- .postbox-grid
-- .postbox-hearts
-- .postbox-honeycomb
-- .postbox-notebook
-- .postbox-plaid
-- .postbox-polkadots
-- .postbox-shadedots
-- .postbox-shadowbox
-- .postbox-stars
-- .postbox-warpgrid
-- .postbox-wavy
-
-(There are also _Animated Backgrounds_ but they are only available if either the "Postbox" or "Zen Postbox" add-on are installed and activated on the server)
-
-#### Content Restrictions
-
-Friendica's Postbox is a bit more forgiving as it allows for more than text-only content. However it does not work with most of the Friendica formatting due to the way BBcode is parsed.
-
-**BBcodes you CANNOT put inside a Postbox:**
-
-- [class], which means you can’t nest Postboxes
-- [hr]
-- [h1],[h2],[h3], etc…
-- [table],[tr],[th],[td]
-- [list],[ul],[ol]
-- [quote]
-- [abstract]
-- [spoiler]
-- [map]
-- [code]
-
-**BBcodes that do not work as intended inside a Postbox:**
-
-- [pre]
-- [noparse]
-- [nobb]
-
-The text will show but will be styled and centered.
-
-**BBcodes that DO WORK inside a Postbox:**
-
-- [b], [i], [u], [o], [s] _(bold has no visible effect)_
-- [url]
-- [img]
-- [audio]
-- [video]
-
-Plus any plain text, including emoji
-
-If you are using Markdown formatting what you can and can’t put in a Postbox is similar, with the exception that (because of how Markdown is parsed into BBcode) you can’t have both a URL and an image in the same Postbox. You can however put inline code in a Postbox with Markdown where BBcode cannot.
+For details and examples of what postbox styles are available and what elements can be placed inside them please refer to the [Bookface Wiki](https://gitlab.com/randompenguin/bookface/-/wikis/For-Friendica-Users#postboxes).
 
 ## GENERAL NOTES:
 
-* This theme HIDES the attachment upload button in the file browser since there is no way to manage/delete uploaded files, and this is confusing to users. If you want to show this button anyway change the CSS variable `--attach-file-button` from "none" to "block" at the top of the stylesheets.
+* This theme cand HIDE the attachment upload button in the file browser. There is no way to manage/delete uploaded files, and this is confusing to users. To hide the file button set `--attach-file-button` to "none" in the `:root{}` section of the stylesheets.
 * Overrides nav_bg, nav_icon_color, background_color, background_image, and contentbg_transp
 * Overrides "Frio" blue accent color with one that looks nicer with these schemes.
 * This scheme is still being revised as new things to style are discovered.
 * This scheme was adapted from a user stylesheet for use in browsers on the client-side.
+
+## CUSTOMIZING BOOKFACE
+
+Bookface makes extensive use of CSS variables. They are declared at the top of the stylesheets in the `:root{}` section. If you are a server administrator who wants to customize them for your server you can edit the variables there OR you can add your own `<style>:root{...}</style>` to the `view/theme/Frio/templates/footer.tpl` file with just the CSS variables you wish to override.
+
+> There is also an optional **Bookface Custom** add-on for Friendica that allows users to easily make their own customizations. You can download the add-on at https://gitlab.com/randompenguin/bookface_custom
 
 ## KNOWN ISSUES
 
@@ -291,97 +117,42 @@ There are numerous places in the stylesheets that use `":has()"` and older versi
 
 You may notice on many (if not most) phones in portrait mode the Action Buttons do not have text labels on them. If you turn your phone to landscape mode the labels will become visible. This is on purpose!  There simply is not enough room to display the labels in a viewport narrower than 400 pixels wide, especially if ALL possible buttons are enabled and being shown. Initially I tried styling that only removed the labels if there were too many buttons. But the inconsistency made it look like the CSS was broken or something. Also some mobile browsers couldn't understand `":has()"` or `":nth-of-type/:last-of-type"` etc. The best solution across devices was to simply *not* show the labels for any of them.
 
+5. Bookface now makes use of the CSS `light-dark()` values. Older browsers do not understand it and will have to use the "Bookface Auto Legacy" option which still uses the older `prefer-light-color` and `prefers-dark-color` selectors.
+
+
 ## CONTRIBUTING
 
-To make updates and maintenance easier the line numbers between the "Light" and "Dark" stylesheets have been synchronized, and the first half of the "Auto" version matches the "Light" stylesheet. This way if you change one you can more easily find the same line in the corresponding files to make the same change there, or if it is not needed for that one, add comment lines to keep the line numbers in sync.
+As of Bookface version 2.1.7 the stylesheets have been modularized and are compiled before use. Ideally this should be done by a CSS preprocessor like SASS or LESS that supports `@import` or `@use`. But Friendica does not actually use a CSS preprocessor. Despite the main `style.pcss` file it is not _actually_ generated by the PCSS/PostCSS preprocessor. Friendica simply gets the file contents of the _/css/style.php_ and whichever scheme stylesheet the user selected and it concatenates the two files together and does a simple string replace for the PHP color variables before generating a file with a `.pcss` extension (that's actually done by `getStylesheeetPath()` in _/src/Core/Theme.php_). However it never loads like a normal stylesheet so you can't use `@import` (and even if Friendica was actually using the PCSS/PostCSS preprocessor it doesn't support `@import` without a plugin anyway). SO we can only use precompiled scheme stylesheets as there is no way to import the individual stylesheet modules and have Friendica compile them with the main theme stylesheet.
 
-In some places fallbacks are included to accommodate older browsers or mobile devices that do not understand more modern code. In general the target for this scheme are browsers released within the last couple of years.
+1. Install the Bookface scheme stylesheets and assets folder into your Friendica development environment.
 
-Just because it looks right or works in your preferred browser or device doesn't mean it will work for everyone. Try to thoroughly *test* your edits in desktop and mobile Chromium-based, Mozilla-based, and Webkit-based browsers before submitting a pull-request.
+2. Copy the Bookface _/src_ folder to somewhere you can execute a Bash script. It should work in Linux, macOS, and Windows WSL.
 
-## HOW SCHEMES WORK IN FRIO
+3. Make changes in the compiled stylesheets to test them.
 
-Each "Frio" theme "scheme" consists of two files with the same name but a different extension, one is `.php` and the other is `.css` but the latter is not loaded directly as a stylesheet. These two files must be inside the `/frio/shemes/` folder, but will not be discovered by the theme unless they have a properly formatted header:
+4. Once you are sure they work make those same changes in the _/src/core.css_ file (or whichever is the relevant stylesheet module). Don't forget to advance the version number in the "head" modules and in the `css_variables.css` module.
 
-**Example .php file header:**
+5. Open a terminal and run the `make.sh` Bash script. **The first time you use it you will have to change file permissions to make it executable.**
 
-	/*
-	 * Copyright (C) 2010-2025, the Friendica project
-	 * SPDX-FileCopyrightText: 2010-2025 the Friendica project
-	 *
-	 * SPDX-License-Identifier: AGPL-3.0-or-later
-	 *
-	 * Name: Theme Name
-	 * Licence: AGPL
-	 * Author: Names and @handles of main contributors
-	 * Overwrites: nav_bg, nav_icon_color, background_color, background_image, contentbg_transp
-	 * Accented: yes
-	 * Version: X.x
-	 */
+6. That will concatenate the stylesheet modules into the compiled stylesheets inside a _/dist_ subfolder.
 
-**Example .css file header:**
+7. Copy the compiled stylesheets into your _/schemes_ folder, overwriting the existing Bookface stylesheets.
 
-    /*
-	    Name       : Theme Name
-	    Version    : 1.3
-        Licence    : AGPL
-        Created on : 09.02.2025
-        Author     : Names and @handles of main contributors
-    */
+8. TEST again that everything is working correctly.
 
-TThe PHP file get read into the _/frio/style.php_ file, to get any color variables that have been set. **You cannot add new variables to your PHP file!**  The `style.php` defines these variables in an array (to which your scheme cannot add new entries). These are the ones you can set in your PHP file:
+9. Submit a Pull Request at the [GitLab Project Page](https://gitlab.com/randompenguin/bookface).  It is okay to submit your generated stylesheets as complete file replacements in your PR. They _should_ be correct if you used the `make.sh` script.
 
-	$nav_bg
-	$nav_icon_color
-	$nav_icon_hover_color
-	$link_color
-	$link_hover_color
-	$menu_background_hover_color
-	$nav_icon_color
-	$menu_background_hover_color
-	$background_color
-	$contentbg_transp
-	$background_image
-	$background_size_img
-	$background_repeat
-	$login_bg_image
-	$login_bg_color
-	$font_color_darker
-	$font_color_lighter
-	$font_color
-	
-Next, the `style.php` reads in the *contents* of your CSS file and concatenates it to the end of the Frio theme _/frio/css/style.css_. Then it does a simple string replace operation on the merged stylesheet contents to replace the variable names with the values set in your PHP scheme file. This is essentially variable validation and why you can't add new variables, they will neither get read in nor replaced. Finally the `style.php` generates the merged stylesheet.
+Note that now all the base bookface PHP scheme files import the same module at _/bookface_assets/bookface_main.php_ which contains all the PHP color variables and logic. _Except_ for the `bookface_legacy.php` which does not use that file include.
 
-If you want users to be able to pick one of the predefined "Accent Color" options your PHP file needs to include:
-
-	require_once 'view/theme/frio/php/PHPColors/Color.php';
-	$accentColor = new Color($scheme_accent);
-	
-If you want users to be able to aslo select a completely custom "Link Color" your PHP file needs to include:
-
-	use Friendica\DI;
-	$customColor = DI::pConfig()->get($uid, 'frio', 'link_color') ?: '';
-	if ($customColor){ $customColor = new Color(''.$customColor.''); }
-	
-I could *only* get "Link Color" to work by explicitly casting the type to string when creating a new Color object. Then you need to conditionally check for a "Link Color" and if one is found use it, but if it is not found then fallback to using some other color (ideally the "Accent Color"):
-
-	$link_color = ($customColor) ? '#'.$customColor->getHex() : '#'.$accentColor->getHex();
-	
-### Custom CSS Variables
-
-While you cannot simply define new PHP variables for setting colors, etc., you *can* do that in your scheme stylesheet.  At the beginning simply define them in a `:root{..}` entry like so:
-
-	--my-custom-variable-name: #hexcolor;
-	
-And then use it in your stylesheet like so:
-
-	.classname {
-		color: var(--my-custom-variable-name);
-	}
-
-I figured out how the "Frio" theme worked by looking at the code. I may not be 100% correct about it since I did not create the theme. If someone knows more and I'm wrong about any of this please correct this document at https://gitlab.com/randompenguin/bookface
 
 ## CHANGELOG:
+2.1.7-rc (21 August 2026)
+* A nearly complete rewrite from the ground-up after all the Friendica refactoring.
+* Added `bookface_assets` sub-folder.
+* Added new screenshots.
+* Removed `res` subfolder.
+* Added 'src' subfolder.
+
 2.1.6 (18 August 2026)
 * Fixed Notifications being too narrow.
 * Merged Link Preview styling [PR 28  @leanderl]
@@ -630,5 +401,6 @@ feb @feb@loma.ml
 Phil @phil@loma.ml
 
 License: AGPL 3.0 or Later
+
 
 
