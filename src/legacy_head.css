@@ -1,0 +1,53 @@
+/*
+	Name	   : Bookface Auto Legacy
+	Version    : 2.1.7
+    Licence    : AGPL
+    Created on : 21 AUG 2026
+    Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
+*/
+
+:root {
+	--bookface-version: '2.1.7';  /* update this every time stylesheet is updated! */
+	/* Fonts and Colors */
+    --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
+    --nav-bg: $nav_bg;
+    /* link-color is for text, accent-color is for backgrounds and borders */
+    --link-color: $link_color;
+    --link-hover-color: $link_hover_color;
+    --accent-color: var(--link-color);
+    /* fallbacks if color-mix is not supported, hsl is more widely supported */
+    --accent-tint: hsl(from var(--accent-color) h 90% calc(l + 35));
+    --accent-shade: hsl(from var(--accent-color) h s calc(l - 12));
+    --accent-tone: hsl(from var(--accent-color) h 40% l);
+    --background-color: $background_color;
+    --menu-background-hover-color: $menu_background_hover_color;
+    @supports (background-color: color-mix(in oklab, black 50%, white)){
+    	--accent-tint: color-mix(in oklab, var(--accent-color) 25%, white);
+    	--accent-shade: color-mix(in oklab, var(--accent-color) 75%, black);
+    	--accent-tone: color-mix(in oklab, var(--accent-color) 50%, gray);
+    	--background-color: color-mix(in oklab, var(--accent-color) 3%, #f9f9f9);
+    	--menu-background-hover-color: var(--accent-tint, $menu_background_hover_color);
+    }
+    --nav-icon-color: $nav_icon_color;
+    --nav-icon-hover-color: $nav_icon_hover_color;
+	
+    --content-bg: var(--nav-bg);
+    --comment-bg: var(--background-color);
+    --font-color: $font_color;
+    --font-color-lighter: $font_color_lighter; 
+    --font-color-darker: $font_color_darker;
+    
+    --border-color: var(--accent-tint);
+    --count-color:  #fff;
+    --count-bg: var(--link-color);
+    --tintshade: var(--accent-tint);
+    --shadowglow: rgba(0,0,0,.3);	
+    --dimbright:  rgba(0,0,0,.1);
+    
+    /* Theme Features */
+	--attach-file-button: block; /* none or block */
+	--show-tooltips: block; /* none or block */ 
+	--follow-button-text: 'Follow';
+    --save-button-text: 'Save';  
+	--community-post-text: 'Community Posts MUST be Public!';
+}
