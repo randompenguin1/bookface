@@ -1,0 +1,40 @@
+:root {
+	--bookface-version: '2.1.7';  /* update this every time stylesheet is updated! */
+	/* Fonts and Colors */
+    --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
+    --nav-bg: $nav_bg;
+    /* link-color is for text, accent-color is for backgrounds and borders */
+    --link-color: $link_color;
+    --link-hover-color: $link_hover_color;
+    --accent-color: var(--link-color);
+    --accent-tint: color-mix(in oklab, var(--accent-color) 25%, white);
+    --accent-shade: color-mix(in oklab, var(--accent-color) 75%, black);
+    --accent-tone: color-mix(in oklab, var(--accent-color) 50%, gray);
+    --background-color: light-dark(color-mix(in oklab, var(--accent-color) 3%, #f9f9f9), color-mix(in oklab, var(--accent-color) 5%, #1c1c1d));
+    --menu-background-hover-color: light-dark(var(--accent-tint, $menu_background_hover_color), var(--accent-shade, $menu_background_color));
+
+    --nav-icon-color: $nav_icon_color;
+    --nav-icon-hover-color: $nav_icon_hover_color;
+	
+    --content-bg: var(--nav-bg);
+    --comment-bg: var(--background-color);
+    --font-color: $font_color;
+    --font-color-lighter: $font_color_lighter; 
+    --font-color-darker: $font_color_darker;
+    
+    --border-color: light-dark(var(--accent-tint), var(--accent-shade));
+    --count-color:  light-dark(#fff, #000);
+    --count-bg: var(--link-color);
+    --tintshade: light-dark(var(--accent-tint), var(--accent-shade));
+    --shadowglow: light-dark(rgba(0,0,0,.3), rgba(0,0,0,.5));	
+    --dimbright:  light-dark(rgba(0,0,0,.1), rgba(255,255,255,.1));
+    
+    /* Theme Features */
+	--attach-file-button: block; /* none or block */
+	--show-tooltips: block; /* none or block */ 
+    
+    /* LOCALIZE pseudo-element text below */
+    --follow-button-text: 'Follow';
+    --save-button-text: 'Save';  
+	--community-post-text: 'Community Posts MUST be Public!';
+}
