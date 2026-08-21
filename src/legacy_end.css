@@ -1,0 +1,21 @@
+} /* end of prefers darkmode */	
+body.mod-admin a.screenshot[href*="frio"],
+body.mod-settings #theme-preview a {
+	background-image: url('scheme/bookface_assets/images/Bookface_Auto_Desktop.jpg');
+}
+		body.mod-admin a.screenshot[href*="frio"]::before,
+		body.mod-settings #theme-version::after {
+			content: ' + Bookface Auto Legacy V.'var(--bookface-version);	
+		}
+@media screen and (max-width: 768px) and (orientation: portrait){
+	body.mod-admin a.screenshot[href*="frio"],
+	body.mod-settings #theme-preview a {
+		background-image: url('scheme/bookface_assets/images/Bookface_Auto_Mobile_Portrait.jpg');
+	}
+}
+@media screen and (max-height: 440px) and (orientation: landscape){
+	body.mod-admin a.screenshot[href*="frio"],
+	body.mod-settings #theme-preview a {
+		background-image: url('scheme/bookface_assets/images/Bookface_Auto_Mobile_Landscape.jpg');
+	}
+}
