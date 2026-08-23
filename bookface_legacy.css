@@ -1,13 +1,13 @@
 /*
 	Name	   : Bookface Auto Legacy
-	Version    : 2.1.7
+	Version    : 2.1.8
     Licence    : AGPL
-    Created on : 21 AUG 2026
+    Created on : 23 AUG 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
 :root {
-	--bookface-version: '2.1.7';  /* update this every time stylesheet is updated! */
+	--bookface-version: '2.1.8';  /* update this every time stylesheet is updated! */
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
@@ -50,6 +50,25 @@
 	--follow-button-text: 'Follow';
     --save-button-text: 'Save';  
 	--community-post-text: 'Community Posts MUST be Public!';
+	
+	/* Label text on Primary and Submit Buttons */
+	--contrast-color: #fff;	/* ultimate fallback */
+	/* crazy calculations but works */
+	@supports(color: rgb(from red r g b)){
+		--contrast-color: rgb(from var(--accent-color) 
+  			round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+  			round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+  			round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+		);
+	}
+	/* fallback if contrast-color is not supported, yes it is meant to be h-b-w order */
+	@supports(color: hwb(from red h w b)){
+		--contrast-color: hwb(from oklch(from var(--accent-color) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999)));
+	}
+	/* the future is almost here! */
+	@supports(color: contrast-color(red)){
+		--contrast-color: contrast-color(var(--accent-color));
+	}
 }
 /* begin Bookface Core styling */
 body {
@@ -731,8 +750,7 @@ ul.tabs li {
 			padding: 12px;
 		}
 			#jotOpen i, #jotOpen span {
-				color: var(--accent-color);
-				filter: invert(1) saturate(0) contrast(5);
+				color: var(--contrast-color);
 			}
 		#jotOpen:hover, #jotOpen:focus {
 			box-shadow: inset 0 0 100px var(--dimbright) !important;
@@ -808,7 +826,7 @@ ul.tabs li {
     input[type="submit"],
     #photos-upload-submit {
         background-color: var(--accent-color) !important;
-        color: white !important;
+        color: var(--contrast-color) !important;
         border-radius: 8px !important;
         border: none !important;
         box-shadow: none !important;
@@ -837,7 +855,7 @@ ul.tabs li {
     input[type="submit"]:focus,
     #photos-upload-submit:hover,
     #photos-upload-submit:focus{
-		color: white !important;
+		color: var(--contrast-color) !important;
         box-shadow: inset 0 0 100px var(--dimbright) !important;
     }
     #delegate-parent .submit button {
@@ -1588,10 +1606,11 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 		width: 36px;
 		background-color: var(--accent-color) !important;
 		opacity: 1 !important;
-		color: #fff !important;
+		color: var(--contrast-color) !important;
 		border-radius: 100%;
 		margin-top: 5px;
 		margin-top: 2px !important;
+		text-shadow: none;
 	}
 	.close:hover,
 	.close:focus {
@@ -2762,8 +2781,7 @@ aside .widget h3.p-name {
 		position: absolute;
 		top: 0; left: 0;
 		right: 0; bottom: 0;
-		color: var(--accent-color);
-		filter: invert(1) saturate(0) contrast(5);
+		color: var(--contrast-color);
 	}	
 #item-delete-selected {
 	height: 50px;
@@ -2776,8 +2794,7 @@ aside .widget h3.p-name {
 	padding: 0px;
 }
 	#item-delete-selected i {
-		color: var(--accent-color);
-		filter: invert(1) saturate(0) contrast(5);
+		color: var(--contrast-color);
 	}
 	#item-delete-selected span {
 		display: none;
@@ -4310,6 +4327,25 @@ body.mod-settings #delegation .contact-block-img {
 		--tintshade: var(--accent-shade);
 		--shadowglow: rgba(0,0,0,.5);	
 		--dimbright:  rgba(255,255,255,.1);
+		
+		/* Label text on Primary and Submit Buttons */
+		--contrast-color: #000;	/* ultimate fallback */
+		/* crazy calculations but works */
+		@supports(color: rgb(from red r g b)){
+			--contrast-color: rgb(from var(--accent-color) 
+				round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+				round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+				round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+			);
+		}
+		/* fallback if contrast-color is not supported, yes it is meant to be h-b-w order */
+		@supports(color: hwb(from red h w b)){
+			--contrast-color: hwb(from oklch(from var(--accent-color) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999)));
+		}
+		/* the future is almost here! */
+		@supports(color: contrast-color(red)){
+			--contrast-color: contrast-color(var(--accent-color));
+		}
 	}
 
 /* begin Bookface Core styling */
@@ -4992,8 +5028,7 @@ ul.tabs li {
 			padding: 12px;
 		}
 			#jotOpen i, #jotOpen span {
-				color: var(--accent-color);
-				filter: invert(1) saturate(0) contrast(5);
+				color: var(--contrast-color);
 			}
 		#jotOpen:hover, #jotOpen:focus {
 			box-shadow: inset 0 0 100px var(--dimbright) !important;
@@ -5069,7 +5104,7 @@ ul.tabs li {
     input[type="submit"],
     #photos-upload-submit {
         background-color: var(--accent-color) !important;
-        color: white !important;
+        color: var(--contrast-color) !important;
         border-radius: 8px !important;
         border: none !important;
         box-shadow: none !important;
@@ -5098,7 +5133,7 @@ ul.tabs li {
     input[type="submit"]:focus,
     #photos-upload-submit:hover,
     #photos-upload-submit:focus{
-		color: white !important;
+		color: var(--contrast-color) !important;
         box-shadow: inset 0 0 100px var(--dimbright) !important;
     }
     #delegate-parent .submit button {
@@ -5849,10 +5884,11 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 		width: 36px;
 		background-color: var(--accent-color) !important;
 		opacity: 1 !important;
-		color: #fff !important;
+		color: var(--contrast-color) !important;
 		border-radius: 100%;
 		margin-top: 5px;
 		margin-top: 2px !important;
+		text-shadow: none;
 	}
 	.close:hover,
 	.close:focus {
@@ -7023,8 +7059,7 @@ aside .widget h3.p-name {
 		position: absolute;
 		top: 0; left: 0;
 		right: 0; bottom: 0;
-		color: var(--accent-color);
-		filter: invert(1) saturate(0) contrast(5);
+		color: var(--contrast-color);
 	}	
 #item-delete-selected {
 	height: 50px;
@@ -7037,8 +7072,7 @@ aside .widget h3.p-name {
 	padding: 0px;
 }
 	#item-delete-selected i {
-		color: var(--accent-color);
-		filter: invert(1) saturate(0) contrast(5);
+		color: var(--contrast-color);
 	}
 	#item-delete-selected span {
 		display: none;
