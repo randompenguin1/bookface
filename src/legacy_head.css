@@ -7,7 +7,7 @@
 */
 
 :root {
-	--bookface-version: '2.1.7';  /* update this every time stylesheet is updated! */
+	--bookface-version: '2.1.8';  /* update this every time stylesheet is updated! */
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
