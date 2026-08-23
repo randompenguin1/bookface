@@ -35,5 +35,23 @@
 		--tintshade: var(--accent-shade);
 		--shadowglow: rgba(0,0,0,.5);	
 		--dimbright:  rgba(255,255,255,.1);
+			/* Label text on Primary and Submit Buttons */
+		--contrast-color: #000;	/* ultimate fallback */
+		/* crazy calculations but works */
+		@supports(color: rgb(from red r g b)){
+			--contrast-color: rgb(from var(--accent-color) 
+				round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+				round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+				round(173.178 - 48.705*pow(r/255 + .055, 2.4) - 163.863*pow(g/255 + .055, 2.4) - 16.5495*pow(b/255 + .055, 2.4), 255)  
+			);
+		}
+		/* fallback if contrast-color is not supported, yes it is meant to be h-b-w order */
+		@supports(color: hwb(from red h w b)){
+			--contrast-color: hwb(from oklch(from var(--accent-color) l 0 0) h calc(((b - 50) * 999)) calc(((w - 50) * 999)));
+		}
+		/* the future is almost here! */
+		@supports(color: contrast-color(red)){
+			--contrast-color: contrast-color(var(--accent-color));
+		}
 	}
 
