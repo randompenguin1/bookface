@@ -678,8 +678,7 @@ ul.tabs li {
 			padding: 12px;
 		}
 			#jotOpen i, #jotOpen span {
-				color: var(--accent-color);
-				filter: invert(1) saturate(0) contrast(5);
+				color: var(--contrast-color);
 			}
 		#jotOpen:hover, #jotOpen:focus {
 			box-shadow: inset 0 0 100px var(--dimbright) !important;
@@ -755,7 +754,7 @@ ul.tabs li {
     input[type="submit"],
     #photos-upload-submit {
         background-color: var(--accent-color) !important;
-        color: white !important;
+        color: var(--contrast-color) !important;
         border-radius: 8px !important;
         border: none !important;
         box-shadow: none !important;
@@ -784,7 +783,7 @@ ul.tabs li {
     input[type="submit"]:focus,
     #photos-upload-submit:hover,
     #photos-upload-submit:focus{
-		color: white !important;
+		color: var(--contrast-color) !important;
         box-shadow: inset 0 0 100px var(--dimbright) !important;
     }
     #delegate-parent .submit button {
@@ -1535,10 +1534,11 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 		width: 36px;
 		background-color: var(--accent-color) !important;
 		opacity: 1 !important;
-		color: #fff !important;
+		color: var(--contrast-color) !important;
 		border-radius: 100%;
 		margin-top: 5px;
 		margin-top: 2px !important;
+		text-shadow: none;
 	}
 	.close:hover,
 	.close:focus {
@@ -2709,8 +2709,7 @@ aside .widget h3.p-name {
 		position: absolute;
 		top: 0; left: 0;
 		right: 0; bottom: 0;
-		color: var(--accent-color);
-		filter: invert(1) saturate(0) contrast(5);
+		color: var(--contrast-color);
 	}	
 #item-delete-selected {
 	height: 50px;
@@ -2723,8 +2722,7 @@ aside .widget h3.p-name {
 	padding: 0px;
 }
 	#item-delete-selected i {
-		color: var(--accent-color);
-		filter: invert(1) saturate(0) contrast(5);
+		color: var(--contrast-color);
 	}
 	#item-delete-selected span {
 		display: none;
