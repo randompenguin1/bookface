@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.1.7-rc
+Version 2.1.8-rc
 
 **Requirements** Friendica "Blutwurz" **2026.08-rc ONLY**
 
@@ -146,6 +146,10 @@ Note that now all the base bookface PHP scheme files import the same module at _
 
 
 ## CHANGELOG:
+2.1.8-rc (23 August 2026)
+* Added `contrast-color` code for buttons that have accent color background with multiple fallbacks
+* Added better handling of accent color for dark mode to make sure colors are not _too_ dark.
+
 2.1.7-rc (21 August 2026)
 * A nearly complete rewrite from the ground-up after all the Friendica refactoring.
 * Added `bookface_assets` sub-folder.
