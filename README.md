@@ -149,6 +149,7 @@ Note that now all the base bookface PHP scheme files import the same module at _
 2.1.8-rc (23 August 2026)
 * Added `contrast-color` code for buttons that have accent color background with multiple fallbacks
 * Added better handling of accent color for dark mode to make sure colors are not _too_ dark.
+* Fixed display errors on login screen when bookface is set to site default.
 
 2.1.7-rc (21 August 2026)
 * A nearly complete rewrite from the ground-up after all the Friendica refactoring.
