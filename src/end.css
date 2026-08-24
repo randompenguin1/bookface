@@ -2,18 +2,22 @@
 body.mod-home {
 	padding-top: 0px !important;
 }
+	body.mod-home #logo-img,
+	body.mod-friendica #logo-img {
+		margin-top: 0;
+	}
 	body.mod-home #navbar-brand-text,
 	body.mod-friendica #navbar-brand-text {
-		margin-top: -24px;
+		margin-top: -10px;
 	}
-.mod-home .navbar ;
+.mod-home .navbar {
 	background-color: transparent !important;
 }
 .mod-home #nav-about {
 	background-color: var(--accent-color, black);
 	height: 50px;
 	width: 50px;
-	color: white !important;
+	color: var(--contrast-color) !important;
 	border-radius: 100% !important;
 	right: 15px;
 	font-size: 0px;	
@@ -34,12 +38,12 @@ body.mod-home {
 		top:  -2px;
 		left: -2px;
 	}
-.mod-friendica .navbar-right ;
+.mod-friendica .navbar-right {
 	margin-right: 5px;
 }
 .mod-home #topbar-second,
 .mod-home .navbar-toggle,
-.mod-friendica .navbar-toggle ;
+.mod-friendica .navbar-toggle {
 	display: none !important;
 }
 .mod-home.is-not-singleuser .login-form,
