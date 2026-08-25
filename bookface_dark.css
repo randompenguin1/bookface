@@ -1,6 +1,6 @@
 /*
 	Name	   : Bookface Dark
-	Version    : 2.1.9
+	Version    : 2.2.0
     Licence    : AGPL
     Created on : 25 AUG 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
@@ -11,7 +11,7 @@
 }
 
 :root {
-	--bookface-version: '2.1.9';  /* update this every time stylesheet is updated! */
+	--bookface-version: '2.2.0';  /* update this every time stylesheet is updated! */
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
@@ -456,10 +456,22 @@ ul.tabs li {
 		.moderation-content-wrapper h1:first-of-type::before {
 			content: '\f10c';
 			font-family: remixicon;
-		}	
+		}
+		.adminpage .table-hover > tbody > tr:hover + tr.details {
+			background-color: var(--tintshade);
+		}
+		#admin-users #users tr.blocked,
+		#admin-users #users tr.blocked a {
+			color: black;
+		}
+		.adminpage .alert-warning,
+		.adminpage .alert-warning a {
+			color: black;
+		}
 	.table-striped > tbody > tr:nth-of-type(2n+1){
 		background-color: var(--tintshade);
 	}
+
 
 	.table > tbody > tr.info > td, 
 	.table > tbody > tr.info > th, 
@@ -475,6 +487,16 @@ ul.tabs li {
 	.table > thead > tr > th.info {
 		background-color: var(--tintshade);
 	}
+	.table-hover > tbody > tr:hover {
+		background-color: var(--tintshade);
+	}
+	.btn-link.table-order {
+		color: var(--font-color-lighter);
+	}
+		.btn-link.table-order:hover,
+		.btn-link.table-order:focus {
+			border-bottom: 1px dashed var(--font-color-lighter);
+		}
 
 	header #banner {
 		left: 0 !important;
