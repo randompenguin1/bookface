@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto
-	Version    : 2.1.8
+	Version    : 2.1.9
     Licence    : AGPL
-    Created on : 23 AUG 2026
+    Created on : 25 AUG 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -10,7 +10,7 @@
 	color-scheme: light dark;
 }
 :root {
-	--bookface-version: '2.1.8';  /* update this every time stylesheet is updated! */
+	--bookface-version: '2.1.9';  /* update this every time stylesheet is updated! */
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
@@ -964,7 +964,7 @@ ul.tabs li {
 		border-radius: 10px;
 	}
 	#profile-extra-links .btn {
-		color: white; 
+		color: var(--contrast-color); 
 		background-color: var(--accent-color); 
 		border-radius: 8px !important;
 		min-height: 36px;
@@ -985,7 +985,7 @@ ul.tabs li {
 	/* SEARCH RESULTS */
 	#search-save {
 		background-color: var(--accent-color) !important;
-		color: white !important;
+		color: var(--contrast-color) !important;
 		border-radius: 8px !important;
 		padding: 12px !important;
 	}
@@ -1754,7 +1754,7 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 		/* file browser */
 		#upload-photo, #upload-attachment {
 			background-color: var(--accent-color) !important;
-			color: white !important;
+			color: var(--contrast-color) !important;
 			border-radius: 8px !important;
 		}
 		#upload-photo:hover,
@@ -1900,6 +1900,9 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 		.edit-profile-link-wrapper .btn.btn-primary:focus {
 			box-shadow: inset 0 0 100px var(--dimbright);
 		}
+body.mod-profile aside .widget {
+	margin-bottom: 5px;
+}
 aside .widget li {
     margin-bottom: 8px;
 }
@@ -2498,11 +2501,11 @@ aside .widget h3.p-name {
 	.fc .fc-event {
 		background-color: var(--accent-color);
 		border: none;
-		color: white;
+		color: var(--contrast-color);
 	}
 		.fc .fc-month-view .fc-content .fc-title .item-desc:hover,
 		.fc .fc-month-view .fc-content .fc-title .item-desc:focus {
-			color: white;
+			color: var(--contrast-color);
 		}
 		.fc .fc-event:hover,
 		.fc .fc-event:focus {
@@ -2745,7 +2748,7 @@ aside .widget h3.p-name {
 		margin-top:  -20px;
 		margin-right: 20px;
 		background-color: var(--accent-color);
-		color: white;
+		color: var(--contrast-color);
 		border-radius: 8px;
 		line-height:  15px;
 	}
@@ -2819,7 +2822,7 @@ aside .widget h3.p-name {
 		}
 			#message-new:hover a,
 			#message-new:focus a {
-				color: white;
+				color: var(--contrast-color);
 				background-color: var(--accent-color);
 				border-radius: 8px;
 			}
@@ -3008,13 +3011,13 @@ aside .widget h3.p-name {
 	}
 /* Delegation Buttons and Profile Photos */
 #delegation a.btn:first-of-type {
-	color: white !important;
+	color: var(--contrast-color) !important;
 	background-color: var(--accent-color) !important;
 	border-radius: 8px;
 }
 	#delegation a.btn:first-of-type:hover,
 	#delegation a.btn:first-of-type:focus {
-		color: white !important;
+		color: var(--contrast-color) !important;
 		background-color: var(--accent-color) !important;
 		box-shadow: inset 0 0 100px var(--dimbright);
 	}
@@ -3541,7 +3544,7 @@ body.mod-settings #delegation .contact-block-img {
 				height: 40px;
 				width:  40px;
 				background-color: var(--accent-color);
-				color: white;
+				color: var(--contrast-color);
 				font-size: 24px;
 				border-radius: 100%;
 				line-height: 40px;
@@ -3557,7 +3560,7 @@ body.mod-settings #delegation .contact-block-img {
 				}
 				#nav-notifications-menu #notifications-header a,
 				#nav-notifications-menu #notifications-header button {
-					color: white !important;
+					color: var(--contrast-color) !important;
 					background-color: var(--accent-color);
 					padding: 6px 12px;
 					border-radius: 8px;
@@ -3720,7 +3723,7 @@ body.mod-settings #delegation .contact-block-img {
 			}
 			.dropdown-mobile-jot.open > .dropdown-toggle.btn-primary {
 				background-color: var(--accent-color);
-				color: white;
+				color: var(--contrast-color);
 				border-radius: 8px;
 			}
 			.dropdown-mobile-jot ul.dropdown-menu li {
@@ -3793,7 +3796,7 @@ body.mod-settings #delegation .contact-block-img {
 		text-align: center;
 		border-radius: 100%;
 		display: block;
-		color: white;
+		color: var(--contrast-color);
 		padding: 0;
 	}
 
@@ -4101,7 +4104,7 @@ body.mod-settings #delegation .contact-block-img {
 				bottom: 10px;
 				transition-duration: .5s;
 				background-color: var(--accent-color);
-				color: white;
+				color: var(--contrast-color);
 				height: 50px;
 				width:  50px;
 				border-radius: 100%;
@@ -4115,7 +4118,7 @@ body.mod-settings #delegation .contact-block-img {
 				right: 10px;
 				transition-duration: .5s;
 				background-color: var(--accent-color) !important;
-				color: white;
+				color: var(--contrast-color);
 				height: 50px;
 				width:  50px;
 				border-radius: 100% !important;
@@ -4150,6 +4153,9 @@ body.mod-settings #delegation .contact-block-img {
 				#nav-user-linkmenu::after {
 					top: 0px;
 				}
+		.nav-label {
+			display: none !important;
+		}
 		#search-mobile {
         	top: 40% !important;
         	bottom: auto !important;
