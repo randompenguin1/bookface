@@ -1,13 +1,13 @@
 /*
 	Name	   : Bookface Auto Legacy
-	Version    : 2.1.8
+	Version    : 2.1.9
     Licence    : AGPL
-    Created on : 23 AUG 2026
+    Created on : 25 AUG 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
 :root {
-	--bookface-version: '2.1.8';  /* update this every time stylesheet is updated! */
+	--bookface-version: '2.1.9';  /* update this every time stylesheet is updated! */
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
