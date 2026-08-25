@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.1.9-rc
+Version 2.2.0-rc
 
 **Requirements** Friendica "Blutwurz" **2026.08-rc ONLY**
 
@@ -146,6 +146,12 @@ Note that now all the base bookface PHP scheme files import the same module at _
 
 
 ## CHANGELOG:
+2.2.0-rc (25 August 2026)
+* Fixed Moderation table hover colors
+* Fixed Moderation table button link colors.
+* Fixed Moderation blocked entry font color in dark mode.
+* Updated screenshots to reflect contrast color change.
+
 2.1.9-rc
 * Fixed missing `--contrast-color` in about 20 places.
 
