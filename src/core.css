@@ -205,6 +205,9 @@ nav.navbar .nav > li > button:focus {
 		width: 50px;
 		height: 50px;
 	}
+	#search-mobile-btn {
+		display: none !important;
+	}
 	#nav-notifications-menu-btn {
 		min-width: 50px;
 		display: inline-block;	
@@ -236,6 +239,8 @@ nav.navbar .nav > li > button:focus {
 }
 	#topbar-first .topbar-nav .nav-segment .nav-notification {
 		right: 6px;
+		box-sizing: content-box;
+		width: fit-content;
 	}
 	#nav-notification.dropdown.open #nav-notifications-menu-btn i::before {	
 		content: '\ef99';
@@ -488,8 +493,11 @@ ul.tabs li {
 		padding: 12px;
 	}
 		[id^="textcomplete-dropdown-"]{
-			top: 10px !important;
+			top: 10px;
 			max-height: 90%;
+		}
+		.acpopup {
+			z-index: 1060 !important;
 		}
 	#topbar-first #search-box .form-search {
 		height: 40px !important;
@@ -990,10 +998,9 @@ ul.tabs li {
 	/* 	Contributed by Matthias (feb@loma.ml):
 		Widgets mit einem Icon versehen
 		Gemeinsame Basisregeln für alle Sidebar-Icons */	
-	aside .widget.fakelink h3::before {
+	aside .widget .fakelink h3::before {
 		font-family: "remixicon";
-		margin-right: 8px;
-		font-size: 14px;
+		padding-right: 0;
 	}
 	aside #sidebar-new-group,
 	aside #sidebar-new-pages,
@@ -1021,8 +1028,17 @@ ul.tabs li {
 		aside .widget-action:hover,
 		aside .widget-action:focus {
 			background-color: var(--dimbright);
+		}
+		aside .fakelink:has(+ .widget-action) h3 {
+			margin-right: 32px;
 		}	
-
+		aside .widget-action + .widget-action {
+			left: -32px;
+		}
+		aside #group-sidebar .fakelink:has(+ .widget-action + .widget-action) h3 {
+			margin-right: 64px;
+		}
+		
 	.sidebar-widget-list img {
 		height: 20px;
 		width:  20px;
@@ -1231,11 +1247,14 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
             font-size: 13px !important;
 			color: var(--font-color); 
 		}
+			.shared-wrapper {
+				border: 1px solid var(--font-color) !important;
+			}
 			.type-link, .type-video {
 				padding: 0 !important;
 				margin:  0 !important;
-				background-color: rgb(240, 242, 245) !important;
-				border: 1px solid rgb(208,211,215) !important;
+				background-color: var(--background-color) !important;
+				border: 1px solid var(--font-color) !important;
 			}
 			.type-link h4, .type-link blockquote, .type-link sup,
 			.type-video h4, .type-video blockquote, .type-video sup {
@@ -1316,7 +1335,7 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 				position: relative;
 				color: var(--nav-icon-color);
 				margin-left: -28px;
-				margin-top:  23px;
+				margin-top:  37px;
 				display: block;
 			}
 			body.show-action-labels .wall-item-actions-row .checkbox input[type="checkbox"]:checked + label::after {
@@ -1520,17 +1539,17 @@ div.img-allocated-max-width:has(+ div.img-allocated-max-width) {
 				font-size: 18px !important;
 				color: var(--nav-icon-color) !important;
 			}
-			#photo-view-wrapper .wall-item-actions .button-likes .fa-thumbs-up,
-			#photo-view-wrapper .wall-item-actions .button-likes .fa-thumbs-down {
+			#photo-view-wrapper .wall-item-actions .button-likes .ri-thumb-up-line,
+			#photo-view-wrapper .wall-item-actions .button-likes .ri-thumb-down-line {
 				font-size: 24px !important;
 				color: var(--nav-icon-color) !important;
 			}
 				#photo-view-wrapper .wall-item-actions .button-likes:hover::after,
 				#photo-view-wrapper .wall-item-actions .button-likes:focus::after,
-				#photo-view-wrapper .wall-item-actions .button-likes:hover .fa-thumbs-up,
-				#photo-view-wrapper .wall-item-actions .button-likes:focus .fa-thumbs-up,
-				#photo-view-wrapper .wall-item-actions .button-likes:hover .fa-thumbs-down,
-				#photo-view-wrapper .wall-item-actions .button-likes:focus .fa-thumbs-down {
+				#photo-view-wrapper .wall-item-actions .button-likes:hover .ri-thumb-up-line,
+				#photo-view-wrapper .wall-item-actions .button-likes:focus .ri-thumb-up-line,
+				#photo-view-wrapper .wall-item-actions .button-likes:hover .ri-thumb-down-line,
+				#photo-view-wrapper .wall-item-actions .button-likes:focus .ri-thumb-down-line {
 					color: var(--link-hover-color) !important;
 				}
 		/* END OF ACTION BUTTON LABELS */	
@@ -2487,9 +2506,6 @@ aside .widget h3.p-name {
 	#photo-album-link:focus-within {
 		background-color: var(--dimbright);
 	}
-#photo-edit-link i.fa-image {
-    padding: 6px 7px !important;
-}
 .photos-order-link {
     margin-top: 0px !important;
 }
@@ -3036,10 +3052,15 @@ body.mod-settings #delegation .contact-block-img {
 */
 @media screen and (max-width: 990px){
 	/* Friendica icon upper left */
-	#banner {
+	#topbar-first-nav-container {
+		justify-content: flex-end;
+	}
+	header #banner {
+		position: fixed;
+		top: 8px;
+		left: 10px !important;
 		display: block !important;
 		padding: 0 !important;
-		margin: 8px 10px;
 	}
 		#friendica-logo-mask {
 			display: block !important;
@@ -3047,6 +3068,9 @@ body.mod-settings #delegation .contact-block-img {
 	/* hide search box - no room */
     #search-box {
         display: none;
+    }
+    #topbar-first .topbar-nav .nav-segment > a {
+    	padding: 10px 15px;
     }
     	/* show mobile search toggle */
     	#topbar-first .navbar-toggle[data-target="#search-mobile"]{
@@ -3300,12 +3324,6 @@ body.mod-settings #delegation .contact-block-img {
 	#search-save {
 		width: 100px !important;
 	}
-		#search-save .fa-plus::after {
-			content: var(--follow-button-text);
-		}
-		#search-save .fa-floppy-o::after {
-			content: var(--save-button-text);
-		}
 	a.wall-item-name-link, span.fakelink {
 		font-weight: bold;
 	}
@@ -3319,7 +3337,7 @@ body.mod-settings #delegation .contact-block-img {
 	}
 	
 	/* Friendica icon upper left */
-	#banner {
+	header #banner {
 		position: fixed;
 		top: 0px;
 		left: 0px;
@@ -3390,7 +3408,7 @@ body.mod-settings #delegation .contact-block-img {
 		#topbar-first .navbar-toggle[data-target="aside"]{
 			position: fixed;
 			top: auto;
-			left: auto;
+			left: 0px;
 			bottom: 2px;
 		}
 			/* change icon */
@@ -3626,9 +3644,6 @@ body.mod-settings #delegation .contact-block-img {
 			#dropdownMenuTools-xs {
 				height: 60px;
 			}
-				ul.tabs-extended .dropdown.open .fa-chevron-down::before{
-					content: '\f077';
-				}
 		#jotOpen, #search-save, #mention-link {
 			position: fixed;
 			bottom: 65px;
@@ -3647,18 +3662,6 @@ body.mod-settings #delegation .contact-block-img {
 				float: none;
 				position: relative;
 				top: 2px;
-			}
-			#search-save .fa-plus::after,
-			#search-save .fa-floppy-o::after {
-				display: none;
-			}
-			#search-save .fa-plus::before,
-			#search-save .fa-floppy-o::before {
-				content: '\f0c7' !important;
-			}
-			.fa-edit::before,
-			.fa-pencil-square-o::before {
-				content: "\f040";
 			}
 		.dropdown-mobile-jot > .dropdown-toggle.btn-primary {
 			background-color: transparent;
@@ -4075,9 +4078,6 @@ body.mod-settings #delegation .contact-block-img {
 			#topbar-first .navbar-toggle[data-target="#search-mobile"]:hover,
 			#topbar-first .navbar-toggle[data-target="#search-mobile"]:focus {
 				box-shadow: inset 0 0 100px var(--dimbright);
-			}
-			.fa-fw {
-				width: auto;
 			}
 			#topbar-first button.offcanvas-right-toggle {
 				top:   10px;
