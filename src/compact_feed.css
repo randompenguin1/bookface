@@ -1,0 +1,267 @@
+/* ULTRA COMPACT FEEDS & CLICKABLE POST BODY */	
+body.mod-settings #field-theme-select-container::after {
+  content: 'EXPERIMENTAL: Bookface Auto Color Compact hides ALL comments in ALL feeds. You have to open posts on a separate single display page to see any comments or comment on the post. It is incompatible with and overrides Compact Conversation View.';
+  border: 3px solid var(--accent-color);
+  display: block;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+
+body.mod-network,
+body.mod-community,
+body.mod-profile,
+body.mod-search {
+
+ & .tread-wrapper:not(:has(.thread_level_1)) .media .contact-info,
+ & .thread_level_1 .media .contact-info {
+	position: unset !important;
+}
+	 & .tread-wrapper:not(:has(.thread_level_1)) .preferences,
+	 & .thread_level_1 .preferences {
+		position: absolute;
+		top: 65px;
+		left: 0;
+		right: 0;
+		bottom: 75px;
+		background-color: transparent;
+	/*	background-color: red; opacity: .5;		uncomment to see what is masked */
+		z-index: 1;
+	}
+		& .tread-wrapper:not(:has(.thread_level_1)) .preferences {
+			bottom: 45px;
+		}
+		/* adjust for showing resharer */
+	 	& .thread_level_1:has(> article > .wall-item-announce) .preferences {
+	 		top: 80px;
+	 	}
+	 	/* adjust bottom for responses */
+	 	& .thread_level_1:has(> article > .wall-item-responses > div > p) .preferences {
+	 		bottom: 110px;
+	 	}	
+	 	/* adjust bottom for event */
+	 	& .thread_level_1:has(> article .event-card) .preferences {
+	 		bottom: 120px;
+	 	}
+ 	/* event with either post or event responses */
+
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(1) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(2) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(3) > p) .preferences {
+	 			bottom: 160px;
+	 		}
+	 		/* response item 4 is not used so far as I can tell */
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(5) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-repsonses > div:nth-child(6) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(7) > p) .preferences {
+	 			bottom: 190px;
+	 		}
+	
+		 & .tread-wrapper:not(:has(.thread_level_1)) .wall-item-network,
+		 & .thread_level_1 .wall-item-network,
+		 & .tread-wrapper:not(:has(.thread_level_1)) .wall-item-network .plink.u-url,
+		 & .thread_level_1 .wall-item-network .plink.u-url {
+			position: absolute;
+			height: 100%;
+			width:  100%;
+			margin: 0;
+			padding: 0;
+			border-radius: 0px;
+		}
+			& .tread-wrapper:not(:has(.thread_level_1)) .wall-item-network .plink.u-url:hover,
+			& .thread_level_1 .wall-item-network .plink.u-url:hover {
+				background-color: transparent !important;
+			}
+			/* cover Comment button with link to single post view */
+			 & .thread_level_1 .plink.u-url::after {
+				content: '';
+				position: absolute;
+				display: block;
+				bottom: -53px;
+				left: 36px;
+				height: 50px;
+				width:  70px;
+				background-color: transparent;
+			/*  background-color: red; 			uncomment to see mask */
+			 }
+			 /* in Media Posts and Search context no comment button to cover */
+			 & .tread-wrapper:not(:has(.thread_level_1)) .plink.u-url::after {
+			 	display: none;
+			 }
+			 @media screen and (max-width: 1200px){
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .plink.u-url::after,
+			 	& .thread_level_1 .plink.u-url::after {
+			 		left: 23px;
+			 	}
+			 }
+			 @media screen and (max-width: 990px){
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .plink.u-url::after,
+			 	& .thread_level_1 .plink.u-url::after {
+			 		left: 42px;
+			 	}			 
+			 }
+			 @media screen and (max-width: 600px){
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .plink.u-url::after,
+			 	& .thread_level_1 .plink.u-url::after {
+			 		left: 18px;
+			 	}
+			 }
+			 @media screen and (max-width: 440px){
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .preferences,
+			 	& .thread_level_1 .preferences {
+			 		bottom: 100px !important;
+			 	}
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .plink.u-url::after,
+			 	& .thread_level_1 .plink.u-url::after {
+			 		left: 12px;
+			 	}
+			 }
+			 @media screen and (max-width: 350px){
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .plink.u-url::after,
+			 	& .thread_level_1 .plink.u-url::after {
+			 		width: 48px;
+			 	}			 	
+			 }
+			 
+			 	& .tread-wrapper:not(:has(.thread_level_1)) .network-svg,
+		 		& .thread_level_1 .network-svg {
+		 			position: absolute;
+		 			top:  -50px;
+		 			right: 10px;
+		 		}
+	
+	
+	& .tread-wrapper:not(:has(.thread_level_1)) .wall-item-bottom a[href*="display"] i {
+		display: none;
+	}
+
+	& .thread_level_1 .wall-item-links a[href*="display"] i {
+		position: absolute;
+		bottom: -43px;
+		left: 95px;
+	}
+		& .thread_level_1:has(.wall-item-emoji) .wall-item-links a[href*="display"] i {
+			bottom: -22px;
+		}
+	& .wall-item-body > p > a:has(img.empty-description),
+	& .wall-item-body > a:has(img.empty-description),
+	& .img-allocated-max-width,
+	& .img-allocated-max-height,
+	& .body-attach,
+	& .type-link,
+	& .tags {
+		position: relative;
+		z-index: 1;
+	}
+	& .shared-wrapper {
+		z-index: 2;
+	}
+		& .shared-wrapper .preferences {
+			bottom: 0px !important;
+		}
+			& .shared-wrapper .plink.u-url::after {
+				content: none;
+			}
+	
+	& .comment-container {
+		height: 0px;
+		overflow: hidden;
+		padding: 0 !important;
+		margin: 0 !important;
+		border: none;
+	}
+		& .comment-container::after,	
+		& .comment-container::before {
+			content: none;
+		}
+	& .comment-fake-form,
+	& .load-more-comments {
+		display: none;
+	}
+}
+body.mod-network.show-action-labels,
+body.mod-community.show-action-labels,
+body.mod-profile.show-action-labels {
+
+		 & .thread_level_1 .preferences {
+		 	bottom: 85px;
+		 }
+		/* adjust for showing resharer */
+	 	& .thread_level_1:has(> article > .wall-item-announce) .preferences {
+	 		top: 80px;
+	 	}
+	 	/* adjust bottom for responses */
+	 	& .thread_level_1:has(> article > .wall-item-responses > div > p) .preferences {
+	 		bottom: 110px;
+	 	}	
+	 	/* adjust bottom for event */
+	 	& .thread_level_1:has(> article .event-card) .preferences {
+	 		bottom: 155px;
+	 	}
+ 	/* event with either post or event responses */
+
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(1) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(2) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(3) > p) .preferences {
+	 			bottom: 190px;
+	 		}
+	 		/* response item 4 is not used so far as I can tell */
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(5) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-repsonses > div:nth-child(6) > p) .preferences,
+	 		& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(7) > p) .preferences {
+	 			bottom: 220px;
+	 		}
+			 @media screen and (max-width: 440px){
+			 	 /* adjust bottom for responses */
+				& .thread_level_1:has(> article > .wall-item-responses > div > p) .preferences {
+					bottom: 155px !important;
+				}
+			 	/* adjust bottom for event */
+			 	& .thread_level_1:has(> article .event-card) .preferences {
+	 				bottom: 170px !important;
+	 			}
+	 			/* event with either post or event responses */
+				& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(1) > p) .preferences,
+				& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(2) > p) .preferences,
+				& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(3) > p) .preferences {
+					bottom: 225px !important;
+				}
+				/* response item 4 is not used so far as I can tell */
+				& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(5) > p) .preferences,
+				& .thread_level_1:has(> article .event-card):has(>article > .wall-item-repsonses > div:nth-child(6) > p) .preferences,
+				& .thread_level_1:has(> article .event-card):has(>article > .wall-item-responses > div:nth-child(7) > p) .preferences {
+					bottom: 277px !important;
+				}
+			 }
+}
+/* this adds a loaded/visible post count */
+@supports (counter-reset: name) {
+	.tread-wrapper {
+		counter-reset: replies;
+	}
+		.wall-item-container.comment {
+			counter-increment: replies;
+		}
+		.tread-wrapper:has(.wall-item-container.comment)::after {
+			content: counter(replies);
+			position: absolute;
+			top:   13px;
+			right: 35px;
+			display: list-item;
+			list-style-position: inside;
+			text-align: right;
+		}
+		body.mod-display .tread-wrapper:has(.wall-item-container.comment)::after {
+			top:   22px;
+			right: 55px;
+		}
+			.tread-wrapper:has(.wall-item-container.comment)::after::marker {
+				content: '\EB59' ' ';
+				font-family: remixicon;
+				display: inline-block;
+				height: 20px;
+				width:  20px;
+			}
+}
+	
