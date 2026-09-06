@@ -1,5 +1,5 @@
 :root {
-	--bookface-version: '2.2.0';  /* update this every time stylesheet is updated! */
+	--bookface-version: '2.2.1';  /* update this every time stylesheet is updated! */
 	/* Fonts and Colors */
     --global-font-family: "Open Sans", Arial, sans-serif, Noto Color Emoji;
     --nav-bg: $nav_bg;
@@ -33,9 +33,7 @@
 	--attach-file-button: block; /* none or block */
 	--show-tooltips: block; /* none or block */ 
     
-    /* LOCALIZE pseudo-element text below */
-    --follow-button-text: 'Follow';
-    --save-button-text: 'Save';  
+    /* LOCALIZE pseudo-element text below */ 
 	--community-post-text: 'Community Posts MUST be Public!';
 
 	/* Label text on Primary and Submit Buttons */
