@@ -36,6 +36,7 @@ cat light_head.css css_variables.css core.css end.css postbox_support.css > dist
 cat dark_head.css css_variables.css core.css end.css postbox_support.css > dist/bookface_dark.css
 cat auto_head.css css_variables.css core.css end.css postbox_support.css > dist/bookface_auto.css
 cat legacy_head.css core.css legacy_middle.css core.css legacy_end.css end.css postbox_support.css > dist/bookface_legacy.css
+cat auto_head.css css_variables.css core.css end.css compact_feed.css postbox_support.css > dist/bookface_auto_compact.css
 
 if [ -e "$this_dir/dist/bookface_light.css" ]
 	then
@@ -63,6 +64,13 @@ if [ -e "$this_dir/dist/bookface_legacy.css" ]
 		echo bookface_legacy.css successfully created
 	else
 		echo bookface_legacy.css was NOT created!
+		return
+fi 	
+if [ -e "$this_dir/dist/bookface_auto_compact.css" ]
+	then
+		echo bookface_auto_compact.css successfully created
+	else
+		echo bookface_auto_compact.css was NOT created!
 		return
 fi 	
 
