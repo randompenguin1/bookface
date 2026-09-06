@@ -1,6 +1,6 @@
 BOOKFACE FOR FRIENDICA
 ======================
-Version 2.2.0-rc
+Version 2.2.1-rc
 
 **Requirements** Friendica "Blutwurz" **2026.08-rc ONLY**
 
@@ -21,6 +21,8 @@ Version 2.2.0-rc
 	* bookface_light.php
 	* bookface_legacy.css
 	* bookface_legacy.php
+	* bookface_auto_compact.css
+	* bookface_auto_compact.php
 
 And the **bookface_assets** folder. _This is new, no previous Bookface release had this folder._
 
@@ -146,6 +148,17 @@ Note that now all the base bookface PHP scheme files import the same module at _
 
 
 ## CHANGELOG:
+2.2.1-rc (06 September 2026)
+* Text completion position and z-index fixed.
+* Notification badge no longer crops long numbers.
+* old Font/Fork Awesome styling removed.
+* unnecessary css label variables removed.
+* Button alignment fixed below 900px wide (still slight overlap of Home with Search from 769px to 796px but both buttons can still be used).
+* Directory Search widget action button alignment fixed.
+* Delete Checkbox label alignment fixed.
+* Dark Mode background color on thumbnail links fixed.
+* Added _experimental_ "Compact View" option (hides ALL comments in ALL feeeds and makes post body clickable to view on separate page).
+
 2.2.0-rc (25 August 2026)
 * Fixed Moderation table hover colors
 * Fixed Moderation table button link colors.
