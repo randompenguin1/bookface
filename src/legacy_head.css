@@ -1,8 +1,8 @@
 /*
 	Name	   : Bookface Auto Legacy
-	Version    : 2.2.0
+	Version    : 2.2.1
     Licence    : AGPL
-    Created on : 25 AUG 2026
+    Created on : 06 SEP 2026
     Author     : Pygoscelis Papua @randompenguin@friendica.world feb @feb@loma.ml Phil @phil@loma.ml
 */
 
@@ -46,9 +46,7 @@
     
     /* Theme Features */
 	--attach-file-button: block; /* none or block */
-	--show-tooltips: block; /* none or block */ 
-	--follow-button-text: 'Follow';
-    --save-button-text: 'Save';  
+	--show-tooltips: block; /* none or block */  
 	--community-post-text: 'Community Posts MUST be Public!';
 	/* Label text on Primary and Submit Buttons */
 	--contrast-color: #fff;	/* ultimate fallback */
